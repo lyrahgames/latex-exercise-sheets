@@ -1,0 +1,31 @@
+\documentclass[a4paper,fleqn]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage[bottom=25mm,left=30mm,right=30mm,bottom=35mm]{geometry}
+\usepackage{times}
+\linespread{1.15}
+
+\usepackage{turnthepage}
+\renewcommand{\turnthepage}{\it bitte wenden}
+
+
+\usepackage[pgfkeys,exsheets]{ati}
+\SetupExSheets{solution/print=true, question/type=exam}
+
+\allowdisplaybreaks
+
+
+\begin{document}
+
+	% \pagestyle{empty}
+
+	\section*{\centering Mathematische Methoden der Physik I \\ Übungsserie 1}
+
+	\input{task-methode_der_variablentrennung}
+	\input{task-homogene_differentialgleichungen}
+	\input{task_orthogonaltrajektorien}
+	% \printsolutions
+
+\end{document}

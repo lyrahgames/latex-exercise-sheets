@@ -1,0 +1,70 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{atimathsym}[2017/07/06 Abstract Task Interface Math Symbols v0.1]
+
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{mathtools}
+
+
+% define
+\newcommand{\define}{\coloneqq}
+% definition of demand sign
+\newcommand{\demand}{\stackrel{!}{=}}
+% define sign from the right
+\newcommand{\definedby}{\eqqcolon}
+% function
+\newcommand{\func}[3]{#1\colon#2\to#3}
+
+\let\oldimplies\implies
+\def\implies{\quad\oldimplies\quad}
+
+\newcommand{\separate}{,\qquad}
+
+
+% brackets
+% curly brackets
+\newcommand{\curlb}[1]{\left\{ #1 \right\}}
+% box brackets
+\newcommand{\boxb}[1]{\left[ #1 \right]}
+% parentheses/curved brackets
+\newcommand{\curvb}[1]{\left( #1 \right)}
+% angle brackets
+\newcommand{\angleb}[1]{\left\langle #1 \right\rangle}
+% floor brackets
+\newcommand{\floorb}[1]{\left\lfloor #1 \right\rfloor}
+% ceil brackets
+\newcommand{\ceilb}[1]{\left\lceil #1 \right\rceil}
+
+% operators
+% inverse
+\newcommand{\inv}[1]{ {#1}^{-1} }
+% magnitude/absolute value
+\newcommand{\abs}[1]{\left\vert #1 \right\vert}
+% norm
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+
+% scalar product
+\newcommand{\dotp}[2]{\angleb{#1,#2}}
+% cross product function
+\newcommand{\crossp}[2]{#1 \times #2}
+
+% derivative
+\DeclareMathOperator{\Deriv}{D}
+\newcommand{\deriv}[1]{ {#1}^{\prime} }
+\newcommand{\dderiv}[1]{ {#1}^{\prime\prime} }
+\newcommand{\ddderiv}[1]{ {#1}^{\prime\prime\prime} }
+\newcommand{\nderiv}[2][]{ \ifx&#1& \deriv{#2} \else {#2}^{(#1)} \fi }
+\DeclareMathOperator{\pderiv}{\partial}
+% infinitesimal difference
+\newcommand{\diff}{\mathrm{d}}
+% integral
+\newcommand{\integral}[4]{\int_{#1}^{#2} #3\ \diff #4}
+\newcommand{\Integral}[4]{\int\limits_{#1}^{#2} #3\ \diff #4}
+\newcommand{\iintegral}[2]{\int #1\ \diff #2} % indefinite integral
+
+% append unit
+\newcommand{\unit}[1]{\, \mathrm{#1}}
+
+
+\endinput

@@ -1,0 +1,155 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ati}[2017/07/05 Abstract Task Interface v0.1]
+
+\RequirePackage{enumitem}
+\RequirePackage{marginnote}
+\RequirePackage{exsheets}
+
+\RequirePackage{atimathsym}
+
+\DeclareOption{pgfkeys}{
+	\def\atiKeySystem{pgfkeys}
+	\AtEndOfPackage{\RequirePackage{pgfkeys}}
+
+	\pgfkeys{
+		/ati/.style = /ati/.cd,
+		ati,
+		.unknown/.code = ,
+		task/.style = /ati/task/.cd,
+		task,
+		.unknown/.code = ,
+		call/.initial = Aufgabe,
+		title/.estore in = \atiTaskTitle,
+		title/.default = ,
+		language/.estore in = \atiTaskLanguage,
+		points/.estore in = \atiTaskPoints,
+		points/.default = 0,
+	}
+}
+
+\DeclareOption{exsheets}{
+	\def\atiTaskSystem{exsheets}
+	\AtEndOfPackage{\RequirePackage{exsheets}}
+
+	\DeclareInstance{exsheets-heading}{block-subtitle}{default}{
+		join = {
+			title[r,B]number[l,B](0.333em,0pt);
+			title[r,B]subtitle[l,B](1em,0pt)
+		},
+		attach = {
+			main[l,vc]title[l,vc](0pt,0pt);
+			main[r,vc]points[l,vc](\marginparsep,0pt)
+		}
+	}
+
+	% \SetupExSheets{headings=block-subtitle, solution/print=true}
+	\SetupExSheets{headings=block-subtitle}
+
+	\newenvironment{atiTask}[1][]{
+		\pgfkeys{ati/task,title,points,#1}
+		\question[subtitle=\atiTaskTitle]{\atiTaskPoints}
+	}{
+		% \end{question}
+		\endquestion
+	}
+
+	\newenvironment{atiSolution}{
+		\solution
+	}{
+		\endsolution
+	}
+}
+
+\DeclareOption{custom}{
+	\def\atiTaskSystem{custom}
+
+	\newcounter{atiTaskCounter}
+
+	\newenvironment{atiTask}[1][]{
+		\pgfkeys{ati/task,points,#1}
+		\refstepcounter{atiTaskCounter}
+		\bigskip\par
+		\noindent
+		{
+			\large
+			\textbf{
+				\pgfkeysvalueof{/ati/task/call}
+				\theatiTaskCounter
+			}
+		}
+		\hfill
+		\ifdefined\atiTaskTitle
+			\textit{\atiTaskTitle}
+		\fi
+		\marginnote{\atiShowPoints{\atiTaskPoints}}
+		\medskip
+		\par
+	}{
+		\bigskip\par
+	}
+
+	\newenvironment{atiSolution}{
+		\bigskip\par
+		\noindent
+		{
+			\large
+			\textsc{
+				Lösung:
+			}
+		}
+		\hfill
+		\medskip
+		\par
+	}{
+		\bigskip
+		\par
+	}
+}
+
+
+% \ExecuteOptions{pgfkeys,custom}
+\ProcessOptions\relax
+
+
+\newenvironment{atiSubtasks}{
+	\begin{enumerate}[label=\normalfont(\alph*), topsep=0pt]
+}{
+	\end{enumerate}
+}
+
+\newenvironment{atiSubtaskSolutions}{
+	\begin{description}[style=multiline]
+		% \let\olditem[##1]\item[##1]
+		% \def\item[##1]##2{\olditem[##1] ##2 \atiPointsCount}
+}{
+	\end{description}
+	% \atiPointsCount
+}
+
+\newenvironment{atiSubequations}{
+	% \begin{multicols}{2}
+	\begin{enumerate}[label=\normalfont(\roman*)]
+	% \newcommand{\nitem}[1][]{\item $ \qquad \begin{aligned}[t] ##1 \end{aligned} $}
+	\let\olditem\item
+	\def\item##1{\olditem \ensuremath{ \qquad \begin{aligned}[t] ##1 \end{aligned} } }
+}{
+	\end{enumerate}
+	% \end{multicols}
+}
+
+\newenvironment{atiItems}{
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+\newcounter{atiPointsCounter}
+\newcommand{\atiPointsPrefix}{}
+\newcommand{\atiPointsSuffix}{~P.}
+\newcommand{\atiPoints}[1][1]{\marginnote{\atiPointsPrefix#1\atiPointsSuffix}\refstepcounter{atiPointsCounter}}
+
+\newcommand{\atiShowPoints}[1]{\atiPointsPrefix#1\atiPointsSuffix}
+
+\newcommand{\atiPointsCount}{\marginnote{\rule{1cm}{0.5pt}\\ \atiPointsPrefix\theatiPointsCounter\atiPointsSuffix}}
+
+\endinput
