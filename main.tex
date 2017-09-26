@@ -10,12 +10,12 @@
 \usepackage{turnthepage}
 \renewcommand{\turnthepage}{\it bitte wenden}
 
-
-\usepackage[pgfkeys,exsheets]{ati}
+\usepackage[pgfkeys,custom]{ati}
 \SetupExSheets{solution/print=true, question/type=exam}
 
 \allowdisplaybreaks
 
+\usepackage{import}
 
 \begin{document}
 
@@ -23,9 +23,21 @@
 
 	\section*{\centering Mathematische Methoden der Physik I \\ Übungsserie 1}
 
-	\input{task-methode_der_variablentrennung}
-	\input{task-homogene_differentialgleichungen}
-	\input{task_orthogonaltrajektorien}
+	\input{database/mathematische_methoden_der_physik_i/ordinary_deq/separable_deq/task-homogene_differentialgleichungen}
+	\input{database/mathematische_methoden_der_physik_i/ordinary_deq/separable_deq/task-orthogonaltrajektorien}
+	\input{database/mathematische_methoden_der_physik_i/ordinary_deq/separable_deq/task-methode_der_variablentrennung}
+
+	\input{database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq/task-methode_der_variation_der_konstanten_i}
+	\input{database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq/task-methode_der_variation_der_konstanten_ii}
+	\input{database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq/task-nichtlineare_differentialgleichung}
+
+	\input{database/mathematische_methoden_der_physik_i/ordinary_deq/exact_deq/task-zwei_exakte_differentialgleichungen}
+	\input{database/mathematische_methoden_der_physik_i/ordinary_deq/exact_deq/task-eine_nichtexakte_differentialgleichung}
+	\input{database/mathematische_methoden_der_physik_i/ordinary_deq/exact_deq/task-integrierende_faktoren}
+
+	% \input{task-methode_der_variablentrennung}
+	% \input{task-homogene_differentialgleichungen}
+	% \input{task_orthogonaltrajektorien}
 	% \printsolutions
 
 \end{document}

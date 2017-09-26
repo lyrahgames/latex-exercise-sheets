@@ -5,7 +5,11 @@
 \RequirePackage{marginnote}
 \RequirePackage{exsheets}
 
+\RequirePackage[autostyle=true,german=guillemets]{csquotes}
+
 \RequirePackage{atimathsym}
+
+
 
 \DeclareOption{pgfkeys}{
 	\def\atiKeySystem{pgfkeys}
@@ -22,8 +26,13 @@
 		title/.estore in = \atiTaskTitle,
 		title/.default = ,
 		language/.estore in = \atiTaskLanguage,
+		language/.default = Deutsch,
 		points/.estore in = \atiTaskPoints,
 		points/.default = 0,
+		topic/.estore in = \atiTaskTopic,
+		topic/.default = ,
+		subtopic/.estore in = \atiTaskSubtopic,
+		subtopic/.default = ,
 	}
 }
 
@@ -66,13 +75,13 @@
 	\newcounter{atiTaskCounter}
 
 	\newenvironment{atiTask}[1][]{
+		\setlength\parindent{0mm}
 		\pgfkeys{ati/task,points,#1}
 		\refstepcounter{atiTaskCounter}
-		\bigskip\par
-		\noindent
+		\bigskip\par%
 		{
-			\large
-			\textbf{
+			\large%
+			\textbf{%
 				\pgfkeysvalueof{/ati/task/call}
 				\theatiTaskCounter
 			}
@@ -81,10 +90,15 @@
 		\ifdefined\atiTaskTitle
 			\textit{\atiTaskTitle}
 		\fi
-		\marginnote{\atiShowPoints{\atiTaskPoints}}
+		% \marginnote{\atiShowPoints{\atiTaskPoints}}
 		\medskip
 		\par
 	}{
+		\bigskip\par
+		\footnotesize
+		topic: \atiTaskTopic \\
+		subtopic: \atiTaskSubtopic \\
+		language: \atiTaskLanguage
 		\bigskip\par
 	}
 
@@ -115,6 +129,12 @@
 	\begin{enumerate}[label=\normalfont(\alph*), topsep=0pt]
 }{
 	\end{enumerate}
+}
+
+\newenvironment{atiNote}{%
+	\medskip\textbf{Hinweis:}
+}{%
+
 }
 
 \newenvironment{atiSubtaskSolutions}{
