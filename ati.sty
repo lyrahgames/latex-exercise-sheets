@@ -88,17 +88,20 @@
 		}
 		\hfill
 		\ifdefined\atiTaskTitle
-			\textit{\atiTaskTitle}
-		\fi
+			\textit{\atiTaskTitle}%
+			\nopagebreak[4]
+		\fi%
 		% \marginnote{\atiShowPoints{\atiTaskPoints}}
-		\medskip
-		\par
+		% \medskip%
+		\par\medskip%
+		% \begin{samepage}
 	}{
-		\bigskip\par
-		\footnotesize
-		topic: \atiTaskTopic \\
-		subtopic: \atiTaskSubtopic \\
-		language: \atiTaskLanguage
+		% \end{samepage}
+		% \bigskip\par
+		% \footnotesize
+		% topic: \atiTaskTopic \\
+		% subtopic: \atiTaskSubtopic \\
+		% language: \atiTaskLanguage
 		\bigskip\par
 	}
 
@@ -125,9 +128,15 @@
 \ProcessOptions\relax
 
 
-\newenvironment{atiSubtasks}{
+\newenvironment{atiSubtasks}{%
 	\begin{enumerate}[label=\normalfont(\alph*), topsep=0pt]
-}{
+}{%
+	\end{enumerate}
+}
+
+\newenvironment{atiSubsubtasks}{%
+	\begin{enumerate}[label=\normalfont(\arabic*), topsep=0pt]
+}{%
 	\end{enumerate}
 }
 

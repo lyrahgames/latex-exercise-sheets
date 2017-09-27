@@ -56,6 +56,10 @@
 \newcommand{\ddderiv}[1]{ {#1}^{\prime\prime\prime} }
 \newcommand{\nderiv}[2][]{ \ifx&#1& \deriv{#2} \else {#2}^{(#1)} \fi }
 \DeclareMathOperator{\pderiv}{\partial}
+
+\newcommand{\fdrv}[2]{\frac{\diff #1}{\diff #2}}
+\newcommand{\nfdrv}[3][]{\ifx&#1& \fdrv{#2}{#3} \else \frac{\diff^{#1}#2}{\diff #3^{#1}} \fi}
+
 % infinitesimal difference
 \newcommand{\diff}{\mathrm{d}}
 % integral
@@ -66,5 +70,6 @@
 % append unit
 \newcommand{\unit}[1]{\, \mathrm{#1}}
 
+\newcommand{\conv}[1][]{\ifx&#1& \longrightarrow \else \xrightarrow{#1} \fi}
 
 \endinput
