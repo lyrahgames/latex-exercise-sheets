@@ -58,7 +58,8 @@
 \DeclareMathOperator{\pderiv}{\partial}
 
 \newcommand{\fdrv}[2]{\frac{\diff #1}{\diff #2}}
-\newcommand{\nfdrv}[3][]{\ifx&#1& \fdrv{#2}{#3} \else \frac{\diff^{#1}#2}{\diff #3^{#1}} \fi}
+% \newcommand{\nfdrv}[3][]{\ifx&#1& \fdrv{#2}{#3} \else \frac{\diff^{#1}#2}{\diff #3^{#1}} \fi}
+\newcommand{\nfdrv}[3][]{\frac{\diff^{#1}#2}{\diff #3^{#1}}}
 
 % infinitesimal difference
 \newcommand{\diff}{\mathrm{d}}
