@@ -9,6 +9,8 @@
 
 \RequirePackage{atimathsym}
 
+\RequirePackage{multienum}
+
 
 
 \DeclareOption{pgfkeys}{
@@ -165,6 +167,16 @@
 	\end{enumerate}
 	% \end{multicols}
 }
+
+% \newenvironment{atiSubequationsColumn}{
+% 	\begin{multienumerate}
+% 	% \let\oldmitemx\mitemx
+% 	\def\itemx##1{\mitemx{\ensuremath{\qquad\begin{aligned}[t]##1\end{aligned}}}}
+% 	% \let\oldmitemxx\mitemxx
+% 	\def\itemxx##1##2{\mitemxx{\ensuremath{\qquad\begin{aligned}[t]##1\end{aligned}}}{\ensuremath{\qquad\begin{aligned}[t]##2\end{aligned}}}
+% }{
+% 	\end{multienumerate}
+% }
 
 \newenvironment{atiItems}{
 	\begin{itemize}
