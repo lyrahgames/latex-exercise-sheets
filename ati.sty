@@ -80,6 +80,8 @@
 		\setlength\parindent{0mm}
 		\pgfkeys{ati/task,points,#1}
 		\refstepcounter{atiTaskCounter}
+		\newcommand\locallabel[1]{\label{ati:\theatiTaskCounter:##1}}
+		\newcommand\localref[1]{\ref{ati:\theatiTaskCounter:##1}}
 		\bigskip\par%
 		{
 			\large%
@@ -108,6 +110,8 @@
 	}
 
 	\newenvironment{atiSolution}{
+		\newcommand\locallabel[1]{\label{ati:\theatiTaskCounter:##1}}
+		\newcommand\localref[1]{\ref{ati:\theatiTaskCounter:##1}}
 		\bigskip\par
 		\noindent
 		{
