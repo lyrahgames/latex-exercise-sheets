@@ -22,6 +22,9 @@
 \newcommand{\separate}{,\qquad}
 
 
+\newcommand{\setR}{\mathds{R}}
+\newcommand{\setN}{\mathds{N}}
+
 % brackets
 % curly brackets
 \newcommand{\curlb}[1]{\left\{ #1 \right\}}
@@ -60,6 +63,10 @@
 \newcommand{\fdrv}[2]{\frac{\diff #1}{\diff #2}}
 % \newcommand{\nfdrv}[3][]{\ifx&#1& \fdrv{#2}{#3} \else \frac{\diff^{#1}#2}{\diff #3^{#1}} \fi}
 \newcommand{\nfdrv}[3][]{\frac{\diff^{#1}#2}{\diff #3^{#1}}}
+
+% time derivative
+\newcommand{\tdrv}[1]{\dot{#1}}
+\newcommand{\ttdrv}[1]{\ddot{#1}}
 
 % infinitesimal difference
 \newcommand{\diff}{\mathrm{d}}

@@ -1,0 +1,28 @@
+\begin{atiTask}[
+	title = Eine Zombieapokalypse,
+	language = Deutsch
+]
+	Auf einer kleinen Insel gerät ein Virus in Umlauf, der die Bevölkerung in Zombies verwandelt.
+	Jeder Infizierte hat in einer Zeitspanne $\tau\in\setR^+$ Kontakt mit $\tau\cdot k$ anderen Personen, die teilweise ebenfalls infiziert, teilweise aber auch gesunde Menschen sind, wobei $k\in\setR^+$ gilt.
+	Gerät ein gesunder Mensch in Kontakt mit einem Zombie, so wird dieser infiziert.
+	\medskip
+	\begin{atiSubtasks}
+		\item{
+			Stellen Sie eine Differentialgleichung auf, die dieser Zombieapokalypse genügt.
+			Verwenden Sie $N\in\setN$ für die Größe der Inselbevölkerung, $Z(t)\in[0,N]$ für die Anzahl der Infizierten, $M(t)\in[0,N]$ für die Anzahl der Gesunden und $t\in\setR^+$ als freien Parameter der Zeit.
+		}
+		\item{
+			Lösen Sie diese Differentialgleichung und das folgende Anfangswertproblem.
+			\[
+				t_0\define 0\separate Z_0\define Z(0) \define \frac{N}{21}
+			\]
+		}
+		\item{
+			Skizzieren Sie $Z(t)$ und $M(t)$ für $k=2$, $N=1050$ und $t\in\setR^+$.
+		}
+		\item{
+			\textbf{Zusatz:} Ab wann ist nur noch weniger als $1\unit{\%}$ der Bevölkerung nicht infiziert?
+			Wie beeinflussen die Parameter $k$ und $N$ diesen Zeitpunkt.
+		}
+	\end{atiSubtasks}
+\end{atiTask}
