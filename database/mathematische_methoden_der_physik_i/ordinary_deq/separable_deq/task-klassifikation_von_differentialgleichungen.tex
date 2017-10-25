@@ -42,27 +42,27 @@
 			\[
 				y'' + 2y' -y = 0
 			\]
-			Es handelt sich um eine gewöhnliche, lineare, homogene, nicht-separable Differentialgleichung 2.Ordnung.
+			\atiPoints[1]Damit handelt es sich bei dieser Differentialgleichung um eine gewöhnliche, lineare, homogene, nicht-separable Differentialgleichung 2.Ordnung.
 		}
 		\item[\localref{dgl2}]{
 			Durch eine einfache Umformung erhalten wir die folgende Differentialgleichung.
 			\[
 				y'+ \sin y = x^2
 			\]
-			Es handelt sich um eine gewöhnliche, nicht-lineare, nicht-separable Differentialgleichung 1.Ordnung.
+			\atiPoints[1]Damit handelt es sich bei dieser Differentialgleichung um eine gewöhnliche, nicht-lineare, nicht-separable Differentialgleichung 1.Ordnung.
 		}
 		\item[\localref{dgl3}]{
 			Durch eine Äquivalenzumformung lässt sich die Differentialgleichungen in die beiden folgenden Formen bringen.
 			\[
 				y' + \tan (x)y = 0 \separate y' = -y\tan x
 			\]
-			Es handelt sich um eine gewöhnliche, lineare, homogene, separable Differentialgleichung 1.Ordnung.
-			Durch Anwendung der Methode der Trennung der Variablen, erhält man die folgende Lösung.
+			\atiPoints[1]Damit handelt es sich bei dieser Differentialgleichung um eine gewöhnliche, lineare, homogene, separable Differentialgleichung 1.Ordnung.
+			Durch Anwendung der Methode der Trennung der Variablen, erhält man dann die folgende Lösung.
 			\[
 				\frac{y'(x)}{y(x)} = -\tan x \implies \integral{y_0}{y}{\frac{1}{s}}{s} = \integral{x_0}{x}{-\tan s}{s}
 			\]
 			\[
-				\implies \ln\abs{\frac{y(x)}{y_0}} = \ln\abs{\frac{\cos x}{\cos x_0}} \implies \abs{y(x)} = \abs{\frac{y_0}{\cos x_0}} \abs{\cos x}
+				\implies \ln\abs{\frac{y(x)}{y_0}} = \ln\abs{\frac{\cos x}{\cos x_0}} \implies \abs{y(x)} = \abs{\frac{y_0}{\cos x_0}} \abs{\cos x}\atiPoints[1]
 			\]
 		}
 		\item[\localref{dgl4}]{
@@ -70,18 +70,18 @@
 			\[
 				y'' = -xy' \separate y'' + xy' = 0
 			\]
-			Es handelt sich um eine gewöhnliche, lineare, homogene, nicht-separable Differentialgleichung 2.Ordnung.
-			Durch die Substitution mit $z\define y'$ lässt sich zudem noch zeigen, dass sie in eine separable Differentialgleichung umgeformt werden kann.
+			\atiPoints[1]Damit handelt es sich bei dieser Differentialgleichung um eine gewöhnliche, lineare, homogene, nicht-separable Differentialgleichung 2.Ordnung.
+			\atiPoints[+\frac{1}{2}]Durch die Substitution mit $z\define y'$ lässt sich zudem noch zeigen, dass sie in eine separable Differentialgleichung umgeformt werden kann.
 		}
 		\item[\localref{dgl5}]{
-			Es handelt sich um eine gewöhnliche, nicht-lineare, separable Differentialgleichung 1.Ordnung.
+			\atiPoints[1]Es handelt sich um eine gewöhnliche, nicht-lineare, separable Differentialgleichung 1.Ordnung.
 			Es lässt sich hier keine Homogenität definieren, da sie nicht linear ist.
 			Die Methode der Trennung der Variablen liefert dann die folgende Lösung.
 			\[
 				\integral{x_0}{x}{y(s)y'(s)}{s} = \integral{x_0}{x}{s}{s} \implies \integral{y_0}{y(x)}{s}{s} = \frac{y^2(x)- y^2_0}{2} = \frac{x^2-x_0^2}{2}
 			\]
 			\[
-				\implies y^2(x) = x^2 - x_0^2 + y_0^2 \implies y(x) = \pm\sqrt{x^2-x_0^2+y_0^2}
+				\implies y^2(x) = x^2 - x_0^2 + y_0^2 \implies y(x) = \pm\sqrt{x^2-x_0^2+y_0^2}\atiPoints[1]
 			\]
 
 		}
@@ -90,7 +90,7 @@
 			\[
 				y' = (x+1)\frac{1}{y+2}
 			\]
-			Es handelt sich um eine gewöhnliche, nicht-lineare, separable, Differentialgleichung 1.Ordnung.
+			\atiPoints[1]Es handelt sich um eine gewöhnliche, nicht-lineare, separable, Differentialgleichung 1.Ordnung.
 			Die Methode der Trennung der Variablen liefert dann die folgende Lösung.
 			\[
 				\boxb{y(x)+2}y'(x) = x+1 \implies \integral{y_0}{y(x)}{s+2}{s} = \integral{x_0}{x}{s+1}{s}
@@ -102,7 +102,7 @@
 				\implies \boxb{y(x)+2}^2 = (x+1)^2 - (x_0+1)^2 + \curvb{y_0+2}^2
 			\]
 			\[
-				\implies y(x) = -2 \pm \sqrt{(x+1)^2 - (x_0+1)^2 + \curvb{y_0+2}^2}
+				\implies y(x) = -2 \pm \sqrt{(x+1)^2 - (x_0+1)^2 + \curvb{y_0+2}^2}\atiPoints[1]
 			\]
 		}
 		\item[\localref{dgl7}]{
@@ -111,8 +111,8 @@
 			\[
 				\abs{y+a} + y'\sqrt{x^2-a^2} = \sqrt{x+a}
 			\]
-			Es handelt sich um eine gewöhnliche, nicht-lineare, nicht-separable Differentialgleichung 1.Ordnung.
-			Ist jedoch durch gewisse Bedingungen festgelegt, dass $y+a$ nicht negativ wird, so kann die gegebene Differentialgleichung auch als lineare, inhomogene Differentialgleichung geschrieben werden.
+			\atiPoints[1]Damit handelt es sich bei dieser Differentialgleichung um eine gewöhnliche, nicht-lineare, nicht-separable Differentialgleichung 1.Ordnung.
+			% Ist jedoch durch gewisse Bedingungen festgelegt, dass $y+a$ nicht negativ wird, so kann die gegebene Differentialgleichung auch als lineare, inhomogene Differentialgleichung geschrieben werden.
 		}
 	\end{atiSubtaskSolutions}
 \end{atiSolution}

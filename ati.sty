@@ -191,7 +191,7 @@
 \newcounter{atiPointsCounter}
 \newcommand{\atiPointsPrefix}{}
 \newcommand{\atiPointsSuffix}{~P.}
-\newcommand{\atiPoints}[1][1]{\marginnote{\atiPointsPrefix#1\atiPointsSuffix}\refstepcounter{atiPointsCounter}}
+\newcommand{\atiPoints}[1][1]{\marginnote{\atiPointsPrefix\ensuremath{#1}\atiPointsSuffix}\refstepcounter{atiPointsCounter}}
 
 \newcommand{\atiShowPoints}[1]{\atiPointsPrefix#1\atiPointsSuffix}
 
