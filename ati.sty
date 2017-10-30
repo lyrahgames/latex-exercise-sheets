@@ -110,13 +110,15 @@
 	}
 
 	\newenvironment{atiSolution}{
+		\setlength\parindent{0mm}
 		\newcommand\locallabel[1]{\label{ati:\theatiTaskCounter:##1}}
 		\newcommand\localref[1]{\ref{ati:\theatiTaskCounter:##1}}
-		\bigskip\par
-		\noindent
+		\bigskip\par%
+		\noindent%
 		{
-			\large
-			\textsc{
+			% \noindent%
+			\large%
+			\textsc{%
 				Lösung:
 			}
 		}
@@ -135,13 +137,15 @@
 
 
 \newenvironment{atiSubtasks}{%
-	\begin{enumerate}[label=\normalfont(\alph*), topsep=0pt]
+	% \begin{enumerate}[label=\normalfont(\alph*), topsep=0pt]
+	\begin{enumerate}[label=\normalfont(\alph*)]
 }{%
 	\end{enumerate}
 }
 
 \newenvironment{atiSubsubtasks}{%
-	\begin{enumerate}[label=\normalfont(\arabic*), topsep=0pt]
+	% \begin{enumerate}[label=\normalfont(\arabic*), topsep=0pt]
+	\begin{enumerate}[label=\normalfont(\arabic*)]
 }{%
 	\end{enumerate}
 }

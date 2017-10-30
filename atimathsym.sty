@@ -18,9 +18,12 @@
 
 \let\oldimplies\implies
 \def\implies{\quad\oldimplies\quad}
+\let\oldiff\iff
+\def\iff{\quad\oldiff\quad}
 
 \newcommand{\separate}{,\qquad}
 
+\newcommand{\set}[1]{\left\{#1\right\}}
 
 \newcommand{\setR}{\mathds{R}}
 \newcommand{\setN}{\mathds{N}}
@@ -63,6 +66,12 @@
 \newcommand{\fdrv}[2]{\frac{\diff #1}{\diff #2}}
 % \newcommand{\nfdrv}[3][]{\ifx&#1& \fdrv{#2}{#3} \else \frac{\diff^{#1}#2}{\diff #3^{#1}} \fi}
 \newcommand{\nfdrv}[3][]{\frac{\diff^{#1}#2}{\diff #3^{#1}}}
+
+\newcommand{\fdrvop}[2]{\fdrv{}{#1}\,#2}
+
+\newcommand{\vbounds}[3]{\left.#1\right\vert_{#2}^{#3}}
+
+\newcommand{\fdrvopb}[3]{\vbounds{\fdrvop{#1}{#2}}{#3}{}}
 
 % time derivative
 \newcommand{\tdrv}[1]{\dot{#1}}

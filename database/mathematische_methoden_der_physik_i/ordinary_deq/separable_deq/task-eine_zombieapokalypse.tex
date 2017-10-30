@@ -7,7 +7,7 @@
 	Gerät ein gesunder Mensch in Kontakt mit einem Zombie, so wird dieser infiziert.
 	\medskip
 	\begin{atiSubtasks}
-		\item{
+		\item{\locallabel{a}
 			Stellen Sie eine Differentialgleichung auf, die dieser Zombieapokalypse genügt.
 			Verwenden Sie $N\in\setN$ für die Größe der Inselbevölkerung, $Z(t)\in[0,N]$ für die Anzahl der Infizierten, $M(t)\in[0,N]$ für die Anzahl der Gesunden und $t\in\setR^+$ als freien Parameter der Zeit.
 
@@ -30,3 +30,31 @@
 		}
 	\end{atiSubtasks}
 \end{atiTask}
+\begin{atiSolution}
+	\begin{atiSubtaskSolutions}
+		\item[\localref{a}]{
+			Wir definieren als Erstes den Anteil der gesunden Menschen $\alpha(t)$ und den Anteil an infizierten Menschen $\beta(t)$ für alle $t\in\setR^+$.
+			\[
+				\alpha(t)\define \frac{M(t)}{N}\separate\beta(t)\define\frac{Z(t)}{N} \implies \alpha(t) + \beta(t) = 1
+			\]
+			Trifft eine infizierte Person nun $\tau\cdot k$ andere Personen, so teilen sich Infizierte und Gesunde entsprechend ihrer Anteile $\alpha(t)$ und $\beta(t)$ auf diese Anzahl auf.
+			Die Anzahl $S(t)$ der gesunden Menschen, die ein Zombie in der Zeit $\tau$ trifft und infiziert, kann demnach durch den folgenden Term approximiert werden.
+			\[
+				S(t) = \tau\cdot k\cdot \alpha(t)
+			\]
+			Die Gesamtanzahl $\Delta Z(t)$ der gesunden Menschen, die im Zeitschritt $\tau$ infiziert werden, kann dann mittels einer Multiplikation mit der Anzahl aller Zombies bestimmt werden.
+			\[
+				\Delta Z(t) = \tau k\alpha(t)Z(t) = \frac{\tau k}{N}M(t)Z(t) = \frac{\tau k}{N} \boxb{N-Z(t)}Z(t)
+			\]
+			\[
+				\implies Z(t+\tau) = Z(t) + \Delta Z(t) = Z(t) + \frac{\tau k}{N} \boxb{N-Z(t)}Z(t)
+			\]
+			\[
+				\implies \frac{Z(t+\tau)-Z(t)}{\tau} = \frac{k}{N}\boxb{N-Z(t)}Z(t)
+			\]
+			\[
+				\implies Z'(t) = \lim_{\tau\conv 0}\frac{Z(t+\tau)-Z(t)}{\tau} = \frac{k}{N}\boxb{N-Z(t)}Z(t)
+			\]
+		}
+	\end{atiSubtaskSolutions}
+\end{atiSolution}

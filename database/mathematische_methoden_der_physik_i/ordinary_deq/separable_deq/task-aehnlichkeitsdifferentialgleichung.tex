@@ -13,3 +13,35 @@
 		z(t)\define\frac{y(t)}{t}\separate t\in\setR^+
 	\]
 \end{atiTask}
+\begin{atiSolution}
+	Durch die Verwendung der Substitution lassen sich die folgenden Aussagen für alle $t\in\setR^+$ treffen.
+	\[
+		y(t) = tz(t) \implies y'(t) = z(t) + tz'(t)\atiPoints[1]
+	\]
+	Das Umformen der ursprünglichen Differentialgleichung und Einsetzen der Substitution führt dann zur gewünschten separablen Differentialgleichung, die sich durch die Methode der Trennung der Variablen lösen lässt.
+	\[
+		ty'(t) = y(t)\boxb{1+\ln \curvb{\frac{y(t)}{t}}} \implies t\boxb{z(t) + tz'(t)} = tz(t)\boxb{1+\ln z(t)}
+	\]
+	\[
+		\implies tz'(t) = z(t)\ln z(t) \implies \frac{z'(t)}{z(t)\ln z(t)} = \frac{1}{t}\atiPoints[1]
+	\]
+	\[
+		\implies \integral{t_0}{t}{\frac{z'(s)}{z(s)\ln z(s)}}{s} = \integral{z_0}{z(t)}{\frac{1}{s\ln s}}{s} = \integral{t_0}{t}{\frac{1}{s}}{s}
+	\]
+	\[
+		\implies \ln\curvb{\frac{\ln z(t)}{\ln z_0}} = \ln \curvb{\frac{t}{t_0}} \implies z(t) = \exp\curvb{\frac{t\ln z_0 }{t_0}} = z_0^{\frac{t}{t_0}}\atiPoints[2]
+	\]
+	\[
+		\implies y(t) = tz(t) = t\exp\curvb{\frac{t\ln z_0 }{t_0}}\atiPoints[1]
+	\]
+	Für die Probe leitet man nun die Lösung ab und substituiert den erhaltenen Term mithilfe der berechneten Lösung.
+	\[
+		y'(t) = \exp\curvb{\frac{t\ln z_0}{t_0}} + \frac{t\ln z_0}{t_0}\exp\curvb{\frac{t\ln z_0}{t_0}}\atiPoints[\frac{1}{2}]
+	\]
+	\[
+		\implies y'(t) = \frac{y(t)}{t} + \ln\curvb{\frac{y(t)}{t}}\frac{y(t)}{t} = \frac{y(t)}{t}\boxb{1 + \ln\curvb{\frac{y(t)}{t}}}
+	\]
+	\[
+		\implies ty'(t) = y(t)\boxb{1+\ln\curvb{\frac{y(t)}{t}}} = y(t)\boxb{1 + \ln y(t) - \ln t}\atiPoints[\frac{1}{2}]
+	\]
+\end{atiSolution}
