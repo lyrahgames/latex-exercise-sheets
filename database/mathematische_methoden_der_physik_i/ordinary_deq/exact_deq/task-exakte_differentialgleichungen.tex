@@ -31,26 +31,99 @@
     \item[\localref{a}]{
       \begin{atiSubtaskSolutions}
         \item[\localref{ai}]{
-          Durch einfache Umstellung erhält man die folgende Form.
-          \[
-            0 = \curvb{y-x^3} + \curvb{x+y^3}y' = f(x,y) + g(x,y)y'
-          \]
+          Wir definieren zwei Funktionen $\func{f,g}{\setR^2}{\setR}$, sodass für alle $x,y\in\setR$ folgende Gleichungen gelten.
           \[
             f(x,y)\define y-x^3\separate g(x,y)\define x+y^3
           \]
           \[
-            \pdrvopb{\tilde{y}}{f(x,\tilde{y})}{y} = 1 = \pdrvopb{\tilde{x}}{g(\tilde{x},y)}{x}
+            \implies f(x,y) + g(x,y)y' = 0
           \]
+          Die Integrabilitätsbedingung ist nach der folgenden Aussage für alle $x,y\in\setR$ erfüllt.
+          Die Differentialgleichung ist damit exakt.
+          \[
+            \partial_2f(x,y) = \pdrvopb{\tilde{y}}{f(x,\tilde{y})}{y} = 1 = \pdrvopb{\tilde{x}}{g(\tilde{x},y)}{x} = \partial_1g(x,y)
+          \]
+          Es gibt nun eine zweimal stetig differenzierbare Potentialfunktion $\func{\varphi}{\setR^2}{\setR}$, die die folgende Bedingung erfüllt.
+          \[
+            \partial_1\varphi = f \separate \partial_2\varphi = g
+          \]
+          Um diese zu berechnen, kann man zum Beispiel einen der beiden folgenden Wege verwenden.
+          \[
+            \varphi(x,y) = \iintegralb{\partial_1\varphi(s,y)}{s}{x} = \iintegralb{f(s,y)}{s}{x} = yx - \frac{x^4}{4} + c(y)
+          \]
+          \[
+            \implies \partial_2\varphi(x,y) = x + c'(y) = g(x,y) = x + y^3
+          \]
+          \[
+            \implies c'(y) = y^3 \implies c(y) = \frac{y^4}{4} + K
+          \]
+          \[
+            \implies \varphi(x,y) = xy - \frac{x^4}{4} + \frac{y^4}{4} + K
+          \]
+          \[
+            \varphi(x,y) = \iintegralb{\partial_2\varphi(x,s)}{s}{y} = \iintegralb{g(x,s)}{s}{y} = xy + \frac{y^4}{4} + d(x)
+          \]
+          \[
+            \implies \partial_1\varphi(x,y) = y + d'(x) = f(x,y) = y - x^3
+          \]
+          \[
+            \implies d'(x) = -x^3 \implies d(x) = -\frac{x^4}{4} + K
+          \]
+          \[
+            \implies \varphi(x,y) = xy - \frac{x^4}{4} + \frac{y^4}{4} + K
+          \]
+          Jetzt gehen wir davon aus, dass es sich bei $y$ um eine stetig differenzierbare Funktion handelt.
+          Nach Verwendung der Kettenregel und der gegebenen Differentialgleichung können wir auf das Folgende für alle $x$ einer offenen Teilmenge $U\subset\setR$ schließen.
+          \[
+            \fdrvopb{s}{\varphi(s,y(s))}{x} = \partial_1\varphi(x,y(x)) + \partial_2\varphi(x,y(x)) y'(x) = 0
+          \]
+          Dies ist nur dann möglich, wenn es für alle $x\in U$ eine Konstante $C\in\setR$ gibt, sodass das Folgende gilt.
+          \[
+            \varphi(x,y(x)) = C = xy(x) - \frac{x^4}{4} + \frac{y^4(x)}{4} + K
+          \]
+          Dies ist auch gleichzeitig die Funktion $y$ in impliziter Form.
         }
         \item[\localref{aii}]{
-          \[
-            f(x,y) + g(x,y)y' = 0
-          \]
+          Wir definieren zwei Funktionen $\func{f,g}{\setR^2}{\setR}$, sodass für alle $x,y\in\setR$ folgende Gleichungen gelten.
           \[
             f(x,y) \define \sin\curvb{xy^2} + xy^2\cos\curvb{xy^2} \separate g(x,y) \define 2x^2y\cos\curvb{xy^2} + 2y
           \]
           \[
-            \pdrvopb{\tilde{y}}{f(x,\tilde{y})}{y} = 4xy\cos\curvb{xy2} - 2x^2y^3\sin\curvb{xy^2} = \pdrvopb{\tilde{x}}{g(\tilde{x},y)}{x}
+            \implies f(x,y) + g(x,y)y' = 0
+          \]
+          Die Integrabilitätsbedingung ist nach der folgenden Aussage für alle $x,y\in\setR$ erfüllt.
+          Die Differentialgleichung ist damit exakt.
+          \[
+            \partial_2f(x,y) = \pdrvopb{\tilde{y}}{f(x,\tilde{y})}{y} = 4xy\cos\curvb{xy2} - 2x^2y^3\sin\curvb{xy^2} = \pdrvopb{\tilde{x}}{g(\tilde{x},y)}{x} = \partial_1g(x,y)
+          \]
+          Es gibt nun eine zweimal stetig differenzierbare Potentialfunktion $\func{\varphi}{\setR^2}{\setR}$, die die folgende Bedingung erfüllt.
+          \[
+            \partial_1\varphi = f \separate \partial_2\varphi = g
+          \]
+          Um diese zu berechnen, kann man zum Beispiel einen der beiden folgenden Wege verwenden.
+          \[
+            \varphi(x,y) = \iintegralb{\partial_1\varphi(s,y)}{s}{x} = \iintegralb{f(s,y)}{s}{x} = -\frac{\cos\curvb{xy^2}}{y^2} + c(y)
+          \]
+          \[
+            \implies \partial_2\varphi(x,y) = + c'(y) = g(x,y) =
+          \]
+          \[
+            \implies c'(y) = y^3 \implies c(y) = \frac{y^4}{4} + K
+          \]
+          \[
+            \implies \varphi(x,y) = xy - \frac{x^4}{4} + \frac{y^4}{4} + K
+          \]
+          \[
+            \varphi(x,y) = \iintegralb{\partial_2\varphi(x,s)}{s}{y} = \iintegralb{g(x,s)}{s}{y} = xy + \frac{y^4}{4} + d(x)
+          \]
+          \[
+            \implies \partial_1\varphi(x,y) = y + d'(x) = f(x,y) = y - x^3
+          \]
+          \[
+            \implies d'(x) = -x^3 \implies d(x) = -\frac{x^4}{4} + K
+          \]
+          \[
+            \implies \varphi(x,y) = xy - \frac{x^4}{4} + \frac{y^4}{4} + K
           \]
         }
       \end{atiSubtaskSolutions}
