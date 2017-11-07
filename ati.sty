@@ -10,7 +10,7 @@
 \RequirePackage{atimathsym}
 
 \RequirePackage{multienum}
-
+\RequirePackage{comment}
 
 
 \DeclareOption{pgfkeys}{
@@ -109,26 +109,40 @@
 		\bigskip\par
 	}
 
-	\newenvironment{atiSolution}{
-		\setlength\parindent{0mm}
-		\newcommand\locallabel[1]{\label{ati:\theatiTaskCounter:##1}}
-		\newcommand\localref[1]{\ref{ati:\theatiTaskCounter:##1}}
-		\bigskip\par%
-		\noindent%
-		{
-			% \noindent%
-			\large%
-			\textsc{%
-				Lösung:
-			}
+	\newif\ifatiShowSolutions
+	% \atiShowSolutionstrue
+	\ifatiShowSolutions
+		\newenvironment{atiSolution}{
+			% \ifatiShowSolutions
+				\setlength\parindent{0mm}
+				\newcommand\locallabel[1]{\label{ati:\theatiTaskCounter:##1}}
+				\newcommand\localref[1]{\ref{ati:\theatiTaskCounter:##1}}
+				\bigskip\par%
+				\noindent%
+				{
+					% \noindent%
+					\large%
+					\textsc{%
+						Lösung:
+					}
+				}
+				\hfill
+				\medskip
+				\par
+			% \else
+			% 	\comment
+			% \fi
+		}{
+			% \ifatiShowSolutions
+				\bigskip
+				\par
+			% \else
+			% 	\endcomment
+			% \fi
 		}
-		\hfill
-		\medskip
-		\par
-	}{
-		\bigskip
-		\par
-	}
+	\else
+		\excludecomment{atiSolution}
+	\fi
 }
 
 
