@@ -2,27 +2,109 @@
   title = Exakte Differentialgleichungen
 ]
   \begin{atiSubtasks}
-    \item{
+    \item{\locallabel{a}
       Zeigen Sie, dass die folgenden Differentialgleichungen exakt sind, und lösen Sie diese durch das Auffinden einer Potentialfunktion.
       \begin{atiSubequations}
-        \item{
+        \item{\locallabel{ai}
           \curvb{x+y^3}y' + y = x^3
         }
-        \item{
+        \item{\locallabel{aii}
           0 = \sin\curvb{xy^2} + xy^2\cos\curvb{xy^2} + \boxb{2x^2y\cos\curvb{xy^2} + 2y}y'
         }
       \end{atiSubequations}
     }
-    \item{
+    \item{\locallabel{b}
       Zeigen Sie, dass es sich bei den folgenden Gleichungen um nicht exakte Differentialgleichungen handelt, indem Sie die Integrabilitätsbedingung überprüfen.
       \begin{atiSubequations}
-        \item{
+        \item{\locallabel{bi}
           0 = 2\cos y + 4x^2y\sin y + \curvb{yx^3\cos y + x^3\sin y}y' - xy'\sin y
         }
-        \item{
+        \item{\locallabel{bii}
           x\arctan\curvb{\frac{x}{y^2}} + \frac{x^2y^2}{x^2+y^4} = \frac{2x^3y}{x^2+y^4}y'
         }
       \end{atiSubequations}
     }
   \end{atiSubtasks}
 \end{atiTask}
+\begin{atiSolution}
+  \begin{atiSubtaskSolutions}
+    \item[\localref{a}]{
+      \begin{atiSubtaskSolutions}
+        \item[\localref{ai}]{
+          Durch einfache Umstellung erhält man die folgende Form.
+          \[
+            0 = \curvb{y-x^3} + \curvb{x+y^3}y' = f(x,y) + g(x,y)y'
+          \]
+          \[
+            f(x,y)\define y-x^3\separate g(x,y)\define x+y^3
+          \]
+          \[
+            \pdrvopb{\tilde{y}}{f(x,\tilde{y})}{y} = 1 = \pdrvopb{\tilde{x}}{g(\tilde{x},y)}{x}
+          \]
+        }
+        \item[\localref{aii}]{
+          \[
+            f(x,y) + g(x,y)y' = 0
+          \]
+          \[
+            f(x,y) \define \sin\curvb{xy^2} + xy^2\cos\curvb{xy^2} \separate g(x,y) \define 2x^2y\cos\curvb{xy^2} + 2y
+          \]
+          \[
+            \pdrvopb{\tilde{y}}{f(x,\tilde{y})}{y} = 4xy\cos\curvb{xy2} - 2x^2y^3\sin\curvb{xy^2} = \pdrvopb{\tilde{x}}{g(\tilde{x},y)}{x}
+          \]
+        }
+      \end{atiSubtaskSolutions}
+    }
+    \item[\localref{b}]{
+      \begin{atiSubtaskSolutions}
+        \item[\localref{bi}]{
+          Wir definieren zwei Funktionen $\func{f,g}{\setR^2}{\setR}$, sodass für alle $x,y\in\setR$ folgende Gleichungen gelten.
+          \[
+            f(x,y) \define 2\cos y + 4x^2y\sin y \separate g(x,y) \define yx^3\cos y + x^3\sin y - x\sin y
+          \]
+          \[
+            \implies f(x,y) + g(x,y)y' = 0
+          \]
+          Wir überprüfen wieder die Integrabilitätsbedingung.
+          Es gibt also $x,y\in\setR$, sodass die folgende Implikation gilt.
+          \[
+            \partial_2f(x,y) = \pdrvopb{\tilde{y}}{f(x,\tilde{y})}{y} = -2\sin y + 4x^2\sin y + 4x^2y\cos y
+          \]
+          \[
+            \partial_1g(x,y) = \pdrvopb{\tilde{x}}{g(\tilde{x},y)}{x} = 3x^2y\cos y + 3x^2\sin y - \sin y
+          \]
+          \[
+            \implies \partial_2f(x,y) - \partial_1g(x,y) = \curvb{x^2-1}\sin y + \curvb{1-3x^2}y\cos y \neq 0
+          \]
+          Die Integrabilitätsbedingung ist damit nicht erfüllt.
+          Demzufolge ist diese Differentialgleichung nicht exakt.
+        }
+        \item[\localref{bii}]{
+          Wir definieren zwei Funktionen $\func{f,g}{\setR\times\setR\setminus\set{0}}{\setR}$, sodass für alle $x,y\in\setR$ mit $y\neq 0$ folgende Gleichungen gelten.
+          \[
+            f(x,y) \define x\arctan\curvb{\frac{x}{y^2}} + \frac{x^2y^2}{x^2+y^4} \separate g(x,y) \define -\frac{2x^3y}{x^2+y^4}
+          \]
+          \[
+            \implies f(x,y) + g(x,y)y' = 0
+          \]
+          Wir überprüfen wieder die Integrabilitätsbedingung.
+          Es gibt also $x,y\in\setR$ mit $y\neq 0$, sodass die folgende Implikation gilt.
+          \[
+            \partial_2f(x,y) = \pdrvopb{\tilde{y}}{f(x,\tilde{y})}{y} = -\frac{4x^4y^5}{\curvb{x^2+y^4}^2}
+          \]
+          \[
+            \partial_1g(x,y) = \pdrvopb{\tilde{x}}{g(\tilde{x},y)}{x} = -\frac{6x^2y}{x^2+y^4} + \frac{4x^4y}{\curvb{x^2+y^4}^2}
+          \]
+          % \[
+          %   \pdrvopb{\tilde{x}}{g(\tilde{x},y)}{x} = -\frac{6x^2y}{x^2+y^4} + \frac{4x^4y}{\curvb{x^2+y^4}^2}
+          % \]
+          \[
+            \implies \partial_2f(x,y) - \partial_1g(x,y) = \frac{6x^2y}{x^2+y^4} - \frac{8x^4y}{\curvb{x^2+y^4}^2} \neq 0
+          \]
+          Die Integrabilitätsbedingung ist damit nicht erfüllt.
+          Demzufolge ist diese Differentialgleichung nicht exakt.
+        }
+      \end{atiSubtaskSolutions}
+    }
+  \end{atiSubtaskSolutions}
+\end{atiSolution}
