@@ -9,6 +9,8 @@
 
 \RequirePackage{atimathsym}
 
+\RequirePackage{multienum}
+\RequirePackage{comment}
 
 
 \DeclareOption{pgfkeys}{
@@ -78,6 +80,8 @@
 		\setlength\parindent{0mm}
 		\pgfkeys{ati/task,points,#1}
 		\refstepcounter{atiTaskCounter}
+		\newcommand\locallabel[1]{\label{ati:\theatiTaskCounter:##1}}
+		\newcommand\localref[1]{\ref{ati:\theatiTaskCounter:##1}}
 		\bigskip\par%
 		{
 			\large%
@@ -105,22 +109,40 @@
 		\bigskip\par
 	}
 
-	\newenvironment{atiSolution}{
-		\bigskip\par
-		\noindent
-		{
-			\large
-			\textsc{
-				Lösung:
-			}
+	\newif\ifatiShowSolutions
+	% \atiShowSolutionstrue
+	\ifatiShowSolutions
+		\newenvironment{atiSolution}{
+			% \ifatiShowSolutions
+				\setlength\parindent{0mm}
+				\newcommand\locallabel[1]{\label{ati:\theatiTaskCounter:##1}}
+				\newcommand\localref[1]{\ref{ati:\theatiTaskCounter:##1}}
+				\bigskip\par%
+				\noindent%
+				{
+					% \noindent%
+					\large%
+					\textsc{%
+						Lösung:
+					}
+				}
+				\hfill
+				\medskip
+				\par
+			% \else
+			% 	\comment
+			% \fi
+		}{
+			% \ifatiShowSolutions
+				\bigskip
+				\par
+			% \else
+			% 	\endcomment
+			% \fi
 		}
-		\hfill
-		\medskip
-		\par
-	}{
-		\bigskip
-		\par
-	}
+	\else
+		\excludecomment{atiSolution}
+	\fi
 }
 
 
@@ -129,13 +151,15 @@
 
 
 \newenvironment{atiSubtasks}{%
-	\begin{enumerate}[label=\normalfont(\alph*), topsep=0pt]
+	% \begin{enumerate}[label=\normalfont(\alph*), topsep=0pt]
+	\begin{enumerate}[label=\normalfont(\alph*)]
 }{%
 	\end{enumerate}
 }
 
 \newenvironment{atiSubsubtasks}{%
-	\begin{enumerate}[label=\normalfont(\arabic*), topsep=0pt]
+	% \begin{enumerate}[label=\normalfont(\arabic*), topsep=0pt]
+	\begin{enumerate}[label=\normalfont(\arabic*)]
 }{%
 	\end{enumerate}
 }
@@ -166,6 +190,16 @@
 	% \end{multicols}
 }
 
+% \newenvironment{atiSubequationsColumn}{
+% 	\begin{multienumerate}
+% 	% \let\oldmitemx\mitemx
+% 	\def\itemx##1{\mitemx{\ensuremath{\qquad\begin{aligned}[t]##1\end{aligned}}}}
+% 	% \let\oldmitemxx\mitemxx
+% 	\def\itemxx##1##2{\mitemxx{\ensuremath{\qquad\begin{aligned}[t]##1\end{aligned}}}{\ensuremath{\qquad\begin{aligned}[t]##2\end{aligned}}}
+% }{
+% 	\end{multienumerate}
+% }
+
 \newenvironment{atiItems}{
 	\begin{itemize}
 }{
@@ -175,7 +209,7 @@
 \newcounter{atiPointsCounter}
 \newcommand{\atiPointsPrefix}{}
 \newcommand{\atiPointsSuffix}{~P.}
-\newcommand{\atiPoints}[1][1]{\marginnote{\atiPointsPrefix#1\atiPointsSuffix}\refstepcounter{atiPointsCounter}}
+\newcommand{\atiPoints}[1][1]{\marginnote{\atiPointsPrefix\ensuremath{#1}\atiPointsSuffix}\refstepcounter{atiPointsCounter}}
 
 \newcommand{\atiShowPoints}[1]{\atiPointsPrefix#1\atiPointsSuffix}
 
