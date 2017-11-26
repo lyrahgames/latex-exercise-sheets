@@ -1,9 +1,9 @@
 \begin{atiTask}[
   title = Gekoppelte Differentialgleichungen
 ]
-  Betrachten Sie folgendes System von miteinander gekoppelten Differentialgleichungen erster Ordnung für die Funktionen $x$ und $y$.
+  Betrachten Sie folgendes System von miteinander gekoppelten Differentialgleichungen erster Ordnung für die Funktionen $x(t)$ und $y(t)$.
   \[
-    \tdrv{x} = x+ y + t\separate \tdrv{y} = 3x - y
+    \tdrv{x} = \fdrv{x(t)}{t} = x + y + t\separate \tdrv{y} = \fdrv{y(t)}{t} = 3x - y
   \]
   Bestimmen Sie die Lösungen, indem Sie die beiden Gleichungen erster Ordnung in eine Gleichung zweiter Ordnung überführen.
   Finden Sie die spezielle Lösung mit den Anfangsbedingungen $x(0)=-\frac{1}{4}$ und $y(0)=1$ und führen Sie eine Probe durch.
