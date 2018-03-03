@@ -15,14 +15,14 @@
 				\item{
 					Kann der folgende Ausdruck als eine Funktion $f$ der Variablen $z(x,y)\define xy$ geschrieben werden, so hängt auch der integrierende Faktor $\lambda$ nur von dieser Variable $z$ ab.
 					\[
-						\frac{1}{xA(x,y)-yB(x,y)}\curvb{\partial_x B(x,y) - \partial_y A(x,y)}
+						\frac{\partial_x B(x,y) - \partial_y A(x,y)}{xA(x,y)-yB(x,y)}
 					\]
 					Geben Sie den Zusammenhang von $\lambda$ und $f$ an.
 				}
 				\item{
 					Kann der folgende Ausdruck als eine Funktion $g$ der Variablen $w(x,y)\define x + y$ geschrieben werden, so hängt auch der integrierende Faktor $\lambda$ nur von dieser Variable $z$ ab.
 					\[
-						\frac{1}{A(x,y)-B(x,y)}\curvb{\partial_x B(x,y) - \partial_y A(x,y)}
+						\frac{\partial_x B(x,y) - \partial_y A(x,y)}{A(x,y)-B(x,y)}
 					\]
 					Geben Sie den Zusammenhang von $\lambda$ und $g$ an.
 
@@ -34,10 +34,10 @@
 			Finden Sie diesen Fall heraus und berechnen Sie einen integrierenden Faktor mit dem Ergebnis aus dem vorherigen Aufgabenteil.
 			\begin{atiSubequations}
 				\item{
-					(xy-1) + \curvb{x^2-xy}y' = 0
+					(xy-1) + \roundBrackets{x^2-xy}y' = 0
 				}
 				\item{
-					y + \curvb{x - 2x^2y^3}y' = 0
+					y + \roundBrackets{x - 2x^2y^3}y' = 0
 				}
 			\end{atiSubequations}
 			Lösen Sie die Differentialgleichung mit diesem integrierenden Faktor und machen Sie anschließend die Probe anhand der ursprünglichen Differentialgleichung.

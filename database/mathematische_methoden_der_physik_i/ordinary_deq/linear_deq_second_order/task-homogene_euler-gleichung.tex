@@ -1,8 +1,5 @@
 \begin{atiTask}[
-	title = Die homogene Euler-Gleichung,
-	topic = Gewöhnliche Differentialgleichungen,
-	subtopic = Die lineare homogene Differentialgleichung 2. Ordnung mit konstanten Koeffizienten,
-	language = Deutsch,
+	title = Die homogene Euler-Gleichung
 ]
 	Die Eulersche Differentialgleichung ist durch die folgende Form gegeben.
 	Dabei stellen die Koeffizienten $a$, $b$ und $c$ reelle Konstanten dar.
@@ -11,13 +8,13 @@
 	\]
 	\begin{atiSubtasks}
 		\item{
-			Überführen Sie diese Differentialgleichung mithilfe der Substitution $x = e^{t(x)}$ für $x\in\setR^+$ in eine Differentialgleichung mit konstanten Koeffizienten.
+			Überführen Sie diese Differentialgleichung mithilfe der Substitution $x = e^{t(x)}$ für $x\in\setReal^+$ in eine Differentialgleichung mit konstanten Koeffizienten.
 		}
 		\item{
 			Ein wichtiges Beispiel für die Potentialtheorie stellt die folgende Differentialgleichung dar.
 			Dabei beschreibt $n$ eine nichtnegative reelle Konstante, $r$ eine nichtnegative reelle Variable und $R$ eine Funktion, welche von $r$ abhängt.
 			\[
-				\nfdrv[2]{R}{r} + \frac{2}{r}\nfdrv{R}{r} - \frac{n(n+1)}{r^2}R = 0
+				\leibnizNDerivative[2]{R}{r} + \frac{2}{r}\leibnizNDerivative{R}{r} - \frac{n(n+1)}{r^2}R = 0
 			\]
 			\begin{atiSubsubtasks}
 				\item{
@@ -29,7 +26,7 @@
 				\item{
 					Geben Sie diejenige spezielle Lösung an, welche die folgende Bedingung erfüllt.
 					\[
-						R\conv[r\conv\infty]0
+						R\converges[r\converges\infty]0
 					\]
 				}
 			\end{atiSubsubtasks}

@@ -1,9 +1,9 @@
 \begin{atiTask}[
   title = Freier Fall mit Reibung
 ]
- Beim freien Fall mit Fallbeschleunigung $g\in\setR^+$ unter dem Einfluss einer geschwindigkeitsproportionalen Reibungskraft mit Reibungskoeffizient $\gamma\in\setR^+$ genügt die abwärts gerichtete Geschwindigkeitsfunktion $v$ eines Massenpunktes mit Masse $m\in\setR^+$ der folgenden Differentialgleichung.
+ Beim freien Fall mit Fallbeschleunigung $g\in\setReal^+$ unter dem Einfluss einer geschwindigkeitsproportionalen Reibungskraft mit Reibungskoeffizient $\gamma\in\setReal^+$ genügt die abwärts gerichtete Geschwindigkeitsfunktion $v$ eines Massenpunktes mit Masse $m\in\setReal^+$ der folgenden Differentialgleichung.
  \[
-   m\tdrv{v} + \gamma v = mg
+   m\timeDerivative{v} + \gamma v = mg
  \]
  \begin{atiSubtasks}
    \item{\locallabel{a}
@@ -12,7 +12,7 @@
   \item{\locallabel{b}
     Berechnen Sie die stationäre Endgeschwindigkeit $v_\infty$ mithilfe der folgenden Definition und der Lösung des Anfangswertproblems.
     \[
-      v_\infty \define \lim_{t\conv\infty}v(t)
+      v_\infty \define \lim_{t\converges\infty}v(t)
     \]
     Berechnen Sie ein zweites Mal $v_\infty$ unter der Annahme, dass die Lösung der Differentialgleichung nicht bekannt ist.
     Betrachten Sie hierfür den Grenzwert der Differentialgleichung.
@@ -28,65 +28,65 @@
     \item[\localref{a}]{
       Die zur gegebenen Differentialgleichung zugehörigen homogene Differentialgleichung kann durch die folgende Form beschrieben werden.
       \[
-        m\tdrv{v} + \gamma v = 0 \implies \tdrv{v} = -\frac{\gamma}{m}v\atiPoints[\frac{1}{2}]
+        m\timeDerivative{v} + \gamma v = 0 \implies \timeDerivative{v} = -\frac{\gamma}{m}v\atiPoints[\frac{1}{2}]
       \]
       Diese Formel lässt sich separieren und durch die Methode der Trennung der Variablen lösen.
       \[
-        \frac{\tdrv{v}(t)}{v(t)} = -\frac{\gamma}{m} \implies \integral{t_0}{t}{\frac{\tdrv{v}(t)}{v(t)}}{t} = \integral{v_0}{v(t)}{\frac{1}{s}}{s} = -\integral{t_0}{t}{\frac{\gamma}{m}}{t}\atiPoints[\frac{1}{2}]
+        \frac{\timeDerivative{v}(t)}{v(t)} = -\frac{\gamma}{m} \implies \integral{t_0}{t}{\frac{\timeDerivative{v}(t)}{v(t)}}{t} = \integral{v_0}{v(t)}{\frac{1}{s}}{s} = -\integral{t_0}{t}{\frac{\gamma}{m}}{t}\atiPoints[\frac{1}{2}]
       \]
       \[
-        \implies \ln\curvb{\frac{v(t)}{v_0}} = -\frac{\gamma}{m}(t-t_0) \implies v(t) = v_0 e^{-\frac{\gamma}{m}(t-t_0)}\atiPoints[\frac{1}{2}]
+        \implies \ln\roundBrackets{\frac{v(t)}{v_0}} = -\frac{\gamma}{m}(t-t_0) \implies v(t) = v_0 e^{-\frac{\gamma}{m}(t-t_0)}\atiPoints[\frac{1}{2}]
       \]
       Nach der Methode der Variation der Konstanten gehen wir nun davon aus, dass sich die Lösung der ursprünglichen Differentialgleichung durch die folgende Funktion beschreiben lässt.
       \[
         v(t) = \varphi(t)e^{-\frac{\gamma}{m}(t-t_0)}\atiPoints[\frac{1}{2}]
       \]
       \[
-        \implies \tdrv{v}(t) = \tdrv{\varphi}(t)e^{-\frac{\gamma}{m}(t-t_0)} - \varphi(t)\frac{\gamma}{m}e^{-\frac{\gamma}{m}(t-t_0)}\atiPoints[\frac{1}{2}]
+        \implies \timeDerivative{v}(t) = \timeDerivative{\varphi}(t)e^{-\frac{\gamma}{m}(t-t_0)} - \varphi(t)\frac{\gamma}{m}e^{-\frac{\gamma}{m}(t-t_0)}\atiPoints[\frac{1}{2}]
       \]
       Das Einsetzen der Ableitung in die ursprüngliche Differentialgleichung ergibt dann das Folgende.
       \[
-        m\tdrv{\varphi}(t)e^{-\frac{\gamma}{m}(t-t_0)} = mg \implies \tdrv{\varphi}(t) = ge^{\frac{\gamma}{m}(t-t_0)}\atiPoints[\frac{1}{2}]
+        m\timeDerivative{\varphi}(t)e^{-\frac{\gamma}{m}(t-t_0)} = mg \implies \timeDerivative{\varphi}(t) = ge^{\frac{\gamma}{m}(t-t_0)}\atiPoints[\frac{1}{2}]
       \]
       \[
         \implies \varphi(t) = \frac{mg}{\gamma}e^{\frac{\gamma}{m}(t-t_0)} - \frac{mg}{\gamma} + \varphi(t_0)
       \]
       \[
-        \implies v(t) = \varphi(t)e^{-\frac{\gamma}{m}(t-t_0)} = \frac{mg}{\gamma}\boxb{1 - e^{-\frac{\gamma}{m}(t-t_0)}} + \varphi(t_0)e^{-\frac{\gamma}{m}(t-t_0)} \atiPoints[\frac{1}{2}]
+        \implies v(t) = \varphi(t)e^{-\frac{\gamma}{m}(t-t_0)} = \frac{mg}{\gamma}\boxBrackets{1 - e^{-\frac{\gamma}{m}(t-t_0)}} + \varphi(t_0)e^{-\frac{\gamma}{m}(t-t_0)} \atiPoints[\frac{1}{2}]
       \]
       Zu beachten ist hier, dass $v_0 = v(t_0) = \varphi(t_0)$ gilt.
       Die Lösung des Anfangswertproblems ist damit wegen $t_0=0$ und $v_0=0$ gegeben durch die folgende Funktion.
       \[
-        v(t) = \frac{mg}{\gamma}\curvb{1-e^{-\frac{\gamma}{m}t}}\atiPoints[\frac{1}{2}]
+        v(t) = \frac{mg}{\gamma}\roundBrackets{1-e^{-\frac{\gamma}{m}t}}\atiPoints[\frac{1}{2}]
       \]
     }
     \item[\localref{b}]{
       Die stationäre Endgeschwindigkeit lässt sich nun einfach mithilfe des Limes berechnen.
       \[
-        v_\infty = \lim_{t\conv\infty}v(t) = \lim_{t\conv\infty} \frac{mg}{\gamma}\curvb{1-e^{-\frac{\gamma}{m}t}} = \frac{mg}{\gamma}\curvb{1-\lim_{t\conv\infty}e^{-\frac{\gamma}{m}t}} = \frac{mg}{\gamma} \atiPoints[1]
+        v_\infty = \lim_{t\converges\infty}v(t) = \lim_{t\converges\infty} \frac{mg}{\gamma}\roundBrackets{1-e^{-\frac{\gamma}{m}t}} = \frac{mg}{\gamma}\roundBrackets{1-\lim_{t\converges\infty}e^{-\frac{\gamma}{m}t}} = \frac{mg}{\gamma} \atiPoints[1]
       \]
       Ohne die Kenntnis der Lösung lässt nun das Folgende notieren.
       \[
-        \lim_{t\conv\infty}\boxb{m\tdrv{v}(t) + \gamma v(t)} = \lim_{t\conv\infty}mg \implies m\lim_{t\conv\infty}\tdrv{v}(t) + \gamma \lim_{t\conv\infty}v(t) = mg
+        \lim_{t\converges\infty}\boxBrackets{m\timeDerivative{v}(t) + \gamma v(t)} = \lim_{t\converges\infty}mg \implies m\lim_{t\converges\infty}\timeDerivative{v}(t) + \gamma \lim_{t\converges\infty}v(t) = mg
       \]
       Da der Limes existiert und $v$ eine stetig differenzierbare Funktion ist, muss demnach die Ableitung im Unendlichen verschwinden.
       \[
-        \lim_{t\conv\infty}\tdrv{v}(t)=0 \implies v_\infty = \lim_{t\conv\infty}v(t) = \frac{mg}{\gamma} \atiPoints[1]
+        \lim_{t\converges\infty}\timeDerivative{v}(t)=0 \implies v_\infty = \lim_{t\converges\infty}v(t) = \frac{mg}{\gamma} \atiPoints[1]
       \]
     }
     \item[\localref{c}]{
       Die in der Aufgabe gegebene Differentialgleichung ist separierbar und damit durch die Methode der Trennung der Variablen lösbar.
       \[
-        \tdrv{v}(t) = g-\frac{\gamma}{m}v(t) \implies \frac{\tdrv{v}(t)}{g-\frac{\gamma}{m}v(t)} = 1 \implies \integral{t_0}{t}{\frac{\tdrv{v}(t)}{g-\frac{\gamma}{m}v(t)}}{t} = \integral{t_0}{t}{}{t} \atiPoints[+\frac{1}{2}]
+        \timeDerivative{v}(t) = g-\frac{\gamma}{m}v(t) \implies \frac{\timeDerivative{v}(t)}{g-\frac{\gamma}{m}v(t)} = 1 \implies \integral{t_0}{t}{\frac{\timeDerivative{v}(t)}{g-\frac{\gamma}{m}v(t)}}{t} = \integral{t_0}{t}{}{t} \atiPoints[+\frac{1}{2}]
       \]
       \[
-        \implies -\frac{m}{\gamma}\ln\boxb{\frac{g-\frac{\gamma}{m}v(t)}{g-\frac{\gamma}{m}v_0}} = t-t_0
+        \implies -\frac{m}{\gamma}\ln\boxBrackets{\frac{g-\frac{\gamma}{m}v(t)}{g-\frac{\gamma}{m}v_0}} = t-t_0
       \]
       \[
-        \implies v(t) = \frac{m}{\gamma}\boxb{g - \curvb{g-\frac{\gamma}{m}v_0}e^{-\frac{\gamma}{m}(t-t_0)}}
+        \implies v(t) = \frac{m}{\gamma}\boxBrackets{g - \roundBrackets{g-\frac{\gamma}{m}v_0}e^{-\frac{\gamma}{m}(t-t_0)}}
       \]
       \[
-        \implies v(t) = \frac{mg}{\gamma}\boxb{1-e^{-\frac{\gamma}{m}(t-t_0)}} + v_0e^{-\frac{\gamma}{m}(t-t_0)}\atiPoints[+\frac{1}{2}]
+        \implies v(t) = \frac{mg}{\gamma}\boxBrackets{1-e^{-\frac{\gamma}{m}(t-t_0)}} + v_0e^{-\frac{\gamma}{m}(t-t_0)}\atiPoints[+\frac{1}{2}]
       \]
     }
   \end{atiSubtaskSolutions}

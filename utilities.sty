@@ -64,12 +64,20 @@
   }%
 }
 \newcommand{\leibnizDerivativeOperatorValue}[3]{%
-  \left. \frac{\infinitesimal}{\infinitesimal #1} #2 \right|_{#3}%
+  \left. \frac{\infinitesimal}{\infinitesimal #1}\, #2 \right|_{#3}%
 }
+\newcommand{\leibnizPartialDerivativeOperatorValue}[3]{%
+  \left. \frac{\partial}{\partial #1}\, #2 \right|_{#3}%
+}
+\newcommand{\appendValue}[2]{\left. #1 \right|_{#2}}
 
 % integral commands
 \newcommand{\integral}[4]{\int_{#1}^{#2} #3\,\infinitesimal #4}
 \newcommand{\indefiniteIntegral}[2]{\int #1\,\infinitesimal #2}
+\newcommand{\indefiniteIntegralValue}[3]{\left. \indefiniteIntegral{#1}{#2} \right|_{#3}}
+
+% operators
+\DeclareMathOperator{\grad}{grad}
 
 % vector commands
 \renewcommand{\vector}[1]{\vec{#1}}
@@ -80,6 +88,6 @@
 
 \newcommand{\appendUnit}[1]{\, \mathrm{#1}}
 
-\newcommand{\conv}[1][]{\ifx&#1& \longrightarrow \else \xrightarrow{#1} \fi}
+\newcommand{\converges}[1][]{\ifx&#1& \longrightarrow \else \xrightarrow{#1} \fi}
 
 \endinput
