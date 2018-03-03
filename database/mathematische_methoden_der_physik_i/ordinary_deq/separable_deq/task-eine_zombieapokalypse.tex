@@ -3,13 +3,13 @@
 	language = Deutsch
 ]
 	Auf einer kleinen Insel gerät ein Virus in Umlauf, der die Bevölkerung in Zombies verwandelt.
-	Jeder Infizierte hat in einer Zeitspanne $\tau\in\setR^+$ Kontakt mit $\tau\cdot k$ anderen Personen, die teilweise ebenfalls infiziert, teilweise aber auch gesunde Menschen sind, wobei $k\in\setR^+$ gilt.
+	Jeder Infizierte hat in einer Zeitspanne $\tau\in\setReal^+$ Kontakt mit $\tau\cdot k$ anderen Personen, die teilweise ebenfalls infiziert, teilweise aber auch gesunde Menschen sind, wobei $k\in\setReal^+$ gilt.
 	Gerät ein gesunder Mensch in Kontakt mit einem Zombie, so wird dieser infiziert.
 	\medskip
 	\begin{atiSubtasks}
 		\item{\locallabel{a}
 			Stellen Sie eine Differentialgleichung auf, die dieser Zombieapokalypse genügt.
-			Verwenden Sie $N\in\setN$ für die Größe der Inselbevölkerung, $Z(t)\in[0,N]$ für die Anzahl der Infizierten, $M(t)\in[0,N]$ für die Anzahl der Gesunden und $t\in\setR^+$ als freien Parameter der Zeit.
+			Verwenden Sie $N\in\setNatural$ für die Größe der Inselbevölkerung, $Z(t)\in[0,N]$ für die Anzahl der Infizierten, $M(t)\in[0,N]$ für die Anzahl der Gesunden und $t\in\setReal^+$ als freien Parameter der Zeit.
 
 			\begin{atiNote}
 				Betrachten Sie zunächst nur die Infizierten zum Zeitpunkt $t+\tau$ und überführen Sie die Differenzengleichung durch Grenzwertbildung in die gesuchte Differentialgleichung.
@@ -22,10 +22,10 @@
 			\]
 		}
 		\item{\locallabel{c}
-			Skizzieren Sie $Z(t)$ und $M(t)$ für $k=2$, $N=1050$ und $t\in\setR^+$.
+			Skizzieren Sie $Z(t)$ und $M(t)$ für $k=2$, $N=1050$ und $t\in\setReal^+$.
 		}
 		\item{\locallabel{d}
-			\textbf{Zusatz:} Ab wann ist nur noch weniger als $1\unit{\%}$ der Bevölkerung nicht infiziert?
+			\textbf{Zusatz:} Ab wann ist nur noch weniger als $1\appendUnit{\%}$ der Bevölkerung nicht infiziert?
 			Wie beeinflussen die Parameter $k$ und $N$ diesen Zeitpunkt?
 		}
 	\end{atiSubtasks}
@@ -33,13 +33,13 @@
 \begin{atiSolution}
 	\begin{atiSubtaskSolutions}
 		\item[\localref{a}]{
-			Wir definieren als Erstes den Anteil der gesunden Menschen $\alpha(t)\in[0,1]$ und den Anteil der infizierten Menschen $\beta(t)\in[0,1]$ für alle $t\in\setR^+$.
+			Wir definieren als Erstes den Anteil der gesunden Menschen $\alpha(t)\in[0,1]$ und den Anteil der infizierten Menschen $\beta(t)\in[0,1]$ für alle $t\in\setReal^+$.
 			\[
 				\alpha(t)\define \frac{M(t)}{N}\separate\beta(t)\define\frac{Z(t)}{N}
 			\]
-			Wir wählen nun eine festen Zeitpunkt $t\in\setR^+$.
-			Nähern wir für kleine Zeitspannen $\tau\in\setR^+$ die Anzahl der Personen, die ein Zombie trifft, durch $\tau k$ an, so teilen sich Infizierte und Gesunde entsprechend ihrer Anteile auf diese Anzahl auf.
-			% Trifft eine infizierte Person für kleine $\tau\in\setR^+$ nun $\tau k$ andere Personen, so teilen sich Infizierte und Gesunde entsprechend ihrer Anteile $\alpha(t)$ und $\beta(t)$ auf diese Anzahl auf.
+			Wir wählen nun eine festen Zeitpunkt $t\in\setReal^+$.
+			Nähern wir für kleine Zeitspannen $\tau\in\setReal^+$ die Anzahl der Personen, die ein Zombie trifft, durch $\tau k$ an, so teilen sich Infizierte und Gesunde entsprechend ihrer Anteile auf diese Anzahl auf.
+			% Trifft eine infizierte Person für kleine $\tau\in\setReal^+$ nun $\tau k$ andere Personen, so teilen sich Infizierte und Gesunde entsprechend ihrer Anteile $\alpha(t)$ und $\beta(t)$ auf diese Anzahl auf.
 			\[
 				\tau k \approx \tau k\alpha(t) + \tau k\beta(t)
 			\]
@@ -51,17 +51,17 @@
 			Dementsprechend lässt sich nun die Anzahl der Zombies $Z(t+\tau)$ nach der Zeitspanne $\tau$ beschreiben.
 			% Damit ergibt sich die Gesamtanzahl $\Delta Z(t)$ der gesunden Menschen, die während dieser Zeitspanne $\tau$ infiziert werden, durch eine Multiplikation von $S(t)$ mit der Anzahl aller Zombies $Z(t)$.
 			% \[
-			% 	\Delta Z(t) = S(t)Z(t) = \tau k\alpha(t)Z(t) = \frac{\tau k}{N}M(t)Z(t) = \frac{\tau k}{N} \boxb{N-Z(t)}Z(t)
+			% 	\Delta Z(t) = S(t)Z(t) = \tau k\alpha(t)Z(t) = \frac{\tau k}{N}M(t)Z(t) = \frac{\tau k}{N} \boxBrackets{N-Z(t)}Z(t)
 			% \]
 			\[
-				Z(t+\tau) \approx Z(t) + S(t)Z(t) = Z(t) + \frac{\tau k}{N} \boxb{N-Z(t)}Z(t)\atiPoints[1]
+				Z(t+\tau) \approx Z(t) + S(t)Z(t) = Z(t) + \frac{\tau k}{N} \boxBrackets{N-Z(t)}Z(t)\atiPoints[1]
 			\]
 			\[
-				\implies \frac{Z(t+\tau)-Z(t)}{\tau} \approx \frac{k}{N}\boxb{N-Z(t)}Z(t)
+				\implies \frac{Z(t+\tau)-Z(t)}{\tau} \approx \frac{k}{N}\boxBrackets{N-Z(t)}Z(t)
 			\]
 			Um die Fehler der Näherung mithilfe einer Differentialgleichung zu korrigieren, bildet man den Grenzwert der erhaltenen Differenzengleichung für $\tau\conv 0$.
 			\[
-				Z'(t) = \lim_{\tau\conv 0}\frac{Z(t+\tau)-Z(t)}{\tau} = \frac{k}{N}\boxb{N-Z(t)}Z(t)
+				Z'(t) = \lim_{\tau\conv 0}\frac{Z(t+\tau)-Z(t)}{\tau} = \frac{k}{N}\boxBrackets{N-Z(t)}Z(t)
 			\]
 			\[
 				\implies Z' = \frac{k}{N}(N-Z)Z \atiPoints[1]
@@ -71,7 +71,7 @@
 			Bei der oben beschriebenen Gleichung handelt es sich offensichtlich um eine separable Differentialgleichung.
 			Die Methode der Trennung der Variablen ergibt dann das Folgende.
 			\[
-				\frac{Z'(t)}{\boxb{N-Z(t)}Z(t)} = \frac{k}{N} \implies \integral{t_0}{t}{\frac{Z'(s)}{\boxb{N-Z(s)}Z(s)}}{s} = \integral{t_0}{t}{\frac{k}{N}}{s}
+				\frac{Z'(t)}{\boxBrackets{N-Z(t)}Z(t)} = \frac{k}{N} \implies \integral{t_0}{t}{\frac{Z'(s)}{\boxBrackets{N-Z(s)}Z(s)}}{s} = \integral{t_0}{t}{\frac{k}{N}}{s}
 			\]
 			\[
 				\implies \integral{Z_0}{Z(t)}{\frac{1}{(N-s)s}}{s} = \frac{k}{N}(t-t_0)\atiPoints[1]
@@ -84,36 +84,36 @@
 				\implies \integral{Z_0}{Z(t)}{\frac{1}{(N-s)s}}{s} = \integral{Z_0}{Z(t)}{\frac{1}{Ns}}{s} - \integral{Z_0}{Z(t)}{\frac{1}{N(s-N)}}{s}
 			\]
 			\[
-				= \frac{1}{N}\ln\boxb{\frac{Z(t)}{Z_0}} - \frac{1}{N}\ln\boxb{\frac{Z(t)-N}{Z_0-N}} = \frac{1}{N}\ln\curvb{\frac{Z(t)\boxb{Z_0-N}}{Z_0\boxb{Z(t)-N}}}\atiPoints[+1]
+				= \frac{1}{N}\ln\boxBrackets{\frac{Z(t)}{Z_0}} - \frac{1}{N}\ln\boxBrackets{\frac{Z(t)-N}{Z_0-N}} = \frac{1}{N}\ln\roundBrackets{\frac{Z(t)\boxBrackets{Z_0-N}}{Z_0\boxBrackets{Z(t)-N}}}\atiPoints[+1]
 			\]
 			Die Lösung des Integrals wird nun eingesetzt und die entstehende Gleichung wird explizit nach $Z(t)$ umgestellt.
 			\[
 				\frac{Z(t)}{Z(t)-N} = \frac{Z_0e^{k(t-t_0)}}{Z_0-N} = -Ae^{k(t-t_0)}\separate A\define \frac{Z_0}{N-Z_0}
 			\]
 			\[
-				\implies Z(t) = \frac{NAe^{k(t-t_0)}}{1 + Ae^{k(t-t_0)}} = N\curvb{1 - \frac{1}{1+Ae^{k(t-t_0)}}}\atiPoints[1]
+				\implies Z(t) = \frac{NAe^{k(t-t_0)}}{1 + Ae^{k(t-t_0)}} = N\roundBrackets{1 - \frac{1}{1+Ae^{k(t-t_0)}}}\atiPoints[1]
 			\]
 			Nun setzen wir die Anfangswerte ein und unterstreichen unser Ergebnis doppelt.
 			\[
-				A = \frac{1}{20} \implies Z(t) = N\curvb{1 - \frac{1}{1+\frac{1}{20}e^{kt}}}\atiPoints[1]
+				A = \frac{1}{20} \implies Z(t) = N\roundBrackets{1 - \frac{1}{1+\frac{1}{20}e^{kt}}}\atiPoints[1]
 			\]
 		}
 		\item[\localref{c}]{
-			Die nachfolgende Skizze zeigt die Werte $M(t)$ und $Z(t)$ für verschiedene Zeiten $t\in\setR^+$.
+			Die nachfolgende Skizze zeigt die Werte $M(t)$ und $Z(t)$ für verschiedene Zeiten $t\in\setReal^+$.
 		}
 		\item[\localref{d}]{
-			Es sei $\alpha^*\in\curvb{0,1-\frac{Z_0}{N}}$ eine feste Grenze für den Anteil der Menschen.
-			Wir suchen nun den frühesten Zeitpunkt $t^*\in\setR^+$, sodass $\alpha(t^*)\leq\alpha^*$ gilt.
+			Es sei $\alpha^*\in\roundBrackets{0,1-\frac{Z_0}{N}}$ eine feste Grenze für den Anteil der Menschen.
+			Wir suchen nun den frühesten Zeitpunkt $t^*\in\setReal^+$, sodass $\alpha(t^*)\leq\alpha^*$ gilt.
 			Durch Äquivalenzumformungen zeigt man, dass $t^*$ existiert und eindeutig ist.
 			\[
 				\alpha^* = \alpha(t^*) = 1-\beta(t^*) = 1 - \frac{Z(t^*)}{N} = \frac{1}{1 + Ae^{k(t^*-t_0)}}
 			\]
 			\[
-				\implies t^* = t_0 + \frac{1}{k}\ln\boxb{\frac{1}{A}\curvb{\frac{1}{\alpha^*}-1}} = t_0 + \frac{1}{k}\ln\boxb{\frac{N-Z_0}{Z_0}\curvb{\frac{1}{\alpha^*}-1}}
+				\implies t^* = t_0 + \frac{1}{k}\ln\boxBrackets{\frac{1}{A}\roundBrackets{\frac{1}{\alpha^*}-1}} = t_0 + \frac{1}{k}\ln\boxBrackets{\frac{N-Z_0}{Z_0}\roundBrackets{\frac{1}{\alpha^*}-1}}
 			\]
 			Setzt man nun die gewünschten Werte der Parameter ein, so erhält man das folgende Ergebnis.
 			\[
-				t_0 = 0\separate k=2\separate A = 0.05 \separate\alpha^* = 1\unit{\%}\implies t^* = \frac{\ln 1980}{2} \approx 3.8\atiPoints[+1]
+				t_0 = 0\separate k=2\separate A = 0.05 \separate\alpha^* = 1\appendUnit{\%}\implies t^* = \frac{\ln 1980}{2} \approx 3.8\atiPoints[+1]
 			\]
 			Zu beachten ist, dass $t^*$ sowohl von $k$ als auch von $N$ abhängig ist.
 			Steigt $k$, so verringert sich $t^*$.
@@ -123,7 +123,7 @@
 	\begin{figure}[H]
 		\center
 		\atiPoints[2]
-		\input{task-eine_zombieapokalypse-skizze}
-		\caption*{Die Abbildung zeigt die Anzahl der Zombies $Z(t)$ und der gesunden Menschen $M(t)$ für verschiedene Zeiten $t$.}
+		\includegraphics[width=0.9\textwidth]{task-eine_zombieapokalypse-diagram}
+		\caption{Die Abbildung zeigt die Anzahl der Zombies $Z(t)$ und der gesunden Menschen $M(t)$ für verschiedene Zeiten $t$.}
 	\end{figure}
 \end{atiSolution}

@@ -14,30 +14,29 @@
 	\]
 
 	\begin{atiSubtasks}
-		\item \label{subtask:homogene-differentialgleichung-a}
-		Lösen Sie die folgende homogene Differentialgleichung.
-		\[
-			2xyy^\prime = 3y^2 - x^2
-		\]
-		Anleitung: Führen Sie eine neue Variable $z(x)$ gemäß $y(x)\definedby x\cdot z(x)$ ein und behandeln Sie die für $z(x)$ entstehende Differentialgleichung mit der Methode der Trennung der Variablen.
+		\item{
+		\label{subtask:homogene-differentialgleichung-a}
+			Lösen Sie die folgende homogene Differentialgleichung.
+			\[
+				2xyy^\prime = 3y^2 - x^2
+			\]
+			Anleitung: Führen Sie eine neue Variable $z(x)$ gemäß $y(x)\reverseDefine x\cdot z(x)$ ein und behandeln Sie die für $z(x)$ entstehende Differentialgleichung mit der Methode der Trennung der Variablen.
+		}
+		\item{
+			Lösen Sie die folgende Differentialgleichung, die nicht homogen ist.
+			\[
+				y' = \frac{y+x-2}{y-x+4}
+			\]
+			Schuld daran sind die beiden additiven Konstanten in Zähler und Nenner des Bruches auf der rechten Seite.
+			Gehen Sie in zwei Schritten nach folgender Anleitung vor.
+			\begin{atiItems}
+				\item Führen Sie die neue Variablen $v\define y-y_0$ und $u\define x-x_0$ ein und bestimmen Sie $x_0$ und $y_0$, sodass die neue Differentialgleichung in den Variablen $u$ und $v$ homogen ist (Gleichungssystem mit zwei Unbekannten).
 
-		\item
-		Lösen Sie die folgende Differentialgleichung, die nicht homogen ist.
-		\[
-			y^\prime = \frac{y+x-2}{y-x+4}
-		\]
-		Schuld daran sind die beiden additiven Konstanten in Zähler und Nenner des Bruches auf der rechten Seite.
-		Gehen Sie in zwei Schritten nach folgender Anleitung vor.
-		\begin{atiItems}
-			\item Führen Sie die neue Variablen $v\define y-y_0$ und $u\define x-x_0$ ein und bestimmen Sie $x_0$ und $y_0$, sodass die neue Differentialgleichung in den Variablen $u$ und $v$ homogen ist (Gleichungssystem mit zwei Unbekannten).
-
-			\item Verfahren Sie mit der Substitution $v(u)\definedby u\cdot z(u)$ weiter, wie in Teilaufgabe \ref{subtask:homogene-differentialgleichung-a}.
-		\end{atiItems}
-
-		\item
-		Machen Sie in beiden Fällen die Probe durch Einsetzen Ihrer Lösung $y(x)$ in die ursprüngliche Differentialgleichung.
+				\item Verfahren Sie mit der Substitution $v(u)\reverseDefine u\cdot z(u)$ weiter, wie in Teilaufgabe \ref{subtask:homogene-differentialgleichung-a}.
+			\end{atiItems}
+		}
+		\item{
+			Machen Sie in beiden Fällen die Probe durch Einsetzen Ihrer Lösung $y(x)$ in die ursprüngliche Differentialgleichung.
+		}
 	\end{atiSubtasks}
 \end{atiTask}
-% \begin{atiSolution}
-
-% \end{atiSolution}

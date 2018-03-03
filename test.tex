@@ -1,0 +1,121 @@
+\documentclass[a4paper,fleqn, 11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage[bottom=25mm,left=30mm,right=30mm,bottom=35mm]{geometry}
+\usepackage{times}
+\linespread{1.15}
+
+\usepackage{turnthepage}
+\renewcommand{\turnthepage}{\it bitte wenden}
+
+
+
+\usepackage{import}
+
+\usepackage{multicol}
+
+\usepackage{float}
+\usepackage{import}
+\usepackage{graphicx}
+
+\usepackage[footnotesize,hang]{caption}
+
+
+\usepackage[pgfkeys,custom]{ati}
+% \SetupExSheets{solution/print=true, question/type=exam}
+% \usepackage{utilities}
+% \usepackage{uniinput}
+\allowdisplaybreaks
+
+\begin{document}
+  \[
+    \set{1}{}
+    \separate
+    \set{2}{3}
+  \]
+  \[
+    \define
+    \separate
+    \reverseDefine
+    \separate
+    \demand
+    \separate
+    \function{f}{X}{Y}
+  \]
+  \[
+    \setReal
+    \separate
+    \setNatural
+    \separate
+    \setInteger
+    \separate
+    \setRational
+  \]
+  \[
+    \roundBrackets{a}
+    \separate
+    \curlyBrackets{b}
+    \separate
+    \boxBrackets{c}
+    \separate
+    \angleBrackets{d}
+    \separate
+    \floorBrackets{e}
+    \separate
+    \ceilBrackets{f}
+  \]
+  \[
+    \absolute{a}
+    \separate
+    \norm{b}
+    \separate
+    \inverse{c}
+  \]
+  \[
+    \dotProduct{a}{b}
+    \separate
+    \scalarProduct{c}{d}
+    \separate
+    \crossProduct{e}{f}
+  \]
+  \[
+    \timeDerivative{a}
+    \separate
+    \timeSecondDerivative{b}
+    \separate
+    \leibnizDerivative{y(t)}{t}
+    \separate
+    \leibnizDerivative{}{t}y(t)
+  \]
+  \[
+    a\appendUnit{m}
+    \separate
+    b\appendUnit{km\cdot s^{-2}}
+    \separate
+    c\appendUnit{\frac{m}{s^2}}
+  \]
+
+  % \begin{multicols}{2}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/task-raeuber_und_beute}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/task-parabol_spiegel}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/task-quadratisches_reibungsgesetz}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/task-inhomogene_dgl_zweiter_ordnung}
+    \input{database/mathematische_methoden_der_physik_i/vector_analysis/task-magnetfeld}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/task-aufstellen_von_differentialgleichungen}
+    \input{database/mathematische_methoden_der_physik_i/vector_analysis/task-konservative_vektorfelder}
+    \input{database/mathematische_methoden_der_physik_i/vector_analysis/task-kurve_gesucht}
+    \input{database/mathematische_methoden_der_physik_i/vector_analysis/task-parametrisierung_gesucht}
+    \input{database/mathematische_methoden_der_physik_i/vector_analysis/task-wegintegrale_berechnen}
+    \input{database/mathematische_methoden_der_physik_i/vector_analysis/task-wie_ein_fisch_im_wasser}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/separable_deq/task-aehnlichkeitsdifferentialgleichung}
+    \import{database/mathematische_methoden_der_physik_i/ordinary_deq/separable_deq/}{task-eine_zombieapokalypse.tex}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/separable_deq/task-homogene_differentialgleichungen}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/separable_deq/task-klassifikation_von_differentialgleichungen}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/separable_deq/task-methode_der_variablentrennung}
+    \import{database/mathematische_methoden_der_physik_i/ordinary_deq/separable_deq/}{task-orthogonaltrajektorien}
+    \import{database/mathematische_methoden_der_physik_i/ordinary_deq/separable_deq/}{task-orthogonaltrajektorien_und_richtungsfeld}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/separable_deq/task-zwei_separable_differentialgleichungen}
+    % \end{multicols}
+\end{document}

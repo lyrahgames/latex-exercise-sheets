@@ -3,12 +3,9 @@
 ]
   Die Temperaturverteilung in einem See sei gegeben durch die folgende Funktion.
   \[
-    D \define \left\{ (x,y,z)\in\setR^3 \middle| z < 0 \right\}
-  \]
-  \[
-    \function{T}{D}{\setR}
+    \function{T}{\set{(x,y,z)\in\setReal^3}{z<0}}{\setReal}
     \separate
-    T(x,y,z)\define -\curvb{x^2 + \frac{y^2}{4} + 2z^2}
+    T(x,y,z)\define -\roundBrackets{x^2 + \frac{y^2}{4} + 2z^2}
   \]
   \begin{atiSubtasks}
     \item{
@@ -16,19 +13,17 @@
     }
     \item{
       Ein Fisch im Wasser befinde sich am Punkt $(1,2,-1)$.
-      In welche Richtung verändert sich die Temperatur am stärksten?
-      Wird es wärmer oder kälter?
+      Bestimmen Sie die Richtung, in die sich die Temperatur am stärksten verändert und entscheiden Sie, ob es wärmer oder kälter wird.
     }
     \item{
       Der Fisch bewege sich auf dem folgenden Weg.
       \[
-        \function{r}{[0,2\pi]}{\setR^3}
+        \function{r}{[0,2\pi]}{\setReal^3}
         \separate
-        r(t)\define 2\cos t \vec{i} + \sin t \vec{j} + (\cos t - 2)\vec{k}
+        r(t)\define 2\cos t \vectorX + \sin t \vectorY + (\cos t - 2)\vectorZ
       \]
-      Wann ist die Temperatur für ihn am größten und wann am kleinsten?
-      Wo befindet er sich zu diesem Zeitpunkt?
-      Skizzieren Sie die Temperatur $T\circ r$, die der Fisch entlang seines Weges erfährt.
+      Bestimmen Sie die Zeitpunkte, an denen Fisch die größte und die kleinste Temperatur empfindet und berechnen sie die zugehörigen Position des Fisches.
+      Skizzieren Sie die Temperatur $T\composition r$, die der Fisch entlang seines Weges in Abhängigkeit der Zeit erfährt.
     }
   \end{atiSubtasks}
 \end{atiTask}

@@ -25,10 +25,10 @@
 \begin{atiSolution}
 	\begin{atiSubtaskSolutions}
 		\item[\localref{a}]{
-			Wir nehmen an, dass es sich bei $y$ um eine Funktion auf einer offenen Teilmenge $M\subset\setR$ handelt und dass der Graph von $y$ die gegebene Gleichung für alle $x\in M$ erfüllt.
+			Wir nehmen an, dass es sich bei $y$ um eine Funktion auf einer offenen Teilmenge $M\subset\setReal$ handelt und dass der Graph von $y$ die gegebene Gleichung für alle $x\in M$ erfüllt.
 			% In diesem Falle lässt sich die gegebene Gleichung für ein $x$ dieser offenen Teilmenge in der folgenden Form schreiben.
 			\[
-				x^2 - 2y^2(x) = c^2 \implies \fdrvopb{\tilde{x}}{\tilde{x}^2 - 2y^2(\tilde{x})}{x} = \fdrvopb{\tilde{x}}{c^2}{x} \implies 2x - 4y(x)y'(x) = 0
+				x^2 - 2y^2(x) = c^2 \implies \leibnizDerivativeOperatorValue{\tilde{x}}{\tilde{x}^2 - 2y^2(\tilde{x})}{x} = \leibnizDerivativeOperatorValue{\tilde{x}}{c^2}{x} \implies 2x - 4y(x)y'(x) = 0
 			\]
 			Man erhält damit eine Differentialgleichung der folgenden Formen.
 			\[
@@ -43,12 +43,12 @@
 			\]
 		}
 		\item[\localref{c}]{
-			Durch Umstellung erhält man eine separierte Differentialgleichung, die sich für die Anfangswerte $x_0\in\setR\setminus\set{0}$ und $y_0\define y(0)\in\setR\setminus\set{0}$ direkt lösen lässt.
+			Durch Umstellung erhält man eine separierte Differentialgleichung, die sich für die Anfangswerte $x_0\in\setReal\setminus\set{0}{}$ und $y_0\define y(0)\in\setReal\setminus\set{0}{}$ direkt lösen lässt.
 			\[
 				\frac{y'(x)}{y(x)} = -\frac{2}{x} \implies \integral{x_0}{x}{\frac{y'(s)}{y(s)}}{s} = -2 \integral{x_0}{x}{\frac{1}{s}}{s}
 			\]
 			\[
-				\implies \integral{y_0}{y(x)}{\frac{1}{s}}{s} = \ln\abs{\frac{y(x)}{y_0}} = \ln\curvb{\frac{y(x)}{y_0}} = -2 \ln\abs{\frac{x}{x_0}} = -2 \ln\curvb{\frac{x}{x_0}}
+				\implies \integral{y_0}{y(x)}{\frac{1}{s}}{s} = \ln\absolute{\frac{y(x)}{y_0}} = \ln\roundBrackets{\frac{y(x)}{y_0}} = -2 \ln\absolute{\frac{x}{x_0}} = -2 \ln\roundBrackets{\frac{x}{x_0}}
 			\]
 			\[
 				\implies y(x) = \frac{y_0x_0^2}{x^2}\atiPoints[1]
@@ -62,8 +62,8 @@
 		\begin{figure}[H]
 			\center
 			\atiPoints[3]
-			\subimport{}{task-orthogonaltrajektorien_und_richtungsfeld-skizze}
-			\caption*{Das Diagramm zeigt das Richtungsfeld der Orthogonaltrajektorien und das Beispiel einer zugehörigen Hyperbel.}
+			\includegraphics[width=0.95\textwidth]{task-orthogonaltrajektorien_und_richtungsfeld-diagram.pdf}
+			\caption{Das Diagramm zeigt das Richtungsfeld der Orthogonaltrajektorien und das Beispiel einer zugehörigen Hyperbel.}
 		\end{figure}
 	\end{atiSubtaskSolutions}
 \end{atiSolution}
