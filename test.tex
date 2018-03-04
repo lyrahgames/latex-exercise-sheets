@@ -85,9 +85,33 @@
     \separate
     \timeSecondDerivative{b}
     \separate
+    \timeThirdDerivative{c}
+    \separate
     \leibnizDerivative{y(t)}{t}
     \separate
-    \leibnizDerivative{}{t}y(t)
+    \leibnizDerivativeOperator{t}{y(t)}
+    \separate
+    \leibnizDerivativeOperator{t}{}y(t)
+    \separate
+    \leibnizDerivative[3]{y(t)}{t}
+  \]
+  \[
+    \appendValue{x}{a}
+    \separate
+    \leibnizDerivativeOperatorValue{a}{b}{c}
+    \separate
+    \leibnizPartialDerivative{f}{x}
+    \separate
+    \leibnizPartialDerivativeOperator{x}{f}
+    \separate
+    \leibnizPartialDerivativeOperatorValue{x}{f}{a}
+    \separate
+    \leibnizPartialDerivative[n]{f}{x}
+  \]
+  \[
+    f\composition g
+    \separate
+    \infinitesimal f
   \]
   \[
     a\appendUnit{m}

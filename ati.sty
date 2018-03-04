@@ -174,33 +174,17 @@
 
 \newenvironment{atiSubtaskSolutions}{
 	\begin{description}[style=multiline]
-		% \let\olditem[##1]\item[##1]
-		% \def\item[##1]##2{\olditem[##1] ##2 \atiPointsCount}
 }{
 	\end{description}
-	% \atiPointsCount
 }
 
 \newenvironment{atiSubequations}{
-	% \begin{multicols}{2}
 	\begin{enumerate}[label=\normalfont(\roman*)]
-	% \newcommand{\nitem}[1][]{\item $ \qquad \begin{aligned}[t] ##1 \end{aligned} $}
 	\let\olditem\item
 	\def\item##1{\olditem \ensuremath{ \qquad \begin{aligned}[t] ##1 \end{aligned} } }
 }{
 	\end{enumerate}
-	% \end{multicols}
 }
-
-% \newenvironment{atiSubequationsColumn}{
-% 	\begin{multienumerate}
-% 	% \let\oldmitemx\mitemx
-% 	\def\itemx##1{\mitemx{\ensuremath{\qquad\begin{aligned}[t]##1\end{aligned}}}}
-% 	% \let\oldmitemxx\mitemxx
-% 	\def\itemxx##1##2{\mitemxx{\ensuremath{\qquad\begin{aligned}[t]##1\end{aligned}}}{\ensuremath{\qquad\begin{aligned}[t]##2\end{aligned}}}
-% }{
-% 	\end{multienumerate}
-% }
 
 \newenvironment{atiItems}{
 	\begin{itemize}

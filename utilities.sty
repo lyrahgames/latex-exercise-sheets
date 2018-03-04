@@ -51,25 +51,47 @@
 \newcommand{\scalarProduct}[2]{\angleBrackets{#1,#2}}
 \newcommand{\crossProduct}[2]{#1 \times #2}
 
+\newcommand{\appendValue}[2]{\left. #1 \right|_{#2}}
+
 % derivative
 \newcommand{\timeDerivative}[1]{\dot{#1}}
 \newcommand{\timeSecondDerivative}[1]{\ddot{#1}}
+\newcommand{\timeThirdDerivative}[1]{\dddot{#1}}
 \newcommand{\infinitesimal}{\mathrm{d}}
-\newcommand{\leibnizDerivative}[2]{\frac{\infinitesimal #1}{\infinitesimal #2}}
-\newcommand{\leibnizNDerivative}[3][]{%
+\newcommand{\leibnizDerivative}[3][]{%
   \ifstrempty{#1}{%
-    \leibnizDerivative{#2}{#3}
+    \frac{\infinitesimal #2}{\infinitesimal #3}%
   }{%
-    \frac{\infinitesimal^{#1}#2}{\infinitesimal {#3}^{#1}}
+    \frac{\infinitesimal^{#1}#2}{\infinitesimal {#3}^{#1}}%
+  }%
+}
+\newcommand{\leibnizPartialDerivative}[3][]{%
+  \ifstrempty{#1}{%
+    \frac{\partial #2}{\partial #3}%
+  }{%
+    \frac{\partial^{#1}#2}{\partial {#3}^{#1}}%
+  }%
+}
+\newcommand{\leibnizDerivativeOperator}[2]{%
+  \ifstrempty{#2}{%
+    \leibnizDerivative{}{#1}%
+  }{%
+    \leibnizDerivative{}{#1}\,#2%
+  }%
+}
+\newcommand{\leibnizPartialDerivativeOperator}[2]{%
+  \ifstrempty{#2}{%
+    \leibnizPartialDerivative{}{#1}%
+  }{%
+    \leibnizPartialDerivative{}{#1}\,#2%
   }%
 }
 \newcommand{\leibnizDerivativeOperatorValue}[3]{%
-  \left. \frac{\infinitesimal}{\infinitesimal #1}\, #2 \right|_{#3}%
+  \appendValue{\leibnizDerivativeOperator{#1}{#2}}{#3}%
 }
 \newcommand{\leibnizPartialDerivativeOperatorValue}[3]{%
-  \left. \frac{\partial}{\partial #1}\, #2 \right|_{#3}%
+  \appendValue{\leibnizPartialDerivativeOperator{#1}{#2}}{#3}%
 }
-\newcommand{\appendValue}[2]{\left. #1 \right|_{#2}}
 
 % integral commands
 \newcommand{\integral}[4]{\int_{#1}^{#2} #3\,\infinitesimal #4}
