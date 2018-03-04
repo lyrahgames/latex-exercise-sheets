@@ -13,6 +13,7 @@
 \newcommand{\reverseDefine}{\eqqcolon}
 \newcommand{\demand}{\stackrel{!}{=}}
 \newcommand{\function}[3]{#1\colon#2\to#3}
+\newcommand{\composition}{\circ}
 
 \newcommand{\separate}{,\qquad}
 
@@ -28,6 +29,7 @@
 \newcommand{\setNatural}{\mathds{N}}
 \newcommand{\setInteger}{\mathds{Z}}
 \newcommand{\setRational}{\mathds{Q}}
+\newcommand{\setComplex}{\mathds{C}}
 
 
 % brackets
@@ -37,9 +39,6 @@
 \newcommand{\angleBrackets}[1]{\left\langle #1 \right\rangle}
 \newcommand{\floorBrackets}[1]{\left\lfloor #1 \right\rfloor}
 \newcommand{\ceilBrackets}[1]{\left\lceil #1 \right\rceil}
-
-% nullary
-\newcommand{\composition}{\circ}
 
 % unary functions
 \newcommand{\absolute}[1]{\left| #1 \right|}
@@ -99,7 +98,10 @@
 \newcommand{\indefiniteIntegralValue}[3]{\left. \indefiniteIntegral{#1}{#2} \right|_{#3}}
 
 % operators
-\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\gradient}{grad}
+\DeclareMathOperator{\curl}{rot}
+\DeclareMathOperator{\divergence}{div}
+\DeclareMathOperator{\laplacian}{\Delta}
 
 % vector commands
 \renewcommand{\vector}[1]{\vec{#1}}
