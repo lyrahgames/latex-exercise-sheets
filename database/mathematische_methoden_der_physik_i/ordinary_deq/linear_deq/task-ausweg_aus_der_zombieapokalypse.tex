@@ -1,0 +1,38 @@
+\begin{atiTask}[
+	title = Ein Ausweg aus der Zombieapokalypse
+]
+	Auf einer kleinen Insel gerät ein Virus in Umlauf, der die Bevölkerung in Zombies verwandelt.
+	Auf dieser Insel wird sofort mit der Evakuierung aller gesunden Menschen begonnen.
+	Für kleine  Zeitspannen $\tau\in\setReal^+$ und Parameter $\delta,N_0\in\setReal^+$ kann der Anteil der gesunden Menschen, die sich infizieren, durch $\tau\cdot\delta$ und die Anzahl der Menschen, die die Insel per Schiff verlassen, durch $\tau\cdot N_0$ approximiert werden.
+	\begin{atiSubtasks}
+		\item{
+			Stellen Sie ein Differentialgleichungssystem auf, welches den oben genannten Bedingungen genügt.
+			Verwenden Sie $M(t)\in\setReal^+$ für die Anzahl der gesunden Menschen, $Z(t)\in\setReal^+$ für die Anzahl der Infizierten und $t\in\setReal^+$ als freien Parameter der Zeit.
+		}
+		\item{
+			Lösen Sie das erhaltene Differentialgleichungssystem für die folgenden Anfangsbedingungen.
+			\[
+				t_0 \define 0
+				\separate
+				M_0\define M(0)\define N\in\setNatural
+				\separate
+				Z_0\define Z(t) \define 0
+			\]
+		}
+		\item{
+			\textbf{Zusatz:} Skizzieren Sie $M(t)$ und $Z(t)$ für $t\in\setReal^+$ und die folgenden Parameter.
+			\[
+				N \define 10000
+				\separate
+				\delta \define \frac{1}{3}
+				\separate
+				N_0 \define 100
+			\]
+		}
+		\item{
+			\textbf{Zusatz:}
+			Bestimmen Sie die Anzahl der geretteten Menschen.
+			Berechnen Sie zudem die Änderung dieser Anzahl, wenn statt einem Einzigem zwei identische Schiffe zum Einsatz kommen.
+		}
+	\end{atiSubtasks}
+\end{atiTask}

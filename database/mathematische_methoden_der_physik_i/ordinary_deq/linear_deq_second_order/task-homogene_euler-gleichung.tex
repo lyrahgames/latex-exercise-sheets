@@ -1,0 +1,35 @@
+\begin{atiTask}[
+	title = Die homogene Euler-Gleichung
+]
+	Die Eulersche Differentialgleichung ist durch die folgende Form gegeben.
+	Dabei stellen die Koeffizienten $a$, $b$ und $c$ reelle Konstanten dar.
+	\[
+		ax^2y'' + bxy' + cy = 0
+	\]
+	\begin{atiSubtasks}
+		\item{
+			Überführen Sie diese Differentialgleichung mithilfe der Substitution $x = e^{t(x)}$ für $x\in\setReal^+$ in eine Differentialgleichung mit konstanten Koeffizienten.
+		}
+		\item{
+			Ein wichtiges Beispiel für die Potentialtheorie stellt die folgende Differentialgleichung dar.
+			Dabei beschreibt $n$ eine nichtnegative reelle Konstante, $r$ eine nichtnegative reelle Variable und $R$ eine Funktion, welche von $r$ abhängt.
+			\[
+				\leibnizDerivative[2]{R}{r} + \frac{2}{r}\leibnizDerivative{R}{r} - \frac{n(n+1)}{r^2}R = 0
+			\]
+			\begin{atiSubsubtasks}
+				\item{
+					Behandeln Sie die genannte Differentialgleichung nach der zuvor beschriebenen Methode.
+				}
+				\item{
+					Konstruieren Sie die allgemeine Lösung $R$ der entstehenden Differentialgleichung mit konstanten Koeffizienten.
+				}
+				\item{
+					Geben Sie diejenige spezielle Lösung an, welche die folgende Bedingung erfüllt.
+					\[
+						R\converges[r\converges\infty]0
+					\]
+				}
+			\end{atiSubsubtasks}
+		}
+	\end{atiSubtasks}
+\end{atiTask}

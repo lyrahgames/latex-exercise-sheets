@@ -1,0 +1,47 @@
+\begin{atiTask}[
+	title = Ähnlichkeitsdifferentialgleichung,
+	language = Deutsch
+]
+	Gegeben sei eine gewöhnliche nicht-separable Differentialgleichung mit der freien Variable $t$ und der folgenden Form.
+	Beachten Sie, dass $\timeDerivative{y}=\leibnizDerivative{y(t)}{t}$ die erste Ableitung nach der Zeit beschreibt.
+	\[
+		t\timeDerivative{y} = y\roundBrackets{1+\ln y - \ln t}
+	\]
+
+	Lösen Sie diese Differentialgleichung, indem Sie sie durch die folgende Substitution in eine separable Differentialgleichung überführen und überprüfen Sie Ihr Ergebnis, indem Sie eine Probe durchführen.
+	\[
+		z(t)\define\frac{y(t)}{t}\separate t\in\setReal^+
+	\]
+\end{atiTask}
+\begin{atiSolution}
+	Durch die Verwendung der Substitution lassen sich die folgenden Aussagen für alle $t\in\setReal^+$ treffen.
+	\[
+		y(t) = tz(t) \implies y'(t) = z(t) + tz'(t)\atiPoints[1]
+	\]
+	Das Umformen der ursprünglichen Differentialgleichung und Einsetzen der Substitution führt dann zur gewünschten separablen Differentialgleichung, die sich durch die Methode der Trennung der Variablen lösen lässt.
+	\[
+		ty'(t) = y(t)\boxBrackets{1+\ln \roundBrackets{\frac{y(t)}{t}}} \implies t\boxBrackets{z(t) + tz'(t)} = tz(t)\boxBrackets{1+\ln z(t)}
+	\]
+	\[
+		\implies tz'(t) = z(t)\ln z(t) \implies \frac{z'(t)}{z(t)\ln z(t)} = \frac{1}{t}\atiPoints[1]
+	\]
+	\[
+		\implies \integral{t_0}{t}{\frac{z'(s)}{z(s)\ln z(s)}}{s} = \integral{z_0}{z(t)}{\frac{1}{s\ln s}}{s} = \integral{t_0}{t}{\frac{1}{s}}{s}
+	\]
+	\[
+		\implies \ln\roundBrackets{\frac{\ln z(t)}{\ln z_0}} = \ln \roundBrackets{\frac{t}{t_0}} \implies z(t) = \exp\roundBrackets{\frac{t\ln z_0 }{t_0}} = z_0^{\frac{t}{t_0}}\atiPoints[2]
+	\]
+	\[
+		\implies y(t) = tz(t) = t\exp\roundBrackets{\frac{t\ln z_0 }{t_0}}\atiPoints[1]
+	\]
+	Für die Probe leitet man nun die Lösung ab und substituiert den erhaltenen Term mithilfe der berechneten Lösung.
+	\[
+		y'(t) = \exp\roundBrackets{\frac{t\ln z_0}{t_0}} + \frac{t\ln z_0}{t_0}\exp\roundBrackets{\frac{t\ln z_0}{t_0}}\atiPoints[\frac{1}{2}]
+	\]
+	\[
+		\implies y'(t) = \frac{y(t)}{t} + \ln\roundBrackets{\frac{y(t)}{t}}\frac{y(t)}{t} = \frac{y(t)}{t}\boxBrackets{1 + \ln\roundBrackets{\frac{y(t)}{t}}}
+	\]
+	\[
+		\implies ty'(t) = y(t)\boxBrackets{1+\ln\roundBrackets{\frac{y(t)}{t}}} = y(t)\boxBrackets{1 + \ln y(t) - \ln t}\atiPoints[\frac{1}{2}]
+	\]
+\end{atiSolution}

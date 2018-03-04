@@ -1,0 +1,64 @@
+\begin{atiTask}[
+	title = Die Wronski-Determinante
+]
+	Gegeben sei die folgende Differentialgleichung, wobei $p$ und $q$ Funktionen in Abhängigkeit von $x$ darstellen.
+	Weiterhin seien $y_1$ und $y_2$ zwei Lösungen dieser Gleichung.
+	\[
+		y'' + p(x)y' + q(x)y = 0
+	\]
+	\begin{atiSubtasks}
+		\item{\locallabel{a}
+			Zeigen Sie, dass die Wronski-Determinante $W$ der folgenden separablen Differentialgleichung genügt und lösen Sie diese Gleichung durch Trennung der Variablen.
+			\[
+				W' = -p(x)\cdot W
+			\]
+			Damit ist es möglich die Wronski-Determinante direkt aus der zugehörigen Differentialgleichung ohne Kenntnis der Lösung dieser zu bestimmen.
+		}
+		\item{
+			Es sei die Lösung $y_1$ bereits bekannt.
+			Interpretieren Sie die folgende Gleichung als inhomogene Differentialgleichung erster Ordnung für $y_2$ und lösen Sie diese durch Variation der Konstanten.
+			\[
+				y_1(x)y_2'(x)-y_2(x)y_1'(x) = W(x)
+			\]
+			So können Sie die zweite Fundamentallösung aus der Kenntnis der ersten Fundamentallösung und der Wronski-Determinante bestimmen.
+		}
+		\item{
+			Betrachten Sie die folgende Differentialgleichung mit den reellen konstanten Koeffizienten $a$, $b$ und $c$.
+			\[
+				ay'' + by' + cy = 0
+			\]
+			\begin{atiSubsubtasks}
+				\item{
+					Bestimmen Sie die Wronski-Determinante dieser Differentialgleichung mit der in \localref{a} beschriebenen Methode.
+				}
+				\item{
+					Nehmen Sie an, dass die folgende Lösung bekannt ist, und bestimmen Sie durch Verwendung des zuvor beschriebenen Verfahrens die zweite Fundamentallösung.
+					\[
+						y_1(x) = e^{\lambda_1 x}
+						\separate
+						\lambda_1 \define -\frac{b}{2a} + \frac{1}{2a}\sqrt{b^2-4ac}
+					\]
+				}
+			\end{atiSubsubtasks}
+		}
+		\item{
+			\textbf{Für Interessierte:}
+			Gegeben sei die folgende Differentialgleichung mit der reellen Konstanten $m$.
+			\[
+				y'' + \frac{1}{x} y' - \frac{m^2}{x}y = 0
+			\]
+			\begin{atiSubsubtasks}
+				\item{
+					Bestimmen Sie die Wronski-Determinante dieser Differentialgleichung.
+				}
+				\item{
+					Überzeugen Sie sich, dass die folgende Funktion eine Lösung dieser Differentialgleichung ist und berechnen Sie nach dem zuvor beschriebenen Verfahren die zweite Fundamentallösung.
+					\[
+						y_1(x) = x^m
+					\]
+					Machen Sie die Probe für diese zweite Lösung und geben Sie auch die allgemeine Lösung der Differentialgleichung an.
+				}
+			\end{atiSubsubtasks}
+		}
+	\end{atiSubtasks}
+\end{atiTask}
