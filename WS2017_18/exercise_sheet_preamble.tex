@@ -1,0 +1,59 @@
+\documentclass[a4paper,fleqn,11pt,twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage[bottom=25mm,left=33mm,right=33mm,bottom=35mm]{geometry}
+\usepackage{times}
+\linespread{1.2}
+\usepackage{turnthepage}
+\renewcommand{\turnthepage}{\it bitte wenden}
+\usepackage{import}
+\usepackage{multicol}
+\usepackage{pgfkeys}
+\usepackage[pgfkeys,custom]{ati}
+\allowdisplaybreaks
+\usepackage{etoolbox}
+
+
+\newcommand{\exerciseSheetHead}[1]{%
+  \pgfkeys{
+    sheetType/.estore in = \exerciseSheetType,%
+    sheetType = Übungsserie,%
+    title/.estore in = \exerciseSheetHeadTitle,%
+    sheetNumber/.estore in = \exerciseSheetNumber,%
+    sheetNumber,
+    author/.estore in = \exerciseSheetAuthor,
+    authorMail/.estore in = \exerciseSheetAuthorMail,
+    submissionDate/.estore in = \exerciseSheetSubmissionDate,
+    submissionDate = {},
+    submissionCall/.estore in = \exerciseSheetSubmissionCall,
+    submissionCall = Abgabe,
+    creationDate/.estore in = \exerciseSheetCreationDate,
+    creationDate = \today,
+    creationCall/.estore in = \exerciseSheetCreationCall,
+    creationCall = Letzte Bearbeitung,
+    extraInfo/.estore in = \exerciseSheetExtraInfo,
+    extraInfo,
+    #1
+  }
+  \hrule
+  \section*{\centering \exerciseSheetHeadTitle \\ \exerciseSheetType{} \exerciseSheetNumber}
+  \medskip
+  \footnotesize
+  \begin{minipage}[c]{0.49\textwidth}
+    \exerciseSheetAuthor \\
+    \exerciseSheetAuthorMail
+  \end{minipage}
+  \hfill
+  \begin{minipage}[c]{0.49\textwidth}
+    \raggedleft
+    \ifblank{\exerciseSheetExtraInfo}{}{~\exerciseSheetExtraInfo\\}
+    \exerciseSheetCreationCall: \exerciseSheetCreationDate \\
+    \exerciseSheetSubmissionCall: \exerciseSheetSubmissionDate
+  \end{minipage}
+  \bigskip
+  \hrule
+  \bigskip
+  \bigskip%
+  \normalsize
+}
