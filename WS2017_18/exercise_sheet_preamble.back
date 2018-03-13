@@ -1,4 +1,4 @@
-\documentclass[a4paper,fleqn,11pt]{article}
+\documentclass[a4paper,11pt,twoside]{article} % options: fleqn für linksbündige gleichungen
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
@@ -69,14 +69,16 @@
     authorMail/.estore in = \exerciseSheetAuthorMail,
     submissionDate/.estore in = \exerciseSheetSubmissionDate,
     submissionDate = {},
-    submissionCall/.estore in = \exerciseSheetSubmissionCall,
-    submissionCall = Abgabe,
     creationDate/.estore in = \exerciseSheetCreationDate,
     creationDate = 120 min,
     creationCall/.estore in = \exerciseSheetCreationCall,
-    creationCall = Bearbeitungszeit:,
+    creationCall = Bearbeitungszeit,
     extraInfo/.estore in = \exerciseSheetExtraInfo,
     extraInfo,
+    examInfo/.estore in = \examInfo,
+    examInfo = Keine,
+    examInfoCall/.estore in = \examInfoCall,
+    examInfoCall = Hilfsmittel:,
     #1
   }
   \hrule
@@ -91,7 +93,8 @@
   \begin{minipage}[c]{0.49\textwidth}
     \raggedleft
     \ifblank{\exerciseSheetExtraInfo}{}{~\exerciseSheetExtraInfo\\}
-    \exerciseSheetCreationCall: \exerciseSheetCreationDate
+    \exerciseSheetCreationCall: \exerciseSheetCreationDate \\
+    \examInfoCall{} \examInfo
   \end{minipage}
   \bigskip
   \hrule
