@@ -1,5 +1,13 @@
 \RequirePackage{import}
 \import{../}{exercise_sheet_preamble}
+ \geometry{
+ a4paper,
+ %total={170mm,257mm},
+ left=20mm,
+ right=20mm,
+ top=20mm,
+ bottom=20mm
+ }
 \begin{document}
 \renewcommand{\vec}[1]{\mathbf{#1}}
   \examSheetHead{%
@@ -16,8 +24,8 @@
   	%	\[\integral{C}{}{x}{x}\]
   	%	\[\indefiniteIntegral{x}{x}\]
 \noindent\textbf{Bitte für jede Aufgabe ein eigenes Blatt verwenden!}		
-		\input{/home/agnes/Uebung_Sammlung/latex-exercise-sheets/database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq/task-methode_der_variation_der_konstanten_iii.tex}\marginpar{5 Punkte}
-		\input{/home/agnes/Uebung_Sammlung/latex-exercise-sheets/database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq_second_order/task-methode_der_unbestimmten_koeffizienten_iii.tex}\marginpar{5 Punkte}
+		\import{../database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq/}{task-methode_der_variation_der_konstanten_iii.tex}\marginpar{5 Punkte}
+		\import{../database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq_second_order/}{task-methode_der_unbestimmten_koeffizienten_iii.tex}\marginpar{5 Punkte}
 		%\input{/home/agnes/Uebung_Sammlung/latex-exercise-sheets/database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq_second_order/task-methode_der_unbestimmten_koeffizienten_ii.tex}
 		%\input{/home/agnes/Uebung_Sammlung/latex-exercise-sheets/database/mathematische_methoden_der_physik_i/vector_analysis/task-wegintegrale_berechnen2.tex}\marginpar{5 Punkte}
 		\import{../database/mathematische_methoden_der_physik_i/vector_analysis/}{task-konservative_vektorfelder_ii}\marginpar{5 Punkte}
