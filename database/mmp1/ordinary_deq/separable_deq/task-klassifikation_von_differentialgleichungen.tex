@@ -1,0 +1,111 @@
+\begin{atiTask}[
+	title = Klassifikation von gewöhnlichen Differentialgleichungen
+]
+	Klassifizieren Sie die folgenden gewöhnlichen Differentialgleichungen durch ihre Ordnung, Homogenität, Linearität und Separabilität.
+	Lösen Sie zudem die separablen Differentialgleichungen.
+	\begin{atiSubequations}
+	\begin{multicols}{2}
+		\item{\locallabel{dgl1}
+			\leibnizDerivative[2]{y(x)}{x} + 2\leibnizDerivative{y(x)}{x} = y
+		}
+		\item{\locallabel{dgl2}
+			\leibnizDerivative{y(x)}{x} + \sin y - x^2 = 0
+		}
+		\item{\locallabel{dgl3}
+			y' + \tan(x)\cdot y = 0
+		}
+		\item{\locallabel{dgl4}
+			\frac{y''}{y'} + x = 0
+		}
+		\item{\locallabel{dgl5}
+			yy'-x = 0
+		}
+		\item{\locallabel{dgl6}
+			\frac{x+1}{y+2} = \leibnizDerivative{y(x)}{x}
+		}
+	\end{multicols}
+		\item{\locallabel{dgl7}
+			\sqrt{y^2 + 3a^2 + ya\roundBrackets{2-\frac{4a}{2y}}} + \leibnizDerivative{y(x)}{x}\sqrt{x^2-a^2} = \sqrt{x+a}
+		}
+	\end{atiSubequations}
+\end{atiTask}
+\begin{atiSolution}
+	\begin{atiSubtaskSolutions}
+		\item[\localref{dgl1}]{
+			Durch eine einfache Umformung erhalten wir die folgende Differentialgleichung.
+			\[
+				y'' + 2y' -y = 0
+			\]
+			\atiPoints[1]Damit handelt es sich bei dieser Differentialgleichung um eine gewöhnliche, lineare, homogene, nicht-separable Differentialgleichung 2.Ordnung.
+		}
+		\item[\localref{dgl2}]{
+			Durch eine einfache Umformung erhalten wir die folgende Differentialgleichung.
+			\[
+				y'+ \sin y = x^2
+			\]
+			\atiPoints[1]Damit handelt es sich bei dieser Differentialgleichung um eine gewöhnliche, nicht-lineare, nicht-separable Differentialgleichung 1.Ordnung.
+		}
+		\item[\localref{dgl3}]{
+			Durch eine Äquivalenzumformung lässt sich die Differentialgleichungen in die beiden folgenden Formen bringen.
+			\[
+				y' + \tan (x)y = 0 \separate y' = -y\tan x
+			\]
+			\atiPoints[1]Damit handelt es sich bei dieser Differentialgleichung um eine gewöhnliche, lineare, homogene, separable Differentialgleichung 1.Ordnung.
+			Durch Anwendung der Methode der Trennung der Variablen, erhält man dann die folgende Lösung.
+			\[
+				\frac{y'(x)}{y(x)} = -\tan x \implies \integral{y_0}{y}{\frac{1}{s}}{s} = \integral{x_0}{x}{-\tan s}{s}
+			\]
+			\[
+				\implies \ln\absolute{\frac{y(x)}{y_0}} = \ln\absolute{\frac{\cos x}{\cos x_0}} \implies \absolute{y(x)} = \absolute{\frac{y_0}{\cos x_0}} \absolute{\cos x}\atiPoints[1]
+			\]
+		}
+		\item[\localref{dgl4}]{
+			Wir formen wieder die gegebene Differentialgleichung um und erhalten die folgenden beiden Ausdrücke.
+			\[
+				y'' = -xy' \separate y'' + xy' = 0
+			\]
+			\atiPoints[1]Damit handelt es sich bei dieser Differentialgleichung um eine gewöhnliche, lineare, homogene, nicht-separable Differentialgleichung 2.Ordnung.
+			\atiPoints[+\frac{1}{2}]Durch die Substitution mit $z\define y'$ lässt sich zudem noch zeigen, dass sie in eine separable Differentialgleichung umgeformt werden kann.
+		}
+		\item[\localref{dgl5}]{
+			\atiPoints[1]Es handelt sich um eine gewöhnliche, nicht-lineare, separable Differentialgleichung 1.Ordnung.
+			Es lässt sich hier keine Homogenität definieren, da sie nicht linear ist.
+			Die Methode der Trennung der Variablen liefert dann die folgende Lösung.
+			\[
+				\integral{x_0}{x}{y(s)y'(s)}{s} = \integral{x_0}{x}{s}{s} \implies \integral{y_0}{y(x)}{s}{s} = \frac{y^2(x)- y^2_0}{2} = \frac{x^2-x_0^2}{2}
+			\]
+			\[
+				\implies y^2(x) = x^2 - x_0^2 + y_0^2 \implies y(x) = \pm\sqrt{x^2-x_0^2+y_0^2}\atiPoints[1]
+			\]
+
+		}
+		\item[\localref{dgl6}]{
+			Durch die Trennung von Zähler und Nenner lässt sich die Differentialgleichung in eine Form bringen, an der sich ihre Eigenschaften ablesen lassen.
+			\[
+				y' = (x+1)\frac{1}{y+2}
+			\]
+			\atiPoints[1]Es handelt sich um eine gewöhnliche, nicht-lineare, separable, Differentialgleichung 1.Ordnung.
+			Die Methode der Trennung der Variablen liefert dann die folgende Lösung.
+			\[
+				\boxBrackets{y(x)+2}y'(x) = x+1 \implies \integral{y_0}{y(x)}{s+2}{s} = \integral{x_0}{x}{s+1}{s}
+			\]
+			\[
+				\implies \frac{1}{2}\roundBrackets{\boxBrackets{y(x)+2}^2 - \boxBrackets{y_0 + 2}^2} = \frac{1}{2}\roundBrackets{(x+1)^2 - (x_0+1)^2}
+			\]
+			\[
+				\implies \boxBrackets{y(x)+2}^2 = (x+1)^2 - (x_0+1)^2 + \roundBrackets{y_0+2}^2
+			\]
+			\[
+				\implies y(x) = -2 \pm \sqrt{(x+1)^2 - (x_0+1)^2 + \roundBrackets{y_0+2}^2}\atiPoints[1]
+			\]
+		}
+		\item[\localref{dgl7}]{
+			Berechnet man den ersten Term auf der linken Seite dieser Gleichung, so ist es möglich die zweite binomische Formel zu verwenden.
+			In diesem Falle erhält man das folgende Resultat.
+			\[
+				\absolute{y+a} + y'\sqrt{x^2-a^2} = \sqrt{x+a}
+			\]
+			\atiPoints[1]Damit handelt es sich bei dieser Differentialgleichung um eine gewöhnliche, nicht-lineare, nicht-separable Differentialgleichung 1.Ordnung.
+		}
+	\end{atiSubtaskSolutions}
+\end{atiSolution}

@@ -1,0 +1,168 @@
+\begin{atiTask}[
+	topic = Gewöhnliche Differentialgleichungen,
+	subtopic = Separable Differentialgleichungen,
+	title = Die Methode der Variablentrennung,
+	language = deutsch,
+]
+	Lösen Sie die folgenden Differentialgleichungen durch Trennung der Variablen und bestimmen Sie gegebenenfalls die Integrationskonstante, sodass die nebenstehenden Anfangsbedingungen erfüllt sind.
+	\begin{atiSubequations}
+		\item{
+			\label{dgl-1}
+			y' = \frac{x e^{-y}}{x^2 + 1} \separate y(1) = 0
+		}
+		\item{
+			\label{dgl-2}
+			xyy' = \frac{x^2 + 2}{y-1}
+		}
+		\item{
+			\label{dgl-3}
+			y' = \frac{x+y}{x+y+2} \separate y(1) = -1
+		}
+	\end{atiSubequations}
+	Machen Sie in allen Fällen die Probe durch Einsetzen Ihrer Lösung in die ursprüngliche Differentialgleichung. Dies ist auch dann verlangt, wenn die Lösung nur in impliziter Form angebbar ist.
+
+	\begin{atiNote}
+		Führen Sie in Teilaufgabe \ref{dgl-3} die neue Variable $z(x)\define x + y(x)$ ein.
+	\end{atiNote}
+\end{atiTask}
+
+\begin{atiSolution}
+	\begin{atiSubtaskSolutions}
+		\item[\ref{dgl-1}]{
+			Separieren Sie $x$ und $y(x)$ auf jeweils eine Seite der Differentialgleichung und integrieren Sie die erhaltene Gleichung.
+			\[
+				y'(x) = \frac{xe^{-y(x)}}{x^2 + 1} \implies e^{y(x)} y'(x) = \frac{x}{x^2 + 1}
+			\]
+			\[
+				\implies \indefiniteIntegral{e^{y(x)}y'(x)}{x} = \indefiniteIntegral{\frac{x}{x^2+1}}{x}
+				\atiPoints[1]
+			\]
+			Lösen Sie das Integral mithilfe einer logarithmischen Integration oder durch Substitution, indem Sie $x^2$ durch eine geeignete Variable ersetzen.
+			\[
+				\indefiniteIntegral{e^y}{y} = \frac{1}{2} \indefiniteIntegral{\frac{2x}{x^2+1}}{x}
+			\]
+			\[
+				\implies e^{y(x)} = \frac{1}{2}\ln(x^2 + 1) + C = \ln\sqrt{x^2 + 1} + C
+				\atiPoints[1]
+			\]
+			Notieren Sie die explizite Lösung durch die Anwendung von $\ln$.
+			\[
+				y(x) = \ln\boxBrackets{\ln\roundBrackets{A\sqrt{x^2+1}}} \separate A\define e^C
+				\atiPoints[1]
+			\]
+			Fordern Sie nun $y(1)\demand 0$, bestimmen Sie die Konstante $A$ und setzen Sie die erhaltene Lösung in die explizite allgemeine Form ein.
+			\[
+				y(1) \demand 0 \implies 1 = \ln \roundBrackets{A\sqrt{2}} \implies A = \frac{\sqrt{2}}{2}e
+				\atiPoints[1]
+			\]
+			\[
+				y(x) = \ln\boxBrackets{\ln\roundBrackets{\frac{e}{2}\sqrt{2(x^2 + 1)}}} = \ln\boxBrackets{1 + \ln\roundBrackets{\frac{1}{2}\sqrt{2(x^2+1)}}}
+				\atiPoints[1]
+			\]
+
+			Sei $y\reverseDefine \ln u$ mit $u(x) = \ln\roundBrackets{A\sqrt{x^2+1}}$.
+			Dann erhält man durch die Anwendung der Kettenregel die folgende Aussage.
+			\[
+				y'(x) = u'(x) \ln' u(x) = \frac{1}{A\sqrt{x^2+1}} \cdot A \cdot \frac{2x}{2\sqrt{x^2+1}} \cdot \frac{1}{u(x)} = e^{-y(x)} \frac{x}{x^2+1}
+				\atiPoints[1]
+			\]
+		}
+
+		\item[\ref{dgl-2}]{
+			Separieren Sie $x$ und $y(x)$ wieder auf jeweils eine Seite der Differentialgleichung
+			\[
+				xy(x)y'(x) = \frac{x^2+2}{y(x)-1} \implies y(x)\boxBrackets{y(x)-1}y'(x) = \frac{x^2+2}{x}
+				\atiPoints[1]
+			\]
+			Integrieren Sie die rechte Seite der erhaltenen Gleichung durch Polynomintegration und der Umkehrregel.
+			\[
+				\indefiniteIntegral{\boxBrackets{y^2(x)-y(x)}y'(x)}{x} = \indefiniteIntegral{\roundBrackets{x+\frac{2}{x}}}{x}
+			\]
+			\[
+				\implies \indefiniteIntegral{y^2-y}{y} = \frac{x^2}{2} + 2\ln\absolute{x}
+				\atiPoints[1]
+			\]
+			Lösen Sie nun auch das Integral der rechten Seite durch Polynomintegration und notieren Sie die allgemeine Lösung in impliziter Form.
+			\[
+				\frac{y^3}{3} - \frac{y^2}{2} = \frac{x^2}{2} + 2\ln\absolute{x} + C
+			\]
+			\[
+				\implies 2y^3 - 3y^2 = 3x^2 + 12 \ln \absolute{x} + D
+				\atiPoints[1]
+			\]
+
+			Durch implizite Ableitung der allgemeinen Form erhalten Sie Folgendes.
+			\[
+				6y^2(x)y'(x) - 6y(x)y'(x) = 6x + \frac{12}{x} \implies y(x)\boxBrackets{y(x)-1}y'(x) = x + \frac{2}{x}
+			\]
+			\[
+				\implies xy(x)\boxBrackets{y(x)-1}y'(x) = x^2+2
+				\atiPoints[1]
+			\]
+		}
+
+		\item[\ref{dgl-3}]{
+			Definieren Sie $z(x)\define x + y(x)$ und bestimmen Sie die Ableitung von $z$.
+			\[
+				z'(x) = 1 + y'(x) \implies y'(x) = z'(x) - 1
+			\]
+			Substituieren Sie nun $x+y(x)$ in der Differentialgleichung durch $z(x)$.
+			\[
+				y'(x) = \frac{x+y(x)}{x+y(x)+2} \implies z'(x) - 1 = \frac{z}{z+2}
+				\atiPoints[1]
+			\]
+			Führen Sie für die erhaltene Differentialgleichung das Verfahren der Trennung der Variablen durch.
+			Separieren Sie $z(x)$ und $x$ auf jeweils eine Seite und integrieren Sie die erhaltene Gleichung.
+			\[
+				z'(x) = \frac{z(x)}{z(x)+2} + 1 = \frac{2z(x)+2}{z+2} = 2\,\frac{z(x)+1}{z(x)+2}
+				\atiPoints[1]
+			\]
+			\[
+				\implies \indefiniteIntegral{\frac{z(x)+2}{z(x)+1}z'(x)}{x} = \indefiniteIntegral{\roundBrackets{1 + \frac{1}{z+1}}}{z} = \indefiniteIntegral{2}{x}
+			\]
+			\[
+				\implies z(x) + \ln\absolute{z(x)+1} = 2x + C
+				\atiPoints[1]
+			\]
+			Führen Sie die Resubstitution durch und geben Sie die allgemeine Lösung in impliziter Form an.
+			\[
+				x + y(x) + \ln\absolute{x+ y(x) + 1} = 2x + C
+			\]
+			\[
+				\implies x+y(x)+1 = \exp(x-y(x)+C) = Ae^{x-y(x)} \separate A\define e^C
+			\]
+			\[
+				\implies x+y(x) = Ae^{x-y(x)} -1
+				\atiPoints[1]
+			\]
+			Fordern Sie die gegebenen Anfangsbedingungen und bestimmen Sie die Konstante $A$.
+			\[
+				y(1)\demand -1 \implies 0=Ae^2-1 \implies A= e^{-2}
+			\]
+			\[
+				\implies x+y(x) = \frac{e^{x-y(x)}}{e^2}-1 = e^{x-y(x)-2}-1
+				\atiPoints[1]
+			\]
+
+			Auch hier ist wieder eine implizite Ableitung notwendig.
+			\[
+				1+y'(x) = Ae^{x-y(x)} \boxBrackets{1-y'(x)}
+			\]
+			Durch Verwendung der allgemeinen Lösung erhalten Sie für die Konstante $A$ den folgenden Ausdruck.
+			\[
+				A = e^{y(x)-x}\boxBrackets{x+y(x)+1}
+			\]
+			Das Einsetzen dieser Gleichung resultiert dann in der gewünschten Differentialgleichung.
+			\[
+				1+y'(x) = e^{y(x)-x}\boxBrackets{x+y(x)+1} e^{x-y(x)} \boxBrackets{1-y'(x)}
+			\]
+			\[
+				\implies 1+y'(x) = x+y(x)+1 - \boxBrackets{x+y(x)+1}y'(x)
+			\]
+			\[
+				\implies y'(x)\boxBrackets{x+y(x)+2} = x+y(x)
+				\atiPoints[1]
+			\]
+		}
+	\end{atiSubtaskSolutions}
+\end{atiSolution}

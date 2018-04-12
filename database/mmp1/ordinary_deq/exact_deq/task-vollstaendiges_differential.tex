@@ -1,0 +1,102 @@
+\begin{atiTask}[
+  title = Vollständiges Differential
+]
+  Es sei die folgende skalare Funktion für alle $x,y,z\in\setReal$ gegeben.
+  \[
+    \function{U}{\setReal^3}{\setReal}
+    \separate
+    U(x,y,z)\define x^4yz^2 + 2y^2x^3e^z
+  \]
+  \begin{atiSubtasks}
+    \item{\locallabel{a}
+      Bestimmen Sie das totale Differential $\infinitesimal U$ der Funktion $U$.
+    }
+    \item{\locallabel{b}
+      Untersuchen Sie, ob es eine Funktion $\function{V}{\setReal^3}{\setReal}$ gibt, sodass das totale Differential $\infinitesimal V$ von $V$ für alle $x,y,z\in\setReal$ mit $x\neq 0$ die folgende Gleichung erfüllt.
+      \[
+        \infinitesimal V(x,y,z)\define \frac{1}{x^2} \infinitesimal U(x,y,z)
+      \]
+      \begin{atiNote}
+        Überprüfen Sie dafür die Integrabilitätsbedingung des gegebenen Differentials.
+      \end{atiNote}
+    }
+  \end{atiSubtasks}
+\end{atiTask}
+\begin{atiSolution}
+  \begin{atiSubtaskSolutions}
+    \item[\localref{a}]{
+      Der Gradient der skalaren Funktion $U$ berechnet sich wie folgt, da es sich bei $U$ um eine stetig differenzierbare Funktion handelt.
+      \[
+        \nabla U(x,y,z) =
+        \begin{pmatrix}
+          \partial_1U(x,y,z) \\
+          \partial_2U(x,y,z) \\
+          \partial_3U(x,y,z)
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+          4x^3yz^2 + 6x^2y^2e^z \\
+          x^4z^2 + 4x^3ye^z \\
+          2x^4yz + 2x^3y^2e^z
+        \end{pmatrix}
+      \]
+      Das totale Differential existiert, da sich $U$ zweimal stetig differenzieren lässt und damit durch den Satz von Schwarz die Integrabilitätsbedingung automatisch erfüllt ist.
+      Es ist dann durch den folgenden Ausdruck gegeben.
+      \[
+        \infinitesimal U = \dotProduct{\nabla U}{\infinitesimal r}
+        \separate
+        \infinitesimal r \define
+        \begin{pmatrix}
+          \infinitesimal x \\
+          \infinitesimal y \\
+          \infinitesimal z
+        \end{pmatrix}
+      \]
+      \[
+        \implies \infinitesimal U(x,y,z) = \partial_1U(x,y,z)\infinitesimal x + \partial_2U(x,y,z)\infinitesimal y + \partial_3U(x,y,z)\infinitesimal z\atiPoints[1]
+      \]
+      \[
+        \implies \infinitesimal U(x,y,z) = \roundBrackets{4x^3yz^2 + 6x^2y^2e^z}\infinitesimal x + \roundBrackets{x^4z^2 + 4x^3ye^z}\infinitesimal y + \roundBrackets{2x^4yz + 2x^3y^2e^z}\infinitesimal z \atiPoints[1]
+      \]
+    }
+    \item[\localref{b}]{
+      Für alle $x,y,z\in\setReal$ mit $x\neq 0$ gilt nun die folgende Aussage.
+      Wir definieren hierfür die Funktionen $\function{f,g,h}{\setReal\setminus\set{0}{}\times\setReal^2}{\setReal}$.
+      \[
+        \frac{1}{x^2}\infinitesimal U(x,y,z) = \underbrace{\roundBrackets{4xyz^2 + 6y^2e^z}}_{\reverseDefine f(x,y,z)}\infinitesimal x + \underbrace{\roundBrackets{x^2z^2 + 4xye^z}}_{\reverseDefine g(x,y,z)}\infinitesimal y + \underbrace{\roundBrackets{2x^2yz + 2xy^2e^z}}_{\reverseDefine h(x,y,z)}\infinitesimal z
+      \]
+      Ein notwendiges (aber nicht hinreichendes) Kriterium für die Existenz der in der Aufgabenstellung beschriebenen Funktion $V$, ist die Erfüllung der Integrabilitätsbedingung.
+      Es gibt nun $x,y,z\in\setReal$ mit $x\neq 0$, die die folgenden Implikationen erfüllen.
+      \[
+        \partial_2f(x,y,z) = \leibnizPartialDerivativeOperatorValue{s}{\roundBrackets{\frac{\partial_1U(x,s,z)}{x^2}}}{y} = \frac{\partial_2\partial_1U(x,y,z)}{x^2}
+      \]
+      \[
+        \partial_1g(x,y,z) = \leibnizPartialDerivativeOperatorValue{s}{\roundBrackets{\frac{\partial_2U(s,y,z)}{s^2}}}{x} = \frac{\partial_2\partial_1U(x,y,z)}{x^2} - \frac{2\ \partial_2U(x,y,z)}{x^3}
+      \]
+      \[
+        \implies \partial_2f(x,y,z) - \partial_1g(x,y,z) = \frac{2\ \partial_2U(x,y,z)}{x^3} = xz^2 + 4ye^z \neq 0
+      \]
+      \[
+        \partial_3f(x,y,z) = \leibnizPartialDerivativeOperatorValue{s}{\roundBrackets{\frac{\partial_1U(x,y,s)}{x^2}}}{z} = \frac{\partial_3\partial_1U(x,y,z)}{x^2}
+      \]
+      \[
+        \partial_1h(x,y,z) = \leibnizPartialDerivativeOperatorValue{s}{\roundBrackets{\frac{\partial_3U(s,y,z)}{s^2}}}{x} = \frac{\partial_3\partial_1U(x,y,z)}{x^2} - \frac{2\ \partial_3U(x,y,z)}{x^3}
+      \]
+      \[
+        \implies \partial_3f(x,y,z) - \partial_1h(x,y,z) = \frac{2\ \partial_3U(x,y,z)}{x^3} = 2xyz + 2y^2e^z \neq 0
+      \]
+      \[
+        \partial_3g(x,y,z) = \leibnizPartialDerivativeOperatorValue{s}{\roundBrackets{\frac{\partial_2U(x,y,s)}{x^2}}}{z} = \frac{\partial_3\partial_2U(x,y,z)}{x^2}
+      \]
+      \[
+        \partial_2h(x,y,z) = \leibnizPartialDerivativeOperatorValue{s}{\roundBrackets{\frac{\partial_3U(x,s,z)}{x^2}}}{y} = \frac{\partial_2\partial_3U(x,y,z)}{x^2}
+      \]
+      \[
+        \implies \partial_3g(x,y,z) - \partial_2h(x,y,z) = 0
+      \]
+      \atiPoints[1]Die ersten beiden Folgerungen zeigen, dass die Integrabilitätsbedingung nicht erfüllt ist.
+      Es reicht eine dieser beiden Aussagen zu zeigen.
+      \atiPoints[1]Demzufolge kann es eine solche Funktion $V$ nicht geben.
+    }
+  \end{atiSubtaskSolutions}
+\end{atiSolution}

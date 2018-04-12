@@ -1,0 +1,196 @@
+\documentclass[a4paper,fleqn, 11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage[bottom=25mm,left=30mm,right=30mm,bottom=35mm]{geometry}
+\usepackage{times}
+\linespread{1.15}
+
+\usepackage{turnthepage}
+\renewcommand{\turnthepage}{\it bitte wenden}
+
+
+
+\usepackage{import}
+
+\usepackage{multicol}
+
+\usepackage{float}
+\usepackage{import}
+\usepackage{graphicx}
+
+\usepackage[footnotesize,hang]{caption}
+
+
+\usepackage[pgfkeys,custom]{ati}
+% \SetupExSheets{solution/print=true, question/type=exam}
+% \usepackage{utilities}
+% \usepackage{uniinput}
+\allowdisplaybreaks
+
+\begin{document}
+  \[
+    \set{1}{}
+    \separate
+    \set{2}{3}
+  \]
+  \[
+    \define
+    \separate
+    \reverseDefine
+    \separate
+    \demand
+    \separate
+    \function{f}{X}{Y}
+  \]
+  \[
+    \setReal
+    \separate
+    \setNatural
+    \separate
+    \setInteger
+    \separate
+    \setRational
+    \separate
+    \setComplex
+  \]
+  \[
+    \roundBrackets{a}
+    \separate
+    \curlyBrackets{b}
+    \separate
+    \boxBrackets{c}
+    \separate
+    \angleBrackets{d}
+    \separate
+    \floorBrackets{e}
+    \separate
+    \ceilBrackets{f}
+  \]
+  \[
+    \absolute{a}
+    \separate
+    \norm{b}
+    \separate
+    \inverse{c}
+  \]
+  \[
+    \dotProduct{a}{b}
+    \separate
+    \scalarProduct{c}{d}
+    \separate
+    \crossProduct{e}{f}
+  \]
+  \[
+    \timeDerivative{a}
+    \separate
+    \timeSecondDerivative{b}
+    \separate
+    \timeThirdDerivative{c}
+    \separate
+    \leibnizDerivative{y(t)}{t}
+    \separate
+    \leibnizDerivativeOperator{t}{y(t)}
+    \separate
+    \leibnizDerivativeOperator{t}{}y(t)
+    \separate
+    \leibnizDerivative[3]{y(t)}{t}
+  \]
+  \[
+    \appendValue{x}{a}
+    \separate
+    \leibnizDerivativeOperatorValue{a}{b}{c}
+    \separate
+    \leibnizPartialDerivative{f}{x}
+    \separate
+    \leibnizPartialDerivativeOperator{x}{f}
+    \separate
+    \leibnizPartialDerivativeOperatorValue{x}{f}{a}
+    \separate
+    \leibnizPartialDerivative[n]{f}{x}
+  \]
+  \[
+    f\composition g
+    \separate
+    \infinitesimal f
+  \]
+  \[
+      \gradient f
+      \separate
+      \curl f
+      \separate
+      \divergence f
+      \separate
+      \laplacian f
+      \separate
+      \nabla f
+      \separate
+      \nabla\cdot f
+      \separate
+      \nabla\times f
+  \]
+  \[
+    a\appendUnit{m}
+    \separate
+    b\appendUnit{km\cdot s^{-2}}
+    \separate
+    c\appendUnit{\frac{m}{s^2}}
+  \]
+  \begin{equation}
+ 	\vector{x}
+  	\separate
+  	\vectorX
+  \end{equation}
+
+  % \begin{multicols}{2}
+  \input{database/mathematische_methoden_der_physik_i/ordinary_deq/separable_deq/task-KlausurTdV}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/task-raeuber_und_beute}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/task-parabol_spiegel}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/task-quadratisches_reibungsgesetz}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/task-inhomogene_dgl_zweiter_ordnung}
+    \input{database/mathematische_methoden_der_physik_i/vector_analysis/task-magnetfeld}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/task-aufstellen_von_differentialgleichungen}
+    \input{database/mathematische_methoden_der_physik_i/vector_analysis/task-konservative_vektorfelder}
+    \input{database/mathematische_methoden_der_physik_i/vector_analysis/task-kurve_gesucht}
+    \input{database/mathematische_methoden_der_physik_i/vector_analysis/task-parametrisierung_gesucht}
+    \input{database/mathematische_methoden_der_physik_i/vector_analysis/task-wegintegrale_berechnen}
+    \input{database/mathematische_methoden_der_physik_i/vector_analysis/task-wie_ein_fisch_im_wasser}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/separable_deq/task-aehnlichkeitsdifferentialgleichung}
+    \import{database/mathematische_methoden_der_physik_i/ordinary_deq/separable_deq/}{task-eine_zombieapokalypse.tex}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/separable_deq/task-homogene_differentialgleichungen}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/separable_deq/task-klassifikation_von_differentialgleichungen}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/separable_deq/task-methode_der_variablentrennung}
+    \import{database/mathematische_methoden_der_physik_i/ordinary_deq/separable_deq/}{task-orthogonaltrajektorien}
+    \import{database/mathematische_methoden_der_physik_i/ordinary_deq/separable_deq/}{task-orthogonaltrajektorien_und_richtungsfeld}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/separable_deq/task-zwei_separable_differentialgleichungen}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq_second_order/task-charakteristische_gleichung}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq_second_order/task-gekoppelte_differentialgleichungen}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq_second_order/task-homogene_euler-gleichung}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq_second_order/task-methode_der_unbestimmten_koeffizienten}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq_second_order/task-variation_der_konstanten}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq_second_order/task-wronski_determinante}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq_second_order/task-wronski_determinante_2}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq/task-ausweg_aus_der_zombieapokalypse}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq/task-freier_fall_mit_reibung}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq/task-methode_der_variation_der_konstanten}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq/task-methode_der_variation_der_konstanten_i}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq/task-methode_der_variation_der_konstanten_ii}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/linear_deq/task-nichtlineare_differentialgleichung}
+    \import{database/mathematische_methoden_der_physik_i/ordinary_deq/inhomogenous_deq/}{task-gleichgewichtspunkte_und_kleine_schwingungen}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/inhomogenous_deq/task-linearisierte_schwingungen}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/inhomogenous_deq/task-methode_energiesatz}
+    \import{database/mathematische_methoden_der_physik_i/ordinary_deq/inhomogenous_deq/}{task-oszillator_auf_rauer_unterlage}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/inhomogenous_deq/task-phasenportrait}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/inhomogenous_deq/task-resonanzfall}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/exact_deq/task-der_integrierende_faktor}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/exact_deq/task-eine_nichtexakte_differentialgleichung}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/exact_deq/task-exakte_differentialgleichungen}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/exact_deq/task-ideales_gas}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/exact_deq/task-integrierende_faktoren}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/exact_deq/task-konstruktion_eines_integrierenden_faktors}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/exact_deq/task-spezielle_integrierende_faktoren}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/exact_deq/task-vollstaendiges_differential}
+    \input{database/mathematische_methoden_der_physik_i/ordinary_deq/exact_deq/task-zwei_exakte_differentialgleichungen}
+    % \end{multicols}
+\end{document}

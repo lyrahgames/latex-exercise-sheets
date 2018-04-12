@@ -92,7 +92,8 @@
 				\theatiTaskCounter
 			}
 		}
-		\hfill
+		%\hfill
+		\quad
 		\ifdefined\atiTaskTitle
 			\textit{\atiTaskTitle}%
 			\nopagebreak[4]
@@ -112,6 +113,8 @@
 	}
 
 	\newif\ifatiShowSolutions
+	% here is the toggl for showing solutions
+	%\atiShowSolutionsfalse
 	\atiShowSolutionstrue
 	\ifatiShowSolutions
 		\newenvironment{atiSolution}{
