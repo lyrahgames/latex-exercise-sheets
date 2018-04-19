@@ -1,0 +1,31 @@
+\begin{atiTask}[
+  title = Skalarprodukte im Integranden
+  %call = Zusatzaufgabe,
+]
+
+Berechnen Sie das folgende Integral
+\[
+I=\iint (3\vec{e}_r+r^2\vec{e}_\phi-2\vec{e}_z)\cdot \D \vec{f}
+\]
+\begin{atiSubtasks}
+\item für die Mantelfläche
+\item für Boden- und Deckfläche
+\end{atiSubtasks}
+des Zylinders $0\leq x^2+z^2\leq R^2, \quad 0\leq z<L$.
+Dabei sind $\vec{e}_r$, $\vec{e}_\phi$ und $\vec{e}_z$ die Einheitsvektoren in Zylinderkoordinaten. Überlegen Sie sich $\D\vec{f}$, indem Sie dazu eine Skizze anfertigen. (Der Flächennormalenvektor soll immer aus der Fläche herauszeigen.)
+\end{atiTask}
+
+\begin{atiSolution}
+\begin{atiSubtasks}
+\item Mantelfläche: $\D \vec{f}=\vec{e}_rR\D \vec{\phi}\D z$
+\[I=\int_{z=0}^L\int_{\phi=0}^{2\pi} (3\vec{e}_r+r^2\vec{e}_\phi-2\vec{e}_z)\cdot \vec{e}_r R\D \vec{\phi}\D z
+\]
+Das ergibt
+\[I=\int_{z=0}^L\int_{\phi=0}^{2\pi}3R \D \phi\D z=3R\cdot 2\pi L=6\pi R L
+\]
+\item Bodenfläche: $\D \vec{f}=-\vec{e}_z r\D r\D \vec{\phi}$
+\[I=\int_{r=0}^R\int_{\phi=0}^{2\pi} 2r\D r \D \phi = 2\pi r^2|_0^R=2\pi R^2
+\]
+Deckelfläche: $\D \vec{f}=+\vec{e}_z r\D r\D \vec{\phi}$ $\Rightarrow$ $I=-2\pi R^2$.
+\end{atiSubtasks}
+\end{atiSolution}

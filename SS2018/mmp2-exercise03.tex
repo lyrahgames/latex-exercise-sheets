@@ -1,0 +1,28 @@
+\RequirePackage{import}
+\import{../}{exercise_sheet_preamble}
+ \geometry{
+ a4paper,
+ %total={170mm,257mm},
+ left=20mm,
+ right=20mm,
+ top=20mm,
+ bottom=20mm
+ }
+\usepackage{pdfpages}
+\begin{document}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+  \exerciseSheetHead{%
+    title = Mathematische Methoden der Physik II,
+    sheetType = Übungsserie,
+    sheetNumber = 3 - Zirkulation und Rotation, % can be omitted
+    author = Dr. Agnes Sambale,
+    authorMail = agnes.sambale@uni-jena.de,
+    submissionDate = {30.04.2018},
+    extraInfo = Sommersemester 2018 % can be omitted  }
+}
+			\import{../database/mmp2/vector_analysis_ii/Surfaceintegrals/}{task-surface_i.tex}
+			\import{../database/mmp2/vector_analysis_ii/Stokes/rotation_i/}{task-rotation_i.tex}
+			\import{../database/mmp2/vector_analysis_ii/Stokes/stokes_iv/}{task-stokes_iv.tex}
+			\import{../database/mmp2/vector_analysis_ii/Stokes/stokes_v/}{task-stokes_v.tex}
+		
+\end{document}
