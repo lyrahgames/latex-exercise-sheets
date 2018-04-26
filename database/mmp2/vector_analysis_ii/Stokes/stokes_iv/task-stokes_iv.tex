@@ -25,23 +25,24 @@ Verwende Additionstheorem bei der folgenden Integration
 \cos(4x)=8\cos^4x-8\cos^2x+1
 \]
 \[
-\int_0^{2\pi}(-3\cos^2\sin^2\phi+0)\D \phi=-3\left[\frac{1}{32}(4\phi-\sin (4\phi))\right]_0^{2\pi}=\uuline{-\frac{3}{4}\pi}
+\int_0^{2\pi}(-3\cos^2\sin^2\phi+0)\D \phi=-3\left[\frac{1}{32}(4\phi-\sin (4\phi))\right]_0^{2\pi}=\uuline{-\frac{3}{4}\pi}\quad (1 Pkt)
 \]
 Berechnen Rotation:
 \[
-\curl \vec{\Phi}=(-x^2z-xy)\vec{i}+(0+2xzy)\vec{j}+(yz-3x^2)\vec{k}
+\curl \vec{\Phi}=(-x^2z-xy)\vec{i}+(0+2xzy)\vec{j}+(yz-3x^2)\vec{k}\quad (1 Pkt)
 \]
 Obere Halbkugel:\\
 Für die Oberfläche benutzen wir nur die Kreisfläche mit dem vektoriellen Flächenelement
 $\D \vec{f}=\vec{k} \D x\D y$. Es ist damit $z=0$ Integranden zu setzen, da das Integrationsgebiet in der $x-y$-Ebene liegt. Also:
 \[
-\iint \curl \vec{\Phi}\cdot \D \vec{f}= \iint_{Kreis}(-3x^2)\D x\D y
+\iint \curl \vec{\Phi}\cdot \D \vec{f}= \iint_{Kreis}(-3x^2)\D x\D y\quad (1 Pkt)
 \]
 Verwende Polarkoordinaten $\D x\D y=r\D r \D \phi$:
 \begin{align*}
 \iint \curl \vec{\Phi}\cdot \D \vec{f}=& -3 \int_{r=0}^1\int_{\phi=0}^{2\pi}r^2\cos^2\phi r\D r\D \phi\\
-=& 3/4r^4|_0^1\int_0^{2\pi}\cos^2\phi\Delta\phi =-3/4\left[1/2(\phi+\sin\phi\cos\phi)\right]_0^{2\pi}=\uuline{-\frac{3}{4}\pi}.
+=& 3/4r^4|_0^1\int_0^{2\pi}\cos^2\phi\Delta\phi =-3/4\left[1/2(\phi+\sin\phi\cos\phi)\right]_0^{2\pi}=\uuline{-\frac{3}{4}\pi}  \quad (1 Pkt).
 \end{align*}
-\item untere Halbkugel: Selbe Überlegungen wie oben, aber mit $\D \vec{f}=-\vec{k} \D x\D y$ erhält man für das Integral $I=3/4\Pi$. Um den Satz von Stokes zu verifizieren ist hier also auch das Linienintegral nochmal in umgekehrter Richtung (gedanklich) zu berechnen (Rechte-Hand-Regel).
+\item untere Halbkugel: Selbe Überlegungen wie oben, aber mit $\D \vec{f}=-\vec{k} \D x\D y$ erhält man für das Integral $I=3/4\pi$ (1/2 Pkt). Um den Satz von Stokes zu verifizieren ist hier also auch das Linienintegral nochmal in umgekehrter Richtung (gedanklich) zu berechnen (Rechte-Hand-Regel) (1/2 Pkt).
 \end{atiSubtasks}
+gesamt: (5 Punkte) 
 \end{atiSolution}
