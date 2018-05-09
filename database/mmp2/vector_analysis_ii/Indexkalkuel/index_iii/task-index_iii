@@ -1,0 +1,14 @@
+\begin{atiTask}[
+  title = Spezielle Vektorfelder
+  %call = Zusatzaufgabe,
+]
+%SoSe16 blatt 4 /2 ohne d)
+
+
+
+
+\end{atiTask}
+
+\begin{atiSolution}
+	\includepdf{solution-index_iii.pdf}
+\end{atiSolution}
