@@ -1,0 +1,6 @@
+SOURCE_DIRECTORY = $(shell pwd)
+$(info SOURCE_DIRECTORY = $(SOURCE_DIRECTORY))
+
+.PHONY: all
+
+all:

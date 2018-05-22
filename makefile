@@ -1,0 +1,11 @@
+SOURCE_DIRECTORY = $(shell pwd)
+$(info SOURCE_DIRECTORY = $(SOURCE_DIRECTORY))
+
+SUBDIRECTORIES = temporary database packages
+
+.PHONY: all $(SUBDIRECTORIES)
+
+all: $(SUBDIRECTORIES)
+
+$(SUBDIRECTORIES):
+	$(MAKE) -C $@ $(MAKECMDGOALS)

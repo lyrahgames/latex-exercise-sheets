@@ -1,0 +1,9 @@
+\documentclass[10pt,ngerman,a4paper]{article}
+\usepackage{standard}
+\usepackage{exercises}
+
+\begin{document}
+
+  %EXERCISES
+
+\end{document}
