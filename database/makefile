@@ -1,14 +1,14 @@
 SOURCE_DIRECTORY = $(shell pwd)
 TEX_DIR = $(HOME)/texmf/tex/latex
-PACKAGE_NAME = exercisedatabase
+PACKAGE_NAME = atidatabase
 PACKAGE_TEMPLATE = package_template
-DATABASE_COMMAND = databaseDirectory
+DATABASE_COMMAND = atiDatabaseDirectory
 
-EXERCISE_FILES = $(shell find -name "*.tex")
-$(info EXERCISE_FILES = $(EXERCISE_FILES))
+# EXERCISE_FILES = $(shell find -name "*.tex")
+# $(info EXERCISE_FILES = $(EXERCISE_FILES))
 
-DIRECTORIES = $(sort $(dir $(EXERCISE_FILES)))
-$(info DIRECTORIES = $(DIRECTORIES))
+# DIRECTORIES = $(sort $(dir $(EXERCISE_FILES)))
+# $(info DIRECTORIES = $(DIRECTORIES))
 
 # .PHONY: $(EXERCISE_FILES)
 
