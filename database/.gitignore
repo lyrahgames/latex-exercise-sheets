@@ -1,12 +1,12 @@
-!.gitignore
-!makefile
-!package_template
-
-!mmp1
-!mmp2
+*
+!*/
 
 !*.tex
 !*.pdf
 !*.eps
 !*.gp
 !*.ggb
+
+!.gitignore
+!makefile
+!package_template

@@ -1,11 +1,11 @@
-# create a whitelist and start with ignoring every file
+# create a whitelist and start with ignoring every file and directory
 *
-# now define files and directories that should not be ignored
-!catalog
+# now un-ignore directories with their own .gitignore
 !database
+!catalog
 !packages
-!*.tex
-!*.pdf
-!*.cls
-!*.sty
+# un-ignore important files in the main source directory
 !makefile
+!atistandard.sty
+!.gitignore
+!.gitmodules
