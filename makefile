@@ -1,11 +1,11 @@
-SUBDIRECTORIES = packages database
+SUBDIRECTORIES = packages database catalog
 FILES = atistandard.sty
 TEX_DIRECTORY = $(HOME)/texmf/tex/latex
 COPY_FILES = $(addprefix $(TEX_DIRECTORY)/, $(FILES))
 
 .PHONY: all $(SUBDIRECTORIES) install
 
-all: $(SUBDIRECTORIES) install
+all: install $(SUBDIRECTORIES)
 
 $(SUBDIRECTORIES):
 	$(MAKE) -C $@ $(MAKECMDGOALS)

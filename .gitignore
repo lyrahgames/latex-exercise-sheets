@@ -1,8 +1,11 @@
-# *.sublime-project
-*.sublime-workspace
-
-**.aux
-**.log
-**.fls
-**.synctex.gz
-**.fdb_latexmk
+# create a whitelist and start with ignoring every file
+*
+# now define files and directories that should not be ignored
+!catalog
+!database
+!packages
+!*.tex
+!*.pdf
+!*.cls
+!*.sty
+!makefile
