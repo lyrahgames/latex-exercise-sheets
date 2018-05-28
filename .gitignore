@@ -4,6 +4,8 @@
 !database
 !catalog
 !packages
+!sheets
+!examples
 # un-ignore important files in the main source directory
 !makefile
 !atistandard.sty
