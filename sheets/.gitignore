@@ -1,3 +1,7 @@
 *
 !*/
+
+!*.tex
+!*.pdf
+
 !.gitignore
