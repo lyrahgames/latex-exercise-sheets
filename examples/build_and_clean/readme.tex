@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{atistandard}
+\begin{document}
+  \section{Abhängigkeiten} % (fold)
+  \label{sec:abhängigkeiten}
+    Die folgenden Abhängigkeiten müssen auf dem verwendeten Linux-Betriebssystem installiert sein.
+    \begin{description}
+      \item[find:] Standardtool unter Linux
+      \item[realpath:] Standardtool unter Linux
+      \item[make:]
+        Make wird hier als Build-System verwendet.
+        Sollte es nicht bereits installiert sein, muss es wahrscheinlich mithilfe des Package-Managers heruntergeladen werden.
+      \item[latexmk:]
+        Dieses Tool kümmert sich um die Kompilierung von \LaTeX-Code ohne mehrmaliges Ausführen.
+        Es ist standardmäßig nicht installiert, sollte aber in den offiziellen Paketquellen zu finden sein.
+    \end{description}
+  % section abhängigkeiten (end)
+
+  \section{Building} % (fold)
+  \label{sec:building}
+    \begin{enumerate}
+      \item Öffne ein Terminal im Hauptverzeichnis dieses Projektes.
+      \item Führe den Befehl \texttt{make} aus.
+    \end{enumerate}
+    Dieser Build-Prozess kann öfters wiederholt werden.
+    Er kümmert sich um die Installation von Paketen und die Generierung des Aufgabenkatalogs.
+  % section building (end)
+
+  \section{Cleaning} % (fold)
+  \label{sec:cleaning}
+    Unter Umständen möchte man die temporären Dateien, die bei der Generierung des Aufgabenkatalogs entstehen löschen, um so eine weitere neue Kompilierung zu erzwingen.
+    \begin{enumerate}
+      \item Öffne ein Terminal im Hauptverzeichnis dieses Projekts.
+      \item Führe \texttt{cd catalog} aus, um dich in das Verzeichnis \texttt{catalog} zu bewegen.
+      \item Für das eigentliche Säubern führt man nun \texttt{make clean} aus.
+      \item Anschließend lässt sich der Katalog noch einmal ohne fehlerhaften Cache generieren, indem man \texttt{make} aufruft.
+    \end{enumerate}
+  % section cleaning (end)
+\end{document}

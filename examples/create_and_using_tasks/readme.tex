@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage{atistandard}
+\usepackage{listings}
+
+\newcommand{\showExample}[1]{%
+  \medskip
+  \hrule
+  \begin{minipage}[c]{0.49\textwidth}
+    \footnotesize
+    \lstinputlisting[breaklines]{#1}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[c]{0.49\textwidth}
+    % \footnotesize
+    \atiImportTask{.}{#1}
+  \end{minipage}
+  \hrule
+  \medskip
+}
+
+\begin{document}
+  \section{\texttt{atiTask}-Environment} % (fold)
+    \noindent
+    \showExample{task_01.tex}
+    \showExample{task_02.tex}
+    \showExample{task_03.tex}
+    \showExample{task_04.tex}
+
+    Im Folgenden wird das Kommando \texttt{atiSetup} verwendet, um dessen Optionen an Beispielen zu zeigen.
+    Dieses Kommando sollte jedoch in Aufgabendateien vorkommen, sondern nur in Übungsserien.
+
+    \showExample{task_05.tex}
+    \showExample{task_06.tex}
+  % section texttt (end)
+
+  \section{\texttt{atistandalonetask}-Klasse} % (fold)
+    Diese Klasse ermöglicht es Aufgaben unabhängig von Sheets zu kompilieren und diese so auf ihre Korrektheit zu überprüfen.
+    In einer solchen Aufgabendatei sollte darauf geachtet werden, maximal den Titel und die Punktzahl der Aufgabe zu definieren und nicht etwa deren Typ, der vom jeweiligen Aufgabenblatt abhängt.
+    \noindent
+    \showExample{standalonetask_01.tex}
+
+    Somit ist es möglich auch lokal Pakete einzubinden, die für die Formulierung der Aufgabe notwendig sind, ohne diese in eine global Datei hinzuzufügen.
+    \showExample{standalonetask_02.tex}
+  % section texttt (end)
+
+  \section{\texttt{atiImportTask} - Einbinden von Aufgaben} % (fold)
+    Ob nun standalone oder nicht, jede Aufgabe lässt sich in ein Sheet durch den Befehl \texttt{atiImportTask} einbinden.
+    Dieser ermöglicht durch ein optionales Argument eine lokale Abänderung der Aufgabenparameter für das derzeitige Sheet (zum Beispiel Punktzahl, Titel, Lösungen, Typ, Nummerierung).
+    \showExample{import_01.tex}
+
+  % section texttt (end)
+\end{document}

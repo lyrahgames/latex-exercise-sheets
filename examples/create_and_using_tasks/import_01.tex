@@ -1,0 +1,9 @@
+\documentclass[crop=false]{standalone}
+\usepackage{atistandard}
+\begin{document}
+  \atiImportTask{.}{task_01.tex}
+  \atiImportTask{.}{standalonetask_01.tex}
+  \atiImportTask[show solution]{.}{standalonetask_01.tex}
+  \atiImportTask[title = Neuer Titel, points = 5]{.}{standalonetask_01.tex}
+  \atiImportTask[type = Zusatz,number = false]{.}{standalonetask_01.tex}
+\end{document}
