@@ -19,12 +19,12 @@ catalog: $(EXERCISE_FILES)
 
 # @echo "Add \"$@\""
 $(EXERCISE_FILES): $(CATALOG_IMPORT_LIST).tex
-	@echo "\noindent \textbf{Kommando zum Importieren der Aufgabe:}\\\\" >> $<
-	@echo "{\noindent\footnotesize\verb:\atiImportTask{:\%\\\\" >> $<
-	@echo "\verb:\atiDatabaseDirectory/:\%\\\\ \verb:$(@D)/:\%\\\\" >> $<
-	@echo "\verb:}{$(@F)}:}\bigskip" >> $<
-	@echo "\par\atiImportTask{\atiDatabaseDirectory/$(@D)/}{$(@F)}" >> $<
-	@echo "\cleardoublepage" >> $<
+	@echo "\\noindent \\textbf{Kommando zum Importieren der Aufgabe:}\\\\" >> $<
+	@echo "{\\noindent\\footnotesize\\verb:\\atiImportTask{:\\%\\\\" >> $<
+	@echo "\\verb:\\atiDatabaseDirectory/:\\%\\\\ \\verb:$(@D)/:\\%\\\\" >> $<
+	@echo "\\verb:}{$(@F)}:}\\bigskip" >> $<
+	@echo "\\par\\atiImportTask{\\atiDatabaseDirectory/$(@D)/}{$(@F)}" >> $<
+	@echo "\\cleardoublepage" >> $<
 	@echo "" >> $<
 
 $(CATALOG_IMPORT_LIST).tex:
