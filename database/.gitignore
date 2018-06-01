@@ -6,6 +6,8 @@
 !*.eps
 !*.gp
 !*.ggb
+!*.png
+!*.jpg
 
 !.gitignore
 !makefile
