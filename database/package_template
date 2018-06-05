@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{PACKAGE_NAME}
+\ProvidesPackage{PACKAGE_NAME}[2018/05/31]
 
 \newcommand{DATABASE_COMMAND}{DATABASE_DIRECTORY}
 

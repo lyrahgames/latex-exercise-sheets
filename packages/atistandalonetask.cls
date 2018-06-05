@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{atistandalonetask}[abstract task interface standalone task]
+\ProvidesClass{atistandalonetask}[2018/05/31 abstract task interface standalone task]
 
 \LoadClass[crop=false]{standalone}
 
