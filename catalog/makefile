@@ -3,7 +3,7 @@ CATALOG = catalog
 CATALOG_IMPORT_LIST = catalog_import_list
 
 EXERCISE_FILES = $(shell find $(DATABASE_DIRECTORY) -mindepth 2 -name "*.tex")
-EXERCISE_FILES := $(shell realpath --relative-to $(DATABASE_DIRECTORY) $(EXERCISE_FILES))
+EXERCISE_FILES := $(subst $(DATABASE_DIRECTORY)/,,$(EXERCISE_FILES))
 # $(info EXERCISE_FILES = $(EXERCISE_FILES))
 
 .PHONY: build catalog $(EXERCISE_FILES) clean $(CATALOG_IMPORT_LIST).tex
