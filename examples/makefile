@@ -1,0 +1,9 @@
+SUBDIRECTORIES = $(sort $(dir $(wildcard */makefile)))
+# $(info SUBDIRECTORIES = $(SUBDIRECTORIES))
+
+.PHONY: all $(SUBDIRECTORIES) clean
+
+all: $(SUBDIRECTORIES)
+
+$(SUBDIRECTORIES):
+	$(MAKE) -C $@ $(MAKECMDGOALS)
