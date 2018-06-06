@@ -1,0 +1,94 @@
+\documentclass[fleqn,11pt]{article}
+\usepackage{atistandard}
+
+\newcommand{\showCommandExample}[1]{%
+  \hrule
+  \medskip%
+  \begin{minipage}[c]{0.49\textwidth}
+    \footnotesize
+    \texttt{\detokenize{#1}}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[c]{0.40\textwidth}
+    $\displaystyle #1$
+  \end{minipage}%
+  \medskip
+}
+
+\begin{document}
+  \showCommandExample{\setReal}
+  \showCommandExample{\setNatural}
+  \showCommandExample{\setInteger}
+  \showCommandExample{\setComplex}
+  \showCommandExample{\setRational}
+
+  \showCommandExample{A \define B}
+  \showCommandExample{A \reverseDefine B}
+  \showCommandExample{A \demand B}
+  \showCommandExample{\function{f}{X}{Y}}
+  \showCommandExample{A\separate B}
+  \showCommandExample{\set{1,\ldots,n}{}}
+  \showCommandExample{\set{k\in\setNatural}{k \leq n}}
+
+  \showCommandExample{\curlyBrackets{\frac{x}{y}}}
+  \showCommandExample{\boxBrackets{\frac{x}{y}}}
+  \showCommandExample{\roundBrackets{\frac{x}{y}}}
+  \showCommandExample{\angleBrackets{\frac{x}{y}}}
+  \showCommandExample{\floorBrackets{\frac{x}{y}}}
+  \showCommandExample{\ceilBrackets{\frac{x}{y}}}
+
+  \showCommandExample{\absolute{x^2}}
+  \showCommandExample{\norm{v^2_n}}
+  \showCommandExample{\inverse{M}}
+
+  \showCommandExample{\dotProduct{v}{w}}
+  \showCommandExample{\scalarProduct{v}{w}}
+  \showCommandExample{\crossProduct{v}{w}}
+
+  \showCommandExample{\appendValue{\frac{x}{y}}{y=x}}
+
+  \showCommandExample{\timeDerivative{r}}
+  \showCommandExample{\timeSecondDerivative{r}}
+  \showCommandExample{\timeThirdDerivative{r}}
+
+  \showCommandExample{\infinitesimal}
+  \showCommandExample{\infinitesimal{x}}
+
+  \showCommandExample{\leibnizDerivative{f(x)}{x}}
+  \showCommandExample{\leibnizDerivative[n]{f(x)}{x}}
+
+  \showCommandExample{\leibnizPartialDerivative{f(x,y)}{x}}
+  \showCommandExample{\leibnizPartialDerivative[n]{f(x,y)}{x}}
+
+  \showCommandExample{\leibnizDerivativeOperator{x}{}}
+  \showCommandExample{\leibnizDerivativeOperator{x}{f(x)}}
+
+  \showCommandExample{\leibnizPartialDerivativeOperator{x}{}}
+  \showCommandExample{\leibnizPartialDerivativeOperator{x}{f(x,y)}}
+
+  \showCommandExample{\leibnizDerivativeOperatorValue{x}{f(x)}{x_0}}
+  \showCommandExample{\leibnizPartialDerivativeOperatorValue{s}{f(s,y)}{x}}
+
+  \showCommandExample{\integral{t_0}{t}{f(s)}{s}}
+  \showCommandExample{\indefiniteIntegral{f(x)}{x}}
+  \showCommandExample{\indefiniteIntegralValue{f(x)}{x}{x_0}}
+
+  \showCommandExample{\gradient U}
+  \showCommandExample{\curl A}
+  \showCommandExample{\divergence B}
+  \showCommandExample{\laplacian\varphi}
+
+  \showCommandExample{\vector{A}}
+  \showCommandExample{\vectorX\separate\vectorY\separate\vectorZ}
+
+  \showCommandExample{\diagonalMatrix{v_1,\ldots,v_n}}
+  \showCommandExample{\transpose{A}}
+
+  \showCommandExample{\jacobian}
+  \showCommandExample{\jacobian \Phi}
+
+  \showCommandExample{12.58\appendUnit{m^2}}
+
+  \showCommandExample{a_n \converges a}
+  \showCommandExample{a_n \converges[n\converges\infty] a}
+\end{document}
