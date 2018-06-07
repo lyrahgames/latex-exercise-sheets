@@ -8,7 +8,7 @@ COPY_FILES = $(addprefix $(TEX_DIRECTORY)/, $(FILES))
 all: install $(SUBDIRECTORIES)
 
 $(SUBDIRECTORIES):
-	$(MAKE) -C $@ $(MAKECMDGOALS)
+	$(MAKE) -C $@
 
 install: $(COPY_FILES)
 
