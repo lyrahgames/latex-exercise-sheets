@@ -17,15 +17,14 @@ clean:
 catalog: $(EXERCISE_FILES)
 	@latexmk -pdf -f $(CATALOG).tex
 
-# @echo "Add \"$@\""
 $(EXERCISE_FILES): $(CATALOG_IMPORT_LIST).tex
-	@echo "\\noindent \\textbf{Kommando zum Importieren der Aufgabe:}\\\\" >> $<
-	@echo "{\\noindent\\footnotesize\\verb:\\atiImportTask{:\\%\\\\" >> $<
-	@echo "\\verb:\\atiDatabaseDirectory/:\\%\\\\ \\verb:$(@D)/:\\%\\\\" >> $<
-	@echo "\\verb:}{$(@F)}:}\\bigskip" >> $<
-	@echo "\\par\\atiImportTask{\\atiDatabaseDirectory/$(@D)/}{$(@F)}" >> $<
-	@echo "\\cleardoublepage" >> $<
-	@echo "" >> $<
+	$(file >>$<,\noindent\textbf{Kommando zum Importieren der Aufgabe:}\\)
+	$(file >>$<,{\noindent\footnotesize\verb:\atiImportTask{:\%\\)
+	$(file >>$<,\verb:\atiDatabaseDirectory/:\%\\ \verb:$(@D)/:\%\\)
+	$(file >>$<,\verb:}{$(@F)}:}\bigskip)
+	$(file >>$<,\par\atiImportTask{\atiDatabaseDirectory/$(@D)/}{$(@F)})
+	$(file >>$<,\cleardoublepage)
+	$(file >>$<,)
 
 $(CATALOG_IMPORT_LIST).tex:
-	@echo -n "" > $@
+	$(file >$@)
