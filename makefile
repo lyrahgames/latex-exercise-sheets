@@ -1,4 +1,4 @@
-SUBDIRECTORIES = packages database catalog examples # the order is important
+SUBDIRECTORIES = packages database catalog examples sheets # the order is important
 FILES = atistandard.sty
 TEX_DIRECTORY = $(HOME)/texmf/tex/latex
 COPY_FILES = $(addprefix $(TEX_DIRECTORY)/, $(FILES))
