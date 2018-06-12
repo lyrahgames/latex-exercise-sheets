@@ -3,11 +3,16 @@
   %call = Zusatzaufgabe,
 ]
 
-Der \textsc{Laplace}-Operator wird u.a. in der Elektrodynamik auch auf Vektoren angewendet. Im kartesischen wird die Definition aus der Vorlesung einfach komponentenweise gebraucht, d.h. es ist
+Der \textsc{Laplace}-Operator wird u.a. in der Elektrodynamik auch auf Vektoren angewendet. Allgemein gilt:
 \[
-\Delta\vec{a}=(\Delta a_1)\vec{e}_1+(\Delta a_2)\vec{e}_2+(\Delta a_3)\vec{e}_3
+\Delta\vec{a}=\Delta (a_1\vec{e}_1)+\Delta (a_2\vec{e}_2)+\Delta (a_3\vec{e}_3).
 \]
-wobei die $a_i$ die Komponenten von $\vec{a}$ sind und $\Delta=\sum_{i=1}^3\frac{\partial^2}{\partial x_i^2}$.
+Im Kartesischen vereinfacht sich die Definition zu
+\[
+\Delta\vec{a}=(\Delta a_1)\vec{e}_1+(\Delta a_2)\vec{e}_2+(\Delta a_3)\vec{e}_3,
+\]
+was einer komponentenweisen Anwendung entspricht.
+%wobei die $a_i$ die Komponenten von $\vec{a}$ sind und $\Delta=\sum_{i=1}^3\frac{\partial^2}{\partial x_i^2}$. 
 Berechnen Sie nun $\Delta \vec{a}$ in Zylinderkoordinaten und zeigen Sie, dass -- im Gegensatz zu kartesischen Koordinaten --
 \[
 \Delta a_i\neq (\Delta \vec{a})_i.
