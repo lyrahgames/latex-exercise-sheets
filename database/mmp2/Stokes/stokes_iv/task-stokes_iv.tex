@@ -1,0 +1,48 @@
+\begin{atiTask}[
+  title = Verifikation Satz von Stokes II
+  %call = Zusatzaufgabe,
+]
+
+Verifizieren Sie den Stokes'schen Satz für das folgende Beispiel, indem Sie  Kurvenintegral und Oberflächenintegral berechnen:
+\[
+\int_C\vec{\Phi}\cdot \D\vec{r}=\iint_F\curl \vec{\Phi} \cdot\D\vec{f}\quad\text{mit}\quad\vec{\Phi}=3x^2y\vec{i}+xyz\vec{j}-x^2zy\vec{k}
+\]
+Die Kurve $C$ sei der Einheitskreis um den Ursprung in der $x-y$-Ebene, die Fläche $F$ sei 
+\begin{atiSubtasks}
+\item die obere Halbkugel mit Radius $R=1$ um $(0,0,0)$
+\item die untere Halbkugel mit Radius $R=1$ um $(0,0,0)$
+\end{atiSubtasks}
+Stimmen die Resultate aus (a) und (b) überein?
+
+\atiNote{Erinnerung: Flächen dürfen deformiert werden. Die auftretende Integration kann durch ein geeignetes Additionstheorem wesentlich vereinfacht werden.}
+\end{atiTask}
+
+\begin{atiSolution}
+\begin{atiSubtasks}
+\item $C:\vec{r}=\cos \phi \vec{i}+\sin\phi\vec{j}$ mit $0<\phi\leq 2\pi$, damit $\D \vec{r}=(-\sin\phi \vec{i}+\cos\phi \vec{j})\D\phi$
+Verwende Additionstheorem bei der folgenden Integration
+\[
+\cos(4x)=8\cos^4x-8\cos^2x+1
+\]
+\[
+\int_0^{2\pi}(-3\cos^2\sin^2\phi+0)\D \phi=-3\left[\frac{1}{32}(4\phi-\sin (4\phi))\right]_0^{2\pi}=\uuline{-\frac{3}{4}\pi}\quad (1 Pkt)
+\]
+Berechnen Rotation:
+\[
+\curl \vec{\Phi}=(-x^2z-xy)\vec{i}+(0+2xzy)\vec{j}+(yz-3x^2)\vec{k}\quad (1 Pkt)
+\]
+Obere Halbkugel:\\
+Für die Oberfläche benutzen wir nur die Kreisfläche mit dem vektoriellen Flächenelement
+$\D \vec{f}=\vec{k} \D x\D y$. Es ist damit $z=0$ Integranden zu setzen, da das Integrationsgebiet in der $x-y$-Ebene liegt. Also:
+\[
+\iint \curl \vec{\Phi}\cdot \D \vec{f}= \iint_{Kreis}(-3x^2)\D x\D y\quad (1 Pkt)
+\]
+Verwende Polarkoordinaten $\D x\D y=r\D r \D \phi$:
+\begin{align*}
+\iint \curl \vec{\Phi}\cdot \D \vec{f}=& -3 \int_{r=0}^1\int_{\phi=0}^{2\pi}r^2\cos^2\phi r\D r\D \phi\\
+=& 3/4r^4|_0^1\int_0^{2\pi}\cos^2\phi\Delta\phi =-3/4\left[1/2(\phi+\sin\phi\cos\phi)\right]_0^{2\pi}=\uuline{-\frac{3}{4}\pi}  \quad (1 Pkt).
+\end{align*}
+\item untere Halbkugel: Selbe Überlegungen wie oben, aber mit $\D \vec{f}=-\vec{k} \D x\D y$ erhält man für das Integral $I=3/4\pi$ (1/2 Pkt). Um den Satz von Stokes zu verifizieren ist hier also auch das Linienintegral nochmal in umgekehrter Richtung (gedanklich) zu berechnen (Rechte-Hand-Regel) (1/2 Pkt).
+\end{atiSubtasks}
+gesamt: (5 Punkte) 
+\end{atiSolution}
