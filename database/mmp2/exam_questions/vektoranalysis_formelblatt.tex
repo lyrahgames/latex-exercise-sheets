@@ -3,59 +3,59 @@
 \begin{document}
 
 \begin{atiTask}[
-	title = Formelblatt
+	%title = Formelblatt
 ]
 	\providecommand{\D}{\mathrm{d}}
-\section{Formelsammlung zur Vektoranalysis}
-\subsection{Vektor-Differentialoperatoren in krummlinigen Orthogonalkoordinaten}
-\begin{flalign*}
-  \text{Linienelement:}\quad & \d s^2 = g_1^2 \dx_2^2 + g_2^2 \dx_2^2 + g_3^2 \dx_3^2 &&
-\end{flalign*}
-Beispiele:\\
-\begin{center}
-\begin{tabular}{l|ccc|ccc}
-  & $x_1$ & $x_2$ & $x_3$ & $g_1$ & $g_2$ & $g_3$   \\ \hline
-  kartes. & $x$ & $y$ & $z$ & $1$ & $1$ & $1$ \\ 
-  Zylinder & $r$ & $\phi$ & $z$ & $1$ & $r$ & $1$ \\ 
-  Kugel & $r$ & $\theta$ & $\phi$ & $1$ & $r$ & $r\sin\theta$ \\ 
-\end{tabular}
-\end{center}
-Volumenelement: $\ds\quad  \d V = g_1 g_2 g_3 \dx_1 \dx_2 \dx_3 $\\[1em]
-Gradient: $\ds\quad \grad U = \left( \frac{1}{g_1} \pdiff{U}{x_1}, \frac{1}{g_2} \pdiff{U}{x_2}, \frac{1}{g_2} \pdiff{U}{x_2} \right)$\\[1em]
-Divergenz: $\ds\quad \div \vA = \frac{1}{g_1 g_2 g_3} \left[ \pdiff{}{x_1} (A_1 g_2 g_3) + \pdiff{}{x_2} (g_1 A_2 g_3) + \pdiff{}{x_3} (g_1 g_2 A_3) \right]$ \\[1em]
-Rotation: $\ds\quad \rot \vA = \frac{1}{g_1 g_2 g_3} \left| \begin{array}{ccc}\ds g_1 \ve_1 & g_2 \ve_2 & g_3 \ve_3 \\[0.5em] \pdiffd{}{x_1} & \pdiffd{}{x_2} & \pdiffd{}{x_3} \\[1em] g_1 A_1 & g_2 A_2 & g_3 A_3 \end{array} \right|$\\[1em]
-Laplace-Operator: $\quad \ds \Delta U = \div \grad U$
-\begin{align*}
-  \Delta U = \frac{1}{g_1 g_2 g_3} \left[ \pdiff{}{x_1} \left( \frac{g_2 g_3}{g_1} \pdiff{U}{x_1} \right) + \pdiff{}{x_2} \left( \frac{g_1 g_3}{g_2} \pdiff{U}{x_2} \right) + \pdiff{}{x_3} \left( \frac{g_1 g_2}{g_3} \pdiff{U}{x_3} \right) \right]
-\end{align*}
-\subsection{Rechenregeln}
-$\rot \grad U = 0$ \\[0.25em]
-$\div \rot \vA = 0$ \\[0.25em]
-$\rot \rot \vA = \grad \div \vA - \Delta \vA \quad$ (kartesische Koordinaten) \\[0.25em]
-$\div( \vA \times \vB ) =  \vB \rot \vA - \vA \rot \vB$ \\[0.25em]
-$\grad ( U V) = U \grad V + V \grad U$ \\[0.25em]
-$ \rot ( \lambda \vA ) = \lambda \rot \vA + (\grad \lambda ) \times \vA$ \\[0.25em]
-$ \div ( \lambda \vA) = \lambda \div \vA + \vA \grad \lambda$ \\[0.25em]
-$ \rot ( \vA \times \vB) = (\vB \grad ) \vA - (\vA \grad ) \vB + \vA \div \vB - \vB \div \vA$ \\[0.25em]
-$ \grad(\vA \vB) = (\vB \grad ) \vA + (\vA \grad ) \vB + \vA \times \rot \vB + \vB \times \rot \vA$ \\[0.25em]
-\clearpage
+%\section{Formelsammlung zur Vektoranalysis}
+%\subsection{Vektor-Differentialoperatoren in krummlinigen Orthogonalkoordinaten}
+%\begin{flalign*}
+%  \text{Linienelement:}\quad & \D s^2 = g_1^2 \D x_2^2 + g_2^2 \D x_2^2 + g_3^2 \D x_3^2 &&
+%\end{flalign*}
+%Beispiele:\\
+%\begin{center}
+%\begin{tabular}{l|ccc|ccc}
+%  & $x_1$ & $x_2$ & $x_3$ & $g_1$ & $g_2$ & $g_3$   \\ \hline
+%  kartes. & $x$ & $y$ & $z$ & $1$ & $1$ & $1$ \\ 
+%  Zylinder & $r$ & $\phi$ & $z$ & $1$ & $r$ & $1$ \\ 
+%  Kugel & $r$ & $\theta$ & $\phi$ & $1$ & $r$ & $r\sin\theta$ \\ 
+%\end{tabular}
+%\end{center}
+%Volumenelement: $\D s\quad  \d V = g_1 g_2 g_3 \D x_1 \D x_2 \D x_3 $\\[1em]
+%Gradient: $\D s\quad \gradient U = \left( \frac{1}{g_1} \LeibnizPartialDerivative{U}{x_1}, \frac{1}{g_2} \LeibnizPartialDerivative{U}{x_2}, \frac{1}{g_2} \LeibnizPartialDerivative{U}{x_2} \right)$\\[1em]
+%Divergenz: $\D s\quad \divergence \vec{A} = \frac{1}{g_1 g_2 g_3} \left[ \LeibnizPartialDerivative{}{x_1} (A_1 g_2 g_3) + \LeibnizPartialDerivative{}{x_2} (g_1 A_2 g_3) + \LeibnizPartialDerivative{}{x_3} (g_1 g_2 A_3) \right]$ \\[1em]
+%Rotation: $\D s\quad \curl \vec{A} = \frac{1}{g_1 g_2 g_3} \left| \begin{array}{ccc}\D s g_1 \vec{e}_1 & g_2 \vec{e}_2 & g_3 \vec{e}_3 \\[0.5em] \LeibnizPartialDerivative{}{x_1} & \LeibnizPartialDerivative{}{x_2} & \LeibnizPartialDerivative{}{x_3} \\[1em] g_1 A_1 & g_2 A_2 & g_3 A_3 \end{array} \right|$\\[1em]
+%Laplace-Operator: $\quad \D s \Delta U = \divergence \gradient U$
+%\begin{align*}
+%  \Delta U = \frac{1}{g_1 g_2 g_3} \left[ \LeibnizPartialDerivative{}{x_1} \left( \frac{g_2 g_3}{g_1} \LeibnizPartialDerivative{U}{x_1} \right) + \LeibnizPartialDerivative{}{x_2} \left( \frac{g_1 g_3}{g_2} \LeibnizPartialDerivative{U}{x_2} \right) + \LeibnizPartialDerivative{}{x_3} \left( \frac{g_1 g_2}{g_3} \LeibnizPartialDerivative{U}{x_3} \right) \right]
+%\end{align*}
+%\subsection{Rechenregeln}
+$\curl \gradient U = 0$ \\[0.25em]
+$\divergence \curl \vec{A} = 0$ \\[0.25em]
+$\curl \curl \vec{A} = \gradient \divergence \vec{A} - \Delta \vec{A} \quad$ (kartesische Koordinaten) \\[0.25em]
+$\divergence( \vec{A} \times \vec{B} ) =  \vec{B} \curl \vec{A} - \vec{A} \curl \vec{B}$ \\[0.25em]
+$\gradient ( U V) = U \gradient V + V \gradient U$ \\[0.25em]
+$ \curl ( \lambda \vec{A} ) = \lambda \curl \vec{A} + (\gradient \lambda ) \times \vec{A}$ \\[0.25em]
+$ \divergence ( \lambda \vec{A}) = \lambda \divergence \vec{A} + \vec{A} \gradient \lambda$ \\[0.25em]
+$ \curl ( \vec{A} \times \vec{B}) = (\vec{B} \gradient ) \vec{A} - (\vec{A} \gradient ) \vec{B} + \vec{A} \divergence \vec{B} - \vec{B} \divergence \vec{A}$ \\[0.25em]
+$ \gradient(\vec{A} \vec{B}) = (\vec{B} \gradient ) \vec{A} + (\vec{A} \gradient ) \vec{B} + \vec{A} \times \curl \vec{B} + \vec{B} \times \curl \vec{A}$ \\[0.25em]
+%\clearpage
 \begin{enumerate}
   \renewcommand{\labelenumi}{\textbf{\alph{enumi})}}
   \item \textbf{Zylinderkoordinaten}\\[1em]
   Linienelement: $\quad \D s^2 = \D r^2 + r^2 \D \phi^2 + \D z^2$ \\[1em] 
   Volumenelement: $\quad \D V = r \D r \D \phi \D z$ \\[1em]
-  Gradient: $\quad \gradient U = \leibnizPartialDerivative{U}{r} \vec{e}_r + \frac{1}{r} \leibnizPartialDerivative{U}{\phi} \vec{e}_\phi + \leibnizPartialDerivative{U}{z} \vec{e}_z$ \\[1em] 
+  Gradient: $\quad \gradient U = \leibnizPartialDerivative{U}{r}\vec{e}_r + \frac{1}{r} \leibnizPartialDerivative{U}{\phi} \vec{e}_\phi + \leibnizPartialDerivative{U}{z} \vec{e}_z$ \\[1em] 
   Divergenz: $\quad \divergence \vec{A} = \frac{1}{r} \leibnizPartialDerivative{}{r} (rA_r) + \frac{1}{r} \leibnizPartialDerivative{A_\phi}{\phi} + \leibnizPartialDerivative{A_z}{z}$ \\[1em]
-  Rotation: $\quad \curl \vec{A} = \left[ \frac{1}{r} \leibnizPartialDerivative{A_z}{\phi} - \leibnizPartialDerivative{A_\phi}{z} \right] \vec{e}_r + \left[ \leibnizPartialDerivative{A_r}{z} - \leibnizPartialDerivative{A_z}{r} \right] \vec{e}_\phi + \frac{1}{r} \left[ \leibnizPartialDerivative{}{r} (rA_\phi) - \leibnizPartialDerivative{A_r}{\phi} \right] \vec{e}_z$ \\[1em]
+  Rotation: $\quad \curl \vec{A} = \left[ \frac{1}{r} \leibnizPartialDerivative{A_z}{\phi} - \leibnizPartialDerivative{A_\phi}{z} \right]\vec{e}_r + \left[ \leibnizPartialDerivative{A_r}{z} - \leibnizPartialDerivative{A_z}{r} \right] \vec{e}_\phi + \frac{1}{r} \left[ \leibnizPartialDerivative{}{r} (rA_\phi) - \leibnizPartialDerivative{A_r}{\phi} \right] \vec{e}_z$ \\[1em]
   Laplace-Operator: $\quad \Delta U = \frac{1}{r} \leibnizPartialDerivative{}{r} \left( r \leibnizPartialDerivative{U}{r} \right) + \frac{1}{r^2} \leibnizPartialDerivative[2]{U}{\phi} + \leibnizPartialDerivative[2]{U}{z}$ 
   \item \textbf{Kugelkoordinaten}\\[1em]
   Linienelement: $\quad \D s^2 = \D r^2 + r^2 \D \theta^2 + r^2 \sin^2 \theta \D\phi^2$ \\[1em] 
   Volumenelement: $\quad \D V = r^2 \sin\theta  \D r \D \theta \D \phi $ \\[1em]
-  Gradient: $\quad \gradient U = \leibnizPartialDerivative{U}{r} \vec{e}_r + \frac{1}{r} \leibnizPartialDerivative{U}{\theta} \vec{e}_\theta + \frac{1}{r\sin\theta} \leibnizPartialDerivative{U}{\phi} \vec{e}_\phi$ \\[1em] 
+  Gradient: $\quad \gradient U = \leibnizPartialDerivative{U}{r}\vec{e}_r + \frac{1}{r} \leibnizPartialDerivative{U}{\theta} \vec{e}_\theta + \frac{1}{r\sin\theta} \leibnizPartialDerivative{U}{\phi} \vec{e}_\phi$ \\[1em] 
   Divergenz: $\quad \divergence \vec{A} = \frac{1}{r^2} \leibnizPartialDerivative{}{r} (r^2A_r) + \frac{1}{r\sin\theta} \left[ \leibnizPartialDerivative{}{\theta} (\sin\theta A_\theta) + \leibnizPartialDerivative{A_\phi}{\phi} \right]$ \\[1em]
   Rotation: 
   \begin{align*}
-\curl \vec{A} = \frac{1}{r\sin\theta} \left[ \leibnizPartialDerivative{}{\theta} (\sin\theta A_\phi) - \leibnizPartialDerivative{A_\theta}{\phi} \right] \vec{e}_r + \frac{1}{r} \left[ \frac{1}{\sin\theta} \leibnizPartialDerivative{A_r}{\phi} - \leibnizPartialDerivative{}{r}    (r A_\phi) \right] \vec{e}_\theta + \frac{1}{r} \left[ \leibnizPartialDerivative{}{r} (rA_\theta) - \leibnizPartialDerivative{A_r}{\theta} \right] \vec{e}_\phi
+\curl \vec{A} = \frac{1}{r\sin\theta} \left[ \leibnizPartialDerivative{}{\theta} (\sin\theta A_\phi) - \leibnizPartialDerivative{A_\theta}{\phi} \right]\vec{e}_r + \frac{1}{r} \left[ \frac{1}{\sin\theta} \leibnizPartialDerivative{A_r}{\phi} - \leibnizPartialDerivative{}{r}    (r A_\phi) \right] \vec{e}_\theta + \frac{1}{r} \left[ \leibnizPartialDerivative{}{r} (rA_\theta) - \leibnizPartialDerivative{A_r}{\theta} \right] \vec{e}_\phi
   \end{align*} 
   Laplace-Operator:
   \begin{align*}
