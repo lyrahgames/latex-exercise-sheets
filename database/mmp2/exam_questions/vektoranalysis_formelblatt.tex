@@ -8,26 +8,26 @@
 	\providecommand{\D}{\mathrm{d}}
 %\section{Formelsammlung zur Vektoranalysis}
 %\subsection{Vektor-Differentialoperatoren in krummlinigen Orthogonalkoordinaten}
-%\begin{flalign*}
-%  \text{Linienelement:}\quad & \D s^2 = g_1^2 \D x_2^2 + g_2^2 \D x_2^2 + g_3^2 \D x_3^2 &&
-%\end{flalign*}
-%Beispiele:\\
-%\begin{center}
-%\begin{tabular}{l|ccc|ccc}
-%  & $x_1$ & $x_2$ & $x_3$ & $g_1$ & $g_2$ & $g_3$   \\ \hline
-%  kartes. & $x$ & $y$ & $z$ & $1$ & $1$ & $1$ \\ 
-%  Zylinder & $r$ & $\phi$ & $z$ & $1$ & $r$ & $1$ \\ 
-%  Kugel & $r$ & $\theta$ & $\phi$ & $1$ & $r$ & $r\sin\theta$ \\ 
-%\end{tabular}
-%\end{center}
-%Volumenelement: $\D s\quad  \d V = g_1 g_2 g_3 \D x_1 \D x_2 \D x_3 $\\[1em]
-%Gradient: $\D s\quad \gradient U = \left( \frac{1}{g_1} \LeibnizPartialDerivative{U}{x_1}, \frac{1}{g_2} \LeibnizPartialDerivative{U}{x_2}, \frac{1}{g_2} \LeibnizPartialDerivative{U}{x_2} \right)$\\[1em]
+\begin{flalign*}
+  \text{Linienelement:}\quad & \D s^2 = g_1^2 \D x_2^2 + g_2^2 \D x_2^2 + g_3^2 \D x_3^2 &&
+\end{flalign*}
+Beispiele:\\
+\begin{center}
+\begin{tabular}{l|ccc|ccc}
+  & $x_1$ & $x_2$ & $x_3$ & $g_1$ & $g_2$ & $g_3$   \\ \hline
+  kartes. & $x$ & $y$ & $z$ & $1$ & $1$ & $1$ \\ 
+  Zylinder & $r$ & $\phi$ & $z$ & $1$ & $r$ & $1$ \\ 
+  Kugel & $r$ & $\theta$ & $\phi$ & $1$ & $r$ & $r\sin\theta$ \\ 
+\end{tabular}
+\end{center}
+Volumenelement: $\D s\quad  \d V = g_1 g_2 g_3 \D x_1 \D x_2 \D x_3 $\\[1em]
+Gradient: $\D s\quad \gradient U = \left( \frac{1}{g_1} \LeibnizPartialDerivative{U}{x_1}, \frac{1}{g_2} \LeibnizPartialDerivative{U}{x_2}, \frac{1}{g_2} \LeibnizPartialDerivative{U}{x_2} \right)$\\[1em]
 %Divergenz: $\D s\quad \divergence \vec{A} = \frac{1}{g_1 g_2 g_3} \left[ \LeibnizPartialDerivative{}{x_1} (A_1 g_2 g_3) + \LeibnizPartialDerivative{}{x_2} (g_1 A_2 g_3) + \LeibnizPartialDerivative{}{x_3} (g_1 g_2 A_3) \right]$ \\[1em]
 %Rotation: $\D s\quad \curl \vec{A} = \frac{1}{g_1 g_2 g_3} \left| \begin{array}{ccc}\D s g_1 \vec{e}_1 & g_2 \vec{e}_2 & g_3 \vec{e}_3 \\[0.5em] \LeibnizPartialDerivative{}{x_1} & \LeibnizPartialDerivative{}{x_2} & \LeibnizPartialDerivative{}{x_3} \\[1em] g_1 A_1 & g_2 A_2 & g_3 A_3 \end{array} \right|$\\[1em]
 %Laplace-Operator: $\quad \D s \Delta U = \divergence \gradient U$
 %\begin{align*}
 %  \Delta U = \frac{1}{g_1 g_2 g_3} \left[ \LeibnizPartialDerivative{}{x_1} \left( \frac{g_2 g_3}{g_1} \LeibnizPartialDerivative{U}{x_1} \right) + \LeibnizPartialDerivative{}{x_2} \left( \frac{g_1 g_3}{g_2} \LeibnizPartialDerivative{U}{x_2} \right) + \LeibnizPartialDerivative{}{x_3} \left( \frac{g_1 g_2}{g_3} \LeibnizPartialDerivative{U}{x_3} \right) \right]
-%\end{align*}
+\end{align*}
 %\subsection{Rechenregeln}
 $\curl \gradient U = 0$ \\[0.25em]
 $\divergence \curl \vec{A} = 0$ \\[0.25em]
