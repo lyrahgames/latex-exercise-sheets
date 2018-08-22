@@ -1,0 +1,61 @@
+\documentclass[fleqn,11pt]{article}
+\usepackage{atistandard}
+%\usepackage{geometry}
+\geometry{a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm}
+
+\begin{document}
+  \atiSheetHead{%
+    title = Mathematische Methoden der Physik II,
+    type = Nachklausur,
+    author = Dr. Agnes Sambale,
+    mail = agnes.sambale@uni-jena.de,
+    %last update = \today,
+    extra info = Sommersemester 2018
+  }
+
+\textbf{Bitte jede Aufgabe auf ein eigenes Blatt schreiben. Es sind keine Hilfsmittel erlaubt.}
+
+  \atiImportTask[points = 4]{%
+  \atiDatabaseDirectory/%
+  mmp1/vector_analysis/dreifachintegral_iv/%
+  }{task-dreifachintegral_iv.tex}
+%
+  \atiImportTask[points = 6]{%
+  \atiDatabaseDirectory/%
+  mmp2/Gauss/gauss_iii/%
+  }{task-gauss_iii.tex}
+  %
+  \atiImportTask[points = 7+3]{%
+  \atiDatabaseDirectory/%
+  mmp2/Krummlinig/Krummlinig_v/%
+  }{task-krummlinig_v.tex}
+%
+  \atiImportTask[points = 4]{%
+  \atiDatabaseDirectory/%
+  mmp2/Delta/delta_vii/%
+  }{task-delta_vii.tex}
+% 
+%\newpage   
+  \atiImportTask[points = 6]{%
+  \atiDatabaseDirectory/%
+  mmp2/Fourier/fourier_vi/%
+  }{task-fourier_vi.tex}
+%
+%
+\newpage
+  \atiImportTask[points = 9+1]{%
+  \atiDatabaseDirectory/%
+  mmp2/exam_questions/%
+  }{task-nachklausurss18.tex}
+%
+%\newpage
+%   \atiImportTask[type=Formelblatt, number=false]{%
+%   \atiDatabaseDirectory/%
+%   mmp2/exam_questions/%
+%    }{vektoranalysis_formelblatt.tex}  
+%
+%  \atiImportTask[points = 3, type = Zusatzaufgabe, number = false]{%
+%  \atiDatabaseDirectory/%
+%  mmp1/vector_analysis/doppelintegral_i/%
+%  }{task-doppelintegral_i.tex}
+\end{document}
