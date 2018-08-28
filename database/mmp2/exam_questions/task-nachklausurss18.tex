@@ -8,18 +8,20 @@
 	\providecommand{\D}{\mathrm{d}}
 
 \begin{atiSubtasks}
-	\item Geben Sie die Bedingungen an unter denen periodische Funktionen der Periode $L$ durch $\sin \frac{2\pi n x}{L}$ und $\cos \frac{2\pi nx}{L}$ entwickelt werden können.
+	\item Geben Sie die Bedingungen an, unter denen periodische Funktionen der Periode $L$ durch $\sin \frac{2\pi n x}{L}$ und $\cos \frac{2\pi nx}{L}$ entwickelt werden können.
 	\item Beweisen Sie die folgende Relation im Indexkalkül
-	\[\curl(\lambda\vec{a})=(\gradient\lambda) \times\vec{a}+\lambda\curl\vec{a}
+	\[\curl(\lambda\vec{a})=(\gradient\lambda) \times\vec{a}+\lambda\curl\vec{a}.
 	\]
 	\item Zu welchem Zeitpunkt wird das Vektorfeld 
 	\[
 	\vec{F}(\vec{r},t)=(x+t\cdot y+z)\vec{i}+(x+y+t\cdot z)\vec{j}+(t\cdot x+y+z)\vec{k}
 	\]
-	\item Gegeben seien die Funktion $f(t)$ und $g(t)$, sowie ihre Fouriertransformierten $\hat{f}(k)$ und $\hat{g}(k)$. Bestimmen Sie die Fouriertransformierte der Funktion 
-	\[
-	h(t)=af(t)+bg(t),\quad a,b\in \mathbb{C}.
-	\]
+	wirbelfrei?
+%	\item Gegeben seien die Funktion $f(t)$ und $g(t)$, sowie ihre Fouriertransformierten $\hat{f}(k)$ und $\hat{g}(k)$. Bestimmen Sie die Fouriertransformierte der Funktion 
+%	\[
+%	h(t)=af(t)+bg(t),\quad a,b\in \mathbb{C}.
+%	\]
+	\item Gegeben seien die Funktion $g(t)$ und ihre Fouriertransformierte $\hat{g}(\omega)$. Bestimmen Sie die Fouriertransformierte der Funktion $g(t-a)$.
 	\item Betrachten Sie die \textsc{Gauss}sche Glockenkurve
 	\[
 	f(x)=Ae^{-Bx^2}
@@ -28,13 +30,13 @@
 	
 	\begin{minipage}{6cm}
 	I Die Amplitude wird vergrößert.\\
-	II Der Peak wird verbreitert.
+	II Die Halbwertsbreite wird vergrößert.
 	\end{minipage}
 	\begin{minipage}{6cm}
 	A Die Amplitude vergrößert sich.\\
 	B Die Amplitude verkleinert sich.\\
-	C Der Peak verbreitert sich.\\
-	D Der Peak wird schmaler.
+	C Die Halbwertsbreite vergrößert sich.\\
+	D Die Halbwertsbreite verkleinert sich.
 	\end{minipage}\\
 		
 	\atiNote{Es müssen nicht zwangsläufig alle Aussagen verwendet werden. Eine Begründung wird nicht verlangt.}
@@ -43,6 +45,27 @@
 	%Feldes zeigt nach oben, oder?\grqq{}, fragt Harry. Ron kaut auf seiner Feder herum: \glqq Bei mir zeigt er nach unten\dots\grqq{} Ohne den Blick von ihrem Pergament zu lösen, ruft Hermine: \glqq Ihr liegt beide falsch.\grqq{} Warum?
 \end{atiSubtasks}
 
+\textbf{Zusatzaufgabe:} Im Gebirge von Ephel Dúath stehen die Hobbits Sam und Frodo mit ihrem Führer vor einer Kreuzung und debattieren, welcher Weg sie zum Pass von Cirith Ungol führt, ohne auf ein Orklager zu treffen. Sie wissen, dass alle Orklager der Umgebung sich an den Punkten des steilsten Anstiegs befinden. „Der Weg bergauf ist der richtige. Nur hier zeigt der Gradient des Wirbelfelds in Richtung Mordor. Der gute Herr muss Sméagol glauben...” Wie kann Sam Frodo überzeugen, dass Gollum lügt? 
+
+~\\[0.6cm]
+\textbf{Nützliche Formeln:}
+
+\[\cosh x =\frac{1}{2}[e^x+e^{-x}]
+\]
+\[\sinh x =\frac{1}{2}[e^x-e^{-x}]
+\]
+\[
+\cosh^2 x- \sinh^2 x=1
+\]
+\[
+\integral{-\infty}{\infty}{e^{-\beta x^2}}{x}=\sqrt{\frac{\pi}{\beta}}
+\]
+%\[
+Divergenz in Zylinderkoordinaten: $\quad \divergence \vec{A} = \frac{1}{r} \leibnizPartialDerivative{}{r} (rA_r) + \frac{1}{r} \leibnizPartialDerivative{A_\varphi}{\varphi} + \leibnizPartialDerivative{A_z}{z}$ \\[0.2cm]
+Rotation in Zylinderkoordinaten: $\quad \curl \vec{A} = \left[ \frac{1}{r} \leibnizPartialDerivative{A_z}{\varphi} - \leibnizPartialDerivative{A_\varphi}{z} \right]\vec{e}_r + \left[ \leibnizPartialDerivative{A_r}{z} - \leibnizPartialDerivative{A_z}{r} \right] \vec{e}_\varphi + \frac{1}{r} \left[ \leibnizPartialDerivative{}{r} (rA_\varphi) - \leibnizPartialDerivative{A_r}{\varphi} \right] \vec{e}_z$ \\
+
+%\divergence \vec{a}=\frac{1}{r}\LeibnizDerivative{(rA_r)}{r}+\frac{1}{r}\LeibnizDerivative{}{}
+%\]
 \end{atiTask}
 
 \end{document}
